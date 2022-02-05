@@ -1,0 +1,10 @@
+#keyVisual{
+    width: 100%;
+    max-width: 70rem;
+    margin: 2rem auto;
+}
+
+#keyVisual img{
+    height: 36rem;
+    object-fit: cover;
+}
