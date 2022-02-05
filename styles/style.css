@@ -1,3 +1,33 @@
+:root{
+    --main-color:#845EC2;
+    --darkmain:#b39cd0;
+    --secondery-color:#4fc4cf;
+    --tertiary-color:#ff8066;  
+    --accent-color:#00c9a7;
+    --storke: #181818;
+    --main-background: #f2eef5;
+
+    --background-color:#f6efef;
+    --headline-color:#2e2e2e;
+    --subheadline-color:#4b4453;
+    --card-background: #f0e2e1;
+    --text-color:#72757e;
+
+    font: Baskerville;
+}
+
+body{
+    background-color:var(--card-background); 
+}
+
+header{
+    background-color: var(--card-background);
+}
+
+.navbar{
+    background: var(--accent-color);
+}
+
 #keyVisual{
     width: 100%;
     max-width: 70rem;
@@ -7,4 +37,8 @@
 #keyVisual img{
     height: 36rem;
     object-fit: cover;
+}
+
+.copyright {
+    color: darken(#ccc, 20%);
 }
