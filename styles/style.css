@@ -13,20 +13,21 @@
     --card-background: #f0e2e1;
     --text-color:#72757e;
 
-    font: Baskerville;
+    
 }
 
 body{
-    background-color:var(--card-background); 
+    margin: 0;
+    padding: 0;
+    font-family: Baskerville, sans-serif;
+    background-color:var(--main-background); 
 }
 
 header{
     background-color: var(--card-background);
 }
 
-.navbar{
-    background: var(--accent-color);
-}
+
 
 #keyVisual{
     width: 100%;

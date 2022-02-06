@@ -11,40 +11,63 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
         crossorigin="anonymous"
     >
+    <link rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    >
+    <script src="script.js"></script>
     <title>Gaisma Artist</title>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="logo" href="/index.html">Gaisma</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Music</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">News</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Performance</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Events</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Support</a>
-                  </li>
-                </ul>
-              </div>
+      <div class="navigation-wrap start-header start-style">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <nav class="navbar navbar-expand-md navbar-light">
+              
+                <a class="navbar-brand" href="/index.html" target="_blank">Gaisma</a>	
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                  aria-expanded="false" aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto py-4 py-md-0">                    
+                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                      <a class="nav-link" href="#">music</a>
+                    </li>
+                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                      <a class="nav-link" href="#">news</a>
+                    </li>
+                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                      <a class="nav-link" href="#">events</a>
+                    </li>
+                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">works</a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">videos</a>
+                        <a class="dropdown-item" href="#">photography</a>
+                        <a class="dropdown-item" href="#">performance</a>
+                        <a class="dropdown-item" href="#">art</a>
+                      </div>
+                    </li>
+                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                      <a class="nav-link" href="#">about</a>
+                    </li>
+                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                      <a class="nav-link" href="https://gaisma.bandcamp.com/merch/was-sehen-wir-eigentlich">support</a>
+                    </li>
+                  </ul>
+                </div>
+                
+              </nav>		
             </div>
-          </nav>
+          </div>
+        </div>
+      </div>
     </header>
     <main>
         <section id="keyVisual" class="carousel slide" data-bs-ride="carousel">
@@ -90,18 +113,18 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-9 text-center">
-            <div class="social mb-4">
-              <h3>Stay in touch</h3>
+            <section class="social mb-4">
+              <h3>Stay in touch <a href = "gaisma@posteo.de"><i class="fa fa-envelope"></i></a></h3>
+        
               <ul class="list-unstyled">
-                <li class="in"><a href="#"><span class="icon-instagram"></span></a></li>
-                <li class="fb"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="sc"><a href="#"><span class="icon-soundcloud"></span></a></li>
-                <li class="dz"><a href="#"><span class="icon-dezzer"></span></a></li>
-                <li class="sp"><a href="#"><span class="icon-spotify"></span></a></li>
-                <li class="bc"><a href="#"><span class="icon-bandcamp"></span></a></li>
-                <li class="yt"><a href="#"><span class="icon-youtube"></span></a></li>
+                <li><span class="social-icon in"><a href="https://www.facebook.com/gaisma.lovin"><i class="fa fa-facebook-f"></i></a></span></li>
+                <li><span class="social-icon fb"><a href="https://www.instagram.com/gaisma.lovin/"><i class="fa fa-instagram"></i></a></span></li>
+                <li><span class="social-icon sc"><a href="https://soundcloud.com/gaisma"><i class="fa fa-soundcloud"></i></a></span></li>
+                <li><span class="social-icon sp"><a href="https://open.spotify.com/artist/01EmU1Segbe63mUG2eyJ58"><i class="fa fa-spotify"></i></a></span></li>
+                <li><span class="social-icon bc"><a href="https://gaisma.bandcamp.com/music"><i class="fa fa-bandcamp"></i></a></span></li>
+                <li><span class="social-icon yt"><a href="https://www.youtube.com/channel/UC4xlthzyUhxk7mI1pCV7W6w"><i class="fa fa-youtube"></i></a></span></li>
               </ul>
-            </div>
+            </section>
 
             <div class="copyright">
               <p class="mb-0"><small>&copy; Gaisma. All Rights Reserved.</small></p>
