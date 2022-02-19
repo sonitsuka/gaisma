@@ -20,30 +20,38 @@
 }
 
 body{
+    background-color: var(--background-color) !important; 
     margin: 0;
     padding: 0;
-    font-family: Libre Baskerville, sans-serif;
-    background-color:var(--main-background); 
+    font-family: Baskerville, sans-serif;  
 }
 
 header{
-    background-color: var(--card-background);
-    font-family: 'Athelas', sans-serif;
+    /*background-color: var(--card-background);*/
+    font-family: 'Baskerville', sans-serif;
+    font-weight: bold;
 }
 
-#stay-in-touch{
-    margin-bottom: 1rem;
+.navigation-wrap{
+    font-size: 1.2rem;
 }
 
-.social-icon{
-    margin-left: 1rem;
+.navbar-brand img{
+    height: 30px ;
+    width: auto;
+    display: block;
 }
 
+main{
+    background-color: var(--background-color); 
+}
 
 #keyVisual{
     width: 100%;
-    max-width: 70rem;
-    margin: 2rem auto;
+    max-width: 80rem;
+    margin: 2rem auto 1rem;
+    font-family: Libre Baskerville, sans-serif;
+
 }
 
 #keyVisual img{
@@ -51,6 +59,50 @@ header{
     object-fit: cover;
 }
 
+footer{
+    background-color: var(--background-color); 
+
+    font-family: Libre Baskerville, sans-serif;
+    color: var(--subheadline-color);
+}
+
+#stay-in-touch{
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.social a{
+    color: var(--subheadline-color);
+    font-size: 22px;
+}
+
+.social a:hover{
+    color: var(--main-color);
+}
+
+.social-icon.in a:hover{
+    color: #d82d7e;
+}
+.social-icon.fb a:hover{
+    color: #395185;
+}
+.social-icon.sc a:hover{
+    color: #f04923;
+}
+.social-icon.sp a:hover{
+    color: #1ed760;
+}
+.social-icon.bc a:hover{
+    color: #1f80aa;
+}
+.social-icon.yt a:hover{
+    color: #ff0000;
+}
+.social-icon{
+    margin-left: 1rem;
+}
 .copyright {
     color: darken(#ccc, 20%);
+    font-size: 0.7rem;
+    margin-bottom: .5rem;
 }
