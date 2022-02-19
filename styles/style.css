@@ -23,23 +23,31 @@ body{
     background-color: var(--background-color) !important; 
     margin: 0;
     padding: 0;
-    font-family: Baskerville, sans-serif;  
+    font-family: Libre Baskerville, sans-serif;  
 }
 
 header{
     /*background-color: var(--card-background);*/
-    font-family: 'Baskerville', sans-serif;
-    font-weight: bold;
+    font-family: Libre Baskerville, sans-serif;
+    font-weight: 400;
 }
 
 .navigation-wrap{
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .navbar-brand img{
     height: 30px ;
     width: auto;
     display: block;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: var(--subheadline-color);
+}
+
+.navbar-item{
+    color: var(--subheadline-color);
 }
 
 main{
