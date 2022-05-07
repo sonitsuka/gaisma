@@ -32,15 +32,38 @@ header{
     font-weight: 400;
 }
 
+#relase-caption{
+    text-decoration: none;
+    color: #ccc;
+}
+
 .navigation-wrap{
     font-size: 1rem;
 }
 
-.navbar-brand img{
-    height: 30px ;
-    width: auto;
-    display: block;
-}
+.logo{
+    text-transform: uppercase; 
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    align-items: center;
+    background: linear-gradient(to right, #845EC2, #b39cd0, #ff8066,#00c9a7);
+    -webkit-background-clip: text; 
+    -webkit-background-fill-color:transparent;
+    background-clip: text; 
+    color: transparent;
+    
+    background-size: 200%;
+    background-position: -100%;  
+    
+    animation: animatedText 2s infinite alternate-reverse;
+  }
+  
+  @keyframes animatedText{
+    to{
+      background-position: 100%; 
+    }
+  }
 
 .navbar-light .navbar-nav .nav-link{
     color: var(--subheadline-color);
@@ -48,6 +71,18 @@ header{
 
 .navbar-item{
     color: var(--subheadline-color);
+}
+
+#dropdownMenuButton1{
+    color: #72757e;
+}
+
+a:hover.dropdown-item {
+    background-color: #f0e2e1;
+}
+
+a.dropdown-item{
+    color: #72757e;
 }
 
 main{
