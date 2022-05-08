@@ -89,20 +89,20 @@ a.dropdown-item{
 #keyVisual{
     width: 100%;
     max-width: 80rem;
-    margin: 2.5rem auto 1rem;
+    margin: 2.5rem auto .5rem;
     font-family: Libre Baskerville, sans-serif;
 
 }
 
 #keyVisual img{
-    height: 80vh;
+    height: 70vh;
     object-fit: cover;
 }
 
 footer{
     font-family: Libre Baskerville, sans-serif;
     color: var(--subheadline-color);
-    margin-top: .5rem;
+
 }
 
 #stay-in-touch{
