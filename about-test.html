@@ -21,6 +21,7 @@
 
     <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/about.css">
     <link 
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
         rel="stylesheet" 
@@ -32,7 +33,7 @@
     >
     
 </head>
-<body>
+<body class="full-body">
     <header class="header-section">
       <div class="navigation-wrap start-header start-style">
         <div class="container">
@@ -42,16 +43,10 @@
 
                 <a class="navbar-brand" href="/index.html" target="_blank">
                   <p id="logo">Gaisma</p></a>	
-                
-                <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-                  aria-expanded="false" aria-label="Toggle navigation"
-                >
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+            
                 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav ms-auto text-center py-4 py-md-0">                    
+                  <ul class="navbar-nav ms-auto text-center py-4 py-md-0" id="navbar-list">                    
                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                       <a class="nav-link" href="#">Music</a>
                     </li>
@@ -67,10 +62,10 @@
                       Works
                       </button>
                       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Videos</a></li>
-                        <li><a class="dropdown-item" href="#">Photography</a></li>
-                        <li><a class="dropdown-item" href="#">Performance</a></li>
-                        <li><a class="dropdown-item" href="#">Art</a></li>
+                        <li><a class="dropdown-item" href="#">videos</a></li>
+                        <li><a class="dropdown-item" href="#">photography</a></li>
+                        <li><a class="dropdown-item" href="#">performance</a></li>
+                        <li><a class="dropdown-item" href="#">art</a></li>
                       </ul>
                     </div>
                     
@@ -88,63 +83,38 @@
           </div>
         </div>
       </div>
+
     </header>
     <main class="main">
-        <section class="container max-height d-flex aline-item-center"> 
-          <div id="keyVisual" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#keyVisual" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#keyVisual" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#keyVisual" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner" id="hero">
-                <div class="carousel-item active">
-                <img src="/images/imageedit_5_5253899701.jpg" 
-                  class="d-block w-100" alt="gaisma"
-                >
-                <div class="carousel-caption d-none d-md-block">
-                    <a id = "relase-caption" href="https://open.spotify.com/artist/01EmU1Segbe63mUG2eyJ58/discography/all?pageUri=spotify:album:0c3Bd93SHLw5vlVhrHN26P">
-                      <h5>New Relese</h5>
-                      <p>Not My Cup Of Tea</p>
-                    </a>
-                </div>
-                </div>
-                <div class="carousel-item">
-                <img src="/images/imageedit_5_5253899701.jpg" 
-                  class="d-block w-100" alt="second"
-                >
+      <div class="container">
+        <div class="row">
 
-                </div>
-                <div class="carousel-item">
-                <img src="/images/imageedit_3_8983186266.jpg" 
-                  class="d-block w-100" alt="thrid"
-                >
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" 
-              data-bs-target="#keyVisual" data-bs-slide="prev"
-            >
-                <span class="carousel-control-prev-icon" 
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" 
-              data-bs-target="#keyVisual" data-bs-slide="next"
-            >
-                <span class="carousel-control-next-icon" 
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-          </div>  
-        </section>
+          <div class="text-center col-xl-6 col-lg-5 col-md-6 col-sm-6" id="about-image">
+              <img src="/images/gaisma_profiel.jpeg" alt="">
+          </div>
+
+          <div class="col-xl-5 col-lg-6 col-md-6 col-sm-6" id="about-text">
+            <h1>About Me</h1>
+
+            <p>Born in Latvia, Alisa has been involved with music and dance since childhood. During her first visit to the Theater she fell in love with ballet and decided to become a ballet dancer. At the age of fifteen, she moved to Germany to study ballet at the Hochschule für Musik und Theater München. She danced at the Bavarian State Opera in Munich and the State Opera in Stuttgart.
+            </p>
+            <p>
+              After six years of ballet carrier, she made a decision to follow her heart and apply to the Academy of Fine Arts in Stuttgart. For the rest of her time, she invested in music production. She learned piano and violin at a young age at the music school in Latvia, guitar and producing she taught herself. She quickly developed a passion for analogue equipment, which she uses in her live sets. Her music can’t be defined within the usual genre categories, as she constantly renews and expands her repertoire. During her live performances, Alisa (also known by her artist name Gaisma in translation from Latvian means “Light”) invites the audience for an adventure with herself.
+
+            </p>
+            <p>  Besides her musical work, she is also engaged in visual projects. These include analogue photography, mostly behind the camera, sometimes in front of it, as well as collages and video works, which she often puts into context with her music. Symbioses of auditory and visual material emerge, in which she presents herself in an increasingly contemporary form of movement. Alisa acts as composer, cinematographer and performer in her works, which are found between choreography and improvisation.
+            </p>
+          </div>
+
+          <div class="col-xl-auto"></div>
+        </div>
+      </div>
     </main>
     <footer class="container pt-4" id="footer-section">
         <div class="row justify-content-center">
           <div class="col-md-9 text-center">
             <section class="social mb-3">
-              <p id = "stay-in-touch">Stay in touch   <a href = "gaisma@posteo.de"><i class="fa fa-envelope"></i></a></p>
+                <a href = "gaisma@posteo.de"><i class="fa fa-envelope"></i></a>
                 <span class="social-icon in"> <a href="https://www.instagram.com/gaisma.lovin"><i class="fa fa-instagram"></i></a></span>
                 <span class="social-icon fb"> <a href="https://www.facebook.com/gaisma.lovin"><i class="fa fa-facebook-f"></i></a></span>
                 <span class="social-icon sc"> <a href="https://soundcloud.com/gaisma"><i class="fa fa-soundcloud"></i></a></span>
@@ -160,12 +130,9 @@
         </div> 
     </footer>
 
-    <div class="slider"></div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
 
-    <script src="/script.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>	
