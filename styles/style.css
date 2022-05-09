@@ -75,7 +75,7 @@ header{
 }
 
 #dropdownMenuButton1{
-    color: #4b4453;
+    color: #72757e;
 }
 
 a:hover.dropdown-item {
@@ -159,6 +159,8 @@ footer{
 
 .main{
     position: relative;
+    font-family: "Libre Baskerville", "Baskerville", "Athelas", sans-serif;
+
 }
 /* 
 .main::after{
