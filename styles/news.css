@@ -1,0 +1,41 @@
+.news--container{
+    padding-bottom: 2rem;
+}
+
+.news--content{
+    row-gap: 3rem;
+}
+
+.news--img{
+    border-radius: .5rem;
+}
+
+.news--button{
+    display: inline-flex;
+    background-color: #ffe;
+    padding: 1.15rem;
+    border-radius: .5rem 0 .5rem 0 ;
+    font-size: 2rem;
+    color: var(--headline);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.news--button i {
+    transform: rotate(-30deg);
+    transition:  .4s;
+}
+
+.news--button:hover i {
+    transition:rotate(-30deg) translateX(.25rem);
+}
+
+.news--title{
+    font-size: 2rem;
+    margin-bottom: .75rem;
+}
+
+.news--description{
+    margin-bottom: 1.5rem;
+}
