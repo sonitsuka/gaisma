@@ -30,6 +30,11 @@ header{
     background-color: var(--background-color);
     font-family: "Libre Baskerville", sans-serif;
     font-weight: 400;
+    position: relative;
+}
+
+.style{
+    z-index: 1;
 }
 
 #relase-caption{
