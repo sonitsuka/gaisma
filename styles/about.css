@@ -95,6 +95,10 @@ img{
     margin: 80px 0px 30px;
 }
 
+#footer--text{
+    font-size: .9rem;
+}
+
 @media screen and (max-width: 480px){
     img{
         max-width: 350px;
