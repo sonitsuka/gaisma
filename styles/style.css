@@ -19,6 +19,10 @@
     
 }
 
+*{
+    box-sizing: border-box;
+}
+
 body{
     background-color: var(--background-color) !important; 
     margin: 0;
@@ -27,7 +31,6 @@ body{
 }
 
 header{
-    background-color: var(--background-color);
     font-family: "Libre Baskerville", sans-serif;
     font-weight: 400;
     position: relative;

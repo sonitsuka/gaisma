@@ -1,3 +1,8 @@
+*{
+    box-sizing: border-box;
+}
+
+
 .card-body{
     height: 40vh;
 }
