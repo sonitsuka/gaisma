@@ -1,0 +1,140 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F7F0FF !important;
+}
+.container{
+    margin: 0;
+}
+
+main {
+    padding: 1rem;
+}
+.text-center h2 {
+    font-size: 24px;
+}
+
+.text-center p {
+    font-size: 16px;
+}
+
+.about-title{
+    padding:0;
+    margin: 0;
+    width: 360px;
+}
+
+.image-stack {
+    position: relative;
+    height: 200px;
+}
+
+.image-stack img {
+    max-width: 80%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.image-stack.top img:nth-child(1) {
+    position: absolute;
+    left: 0;
+    top: -150px;
+    z-index: 1;
+}
+
+.image-stack.top img:nth-child(2) {
+    position: absolute;
+    left: 30%;
+    top: 150px;
+    z-index: 2;
+    clip-path: circle(50% at 40% 40%);
+    box-shadow: 0 5px 10px rgba(0, 128, 0, 1);
+}
+
+.image-stack.top img:nth-child(3) {
+    position: absolute;
+    left: 10%;
+    top: 200px;
+    z-index: 3;
+}
+
+.image-stack.bottom img:nth-child(1) {
+    
+    left: 0;
+    top: -10%;
+    z-index: 1;
+}
+
+.image-stack.bottom img:nth-child(2) {
+    left: 30%;
+    top: 60%;
+    z-index: 2;
+}
+
+.image-stack.bottom img:nth-child(3){
+    left: 10%;
+    top: 90%;
+
+    z-index: 4;
+}
+
+.image-stack.bottom img:nth-child(4) {
+    left: 10%;
+    top: 150%;
+    z-index: 3;
+}
+.fade-in {
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+.image-opacity {
+    opacity: 0.5;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@media (max-width: 980px) {
+    .text-container {
+        width: 95%;
+    }
+    .image-stack img {
+        max-width: 60%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 767px) {
+    .image-stack img {
+        max-width: 60%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .image-stack.top img:nth-child(3) {
+        left: 0;
+        top: 0;
+        z-index: 1;
+    }
+
+    .image-stack.top img:nth-child(2),
+    .image-stack.top img:nth-child(1) {
+        display: none;
+    }
+
+    .text-container {
+        width: 100%;
+        padding: 0 15px;
+    }
+}

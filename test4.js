@@ -6,6 +6,9 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+// Set the background color to white
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 class Noise {
   constructor(octaves = 1, persistence = 0.5) {
@@ -94,7 +97,8 @@ canvas.addEventListener("mousemove", function (e) {
   
 
 function animate() {
-  ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+  // Set the background color to a translucent black
+  ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   for (let i = 0; i < particles.length; i++) {

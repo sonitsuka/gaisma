@@ -166,10 +166,9 @@ footer{
     z-index: -1;
 }
 
-.main{
+main{
     position: relative;
     font-family: "Libre Baskerville", "Baskerville", "Athelas", sans-serif;
-
 }
 /* 
 .main::after{
