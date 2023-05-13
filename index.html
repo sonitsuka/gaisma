@@ -1,17 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>test2 
-      
-    </title>
-  </head>
-  <body>
-    <canvas id="canvas"></canvas>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaisma Artist Website</title>
+    <link rel="stylesheet" href="style.css">
 
-    <!-- canvas id="canvas" width="100%" height="100%"></canvas -->
-    <script src="test4.js"></script>
-  </body>
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
+
+    <link rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    >
+    
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home" id="logo">Gaisma</a>
+            <a href="#music">Music</a>
+            <a href="#performance">Performance</a>
+            <a href="#photography">Photography</a>
+            <a href="#collages">Collages</a>
+            <a href="#about">About</a>
+            <a href="#users">Space for users</a>
+        </nav>
+    </header>
+    <main>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" id="home">Home</div>
+                <section id="music" class="swiper-slide">Music</section>
+                <section id="performance" class="swiper-slide">Performance</section>
+                <section id="photography" class="swiper-slide">Photography</section>
+                <section id="collages" class="swiper-slide">Collages</section>
+                <section id="about" class="swiper-slide">About</section>
+                <section id="users" class="swiper-slide">Space for users</section>
+            </div>
+        </div>
+    </main>
+    <footer class="container pt-4" id="footer-section">
+      <div class="row justify-content-center">
+        <div class="col-md-9 text-center">
+          <section class="social mb-3">
+              <a href = "gaisma@posteo.de"><i class="fa fa-envelope"></i></a>
+              <span class="social-icon in"> <a href="https://www.instagram.com/gaisma.lovin"><i class="fa fa-instagram"></i></a></span>
+              <span class="social-icon fb"> <a href="https://www.facebook.com/gaisma.lovin"><i class="fa fa-facebook-f"></i></a></span>
+              <span class="social-icon sc"> <a href="https://soundcloud.com/gaisma"><i class="fa fa-soundcloud"></i></a></span>
+              <span class="social-icon sp"> 
+                <a href="https://open.spotify.com/artist/01EmU1Segbe63mUG2eyJ58"><i class="fa fa-spotify"></i></a></span>
+              <span class="social-icon bc"><a href="https://gaisma.bandcamp.com/music"><i class="fa fa-bandcamp"></i></a></span>
+              <span class="social-icon yt"><a href="https://www.youtube.com/channel/UC4xlthzyUhxk7mI1pCV7W6w"><i class="fa fa-youtube"></i></a></span>
+          </section>
+          <div class="copyright">
+            <p class="mb-0">Gaisma &copy; 2023</p>
+          </div>
+        </div>
+      </div> 
+  </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>

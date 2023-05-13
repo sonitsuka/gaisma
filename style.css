@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;400;500;800;900&family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('http://fonts.cdnfonts.com/css/athelas');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    font-family: Libre Baskerville, sans-serif;  
+    background-color: #F2F2F2;
+    }
+
+    
+.swiper-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000; /* Added z-index */
+}
+
+nav {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #fff;
+    z-index: 1000; /* Added z-index */
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+#logo{
+    text-transform: uppercase; 
+    font-weight: bold;
+    letter-spacing: 3px;
+    align-items: center;
+    background: linear-gradient(to bottom right, #845EC2, #b39cd0, #ff8066,#00c9a7);
+    -webkit-background-clip: text; 
+    -webkit-background-fill-color:transparent;
+    background-clip: text; 
+    color: transparent;
+    
+    background-size: 200%;
+    background-position: -100%;  
+    
+    animation: animatedText 3s infinite alternate-reverse;
+  }
+  
+  @keyframes animatedText{
+    to{
+      background-position: 100%; 
+    }
+  }
+
+
+  
+#stay-in-touch{
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.social a{
+    color: var(--subheadline-color);
+    font-size: 22px;
+}
+
+.social a:hover{
+    color: #845EC2;
+}
+
+.social-icon.in a:hover{
+    color: #d82d7e;
+}
+.social-icon.fb a:hover{
+    color: #395185;
+}
+.social-icon.sc a:hover{
+    color: #f04923;
+}
+.social-icon.sp a:hover{
+    color: #1ed760;
+}
+.social-icon.bc a:hover{
+    color: #1f80aa;
+}
+.social-icon.yt a:hover{
+    color: #ff0000;
+}
+.social-icon{
+    margin-left: 1rem;
+}
+.copyright {
+    color: darken(#ccc, 20%);
+    font-size: 0.7rem;
+    margin-bottom: .5rem;
+}
+
+/* Add this to your CSS file */
+::-webkit-scrollbar {
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

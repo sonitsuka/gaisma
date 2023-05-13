@@ -1,14 +1,107 @@
-const main = document.querySelector('#hero')
-const slider = document.querySelector('.slider')
-const header = document.querySelector('.header-section')
-const logo = document.querySelector('.logo')
-const footer = document.querySelector('#footer-section')
 
-const tl = new TimelineMax()
+    
+// Initialize Swiper
+var swiper = new Swiper('.swiper-container', {
+    direction: 'horizontal',
+    slidesPerView: 1,
+    spaceBetween: 0,
+    mousewheel: true,
+    keyboard: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
 
-tl.fromTo(main,1, {height: '0%'}, {height:'100%', ease: Power2.easeInOut}
-).fromTo(main, 1.2, {width: '100%'}, {height: '100%', ease: Power2.easeInOut}
-).fromTo(slider, 1.2, {x:'-100%'}, {x:'0%',  ease: PoweraseInOut}, '-=1.2'
-).fromTo(logo, 0.5, {opacity:0, x:30}, {opacity:1, x:0}, '-=0.5'
-).fromTo(header, 0.5, {opacity:0, x:30}, {opacity:1, x:0}, '-=0.5'
-).fromTo(footer, 0.5, {opacity:0, x:30}, {opacity:1, x:0}, '-=0.5')
+// Add event listeners to the links
+document.querySelectorAll('nav a').forEach((link, index) => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        swiper.slideTo(index);
+    });
+});
+
+// Change background color based on slide index006699
+swiper.on('slideChange', function () {
+    const sections = [
+        '#FFFFFF', // Home
+        '#F34100', // Music
+        '#FF7F50', // Performance
+        '#FFF8B9', // Photography
+        '#B4EDC0', // Collages
+        '#AFCCDE', // About
+        '#221A85'  // Space for Users
+    ];
+    document.body.style.backgroundColor = sections[this.activeIndex];
+});
+
+
+
+
+/** simple slider 
+ * document.querySelectorAll('nav a').forEach((link) => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    });
+});
+
+document.querySelectorAll('nav a').forEach((link, index) => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.getElementById('section' + (index + 1));
+
+        //const target = document.getElementById('header' + index);
+        target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+});
+
+
+window.addEventListener('scroll', function() {
+    const sections = [
+        document.getElementById('music'),
+        document.getElementById('performance'),
+        document.getElementById('photography'),
+        document.getElementById('collages'),
+        document.getElementById('about'),
+        document.getElementById('users')
+    ];
+
+    const scrollPosition = window.scrollX;
+
+    sections.forEach((section, i) => {
+        const start = i * window.innerWidth;
+        const end = start + window.innerWidth;
+        if (scrollPosition >= start && scrollPosition < end) {
+            switch (i) {
+                case 0:
+                    section.style.backgroundColor = '#F34100';
+                    break;
+                case 1:
+                    section.style.backgroundColor = '#FF7F50';
+                    break;
+                case 2:
+                    section.style.backgroundColor = '#FFF8B9';
+                    break;
+                case 3:
+                    section.style.backgroundColor = '#B4EDC0';
+                    break;
+                case 4:
+                    section.style.backgroundColor = '#AFCCDE';
+                    break;
+                case 5:
+                    section.style.backgroundColor = '#4B0082';
+                    break;
+            }
+        }
+    });
+});
+
+function changeColors(sections, color) {
+    sections.forEach(section => {
+        section.style.backgroundColor = color;
+    });
+}
+ */
