@@ -7,6 +7,16 @@
      follow.style.top = y + 'px';
  };
  
+// media query hamburger bar
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+
+
+ // scroll arrow        
 var main = document.querySelector('main');
 var arrow = document.querySelector('.scroll-arrow');
 

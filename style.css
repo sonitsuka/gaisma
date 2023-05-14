@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;400;500;800;900&family=Roboto:wght@100;300;400;500;700&display=swap');
 @import url('http://fonts.cdnfonts.com/css/athelas');
-
-  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
 :root{
     --main-color:#845EC2;
@@ -57,6 +56,7 @@ footer {
     z-index: 1000; /* Added z-index */
 }
 
+/* nav bar */
 nav a {
     text-decoration: none;
     padding: 0px 20px;
@@ -67,9 +67,15 @@ nav a {
     display: flex;
     list-style-type: none;
     font-size: 0.8rem;
+    justify-content: space-evenly;
+    width: 60%;
 }
 
-#logo{
+.hamburger {
+    display: none;
+}
+
+.logo{
     font-family: 'Abril Fatface', cursive;
     margin-right: auto;
     text-transform: uppercase; 
@@ -228,4 +234,38 @@ nav a {
 @keyframes soap_rotate{
 	0%{transform: rotate(0);}
 	100%{transform: rotate(360deg);}
+}
+
+
+/* media queries */ 
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        top: 20px;
+        height: 92vh;
+        width: 50%;
+        background-color: #5b78c7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .nav-links li {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .hamburger {
+        display: block;
+        position: fixed;
+        right: 0px;
+        top: 20px;
+    }
+}
+
+.nav-links.show {
+    transform: translateX(0%);
 }
