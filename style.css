@@ -1,12 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;400;500;800;900&family=Roboto:wght@100;300;400;500;700&display=swap');
 @import url('http://fonts.cdnfonts.com/css/athelas');
+
+:root{
+    --main-color:#845EC2;
+    --darkmain:#b39cd0;
+    --secondery-color:#4fc4cf;
+    --tertiary-color:#ff8066;  
+    --accent-color:#00c9a7;
+    --storke: #181818;
+    --main-background: #f2eef5;
+
+    --background-color:#f6efef;
+    --headline-color:#2e2e2e;
+    --subheadline-color:#4b4453;
+    --card-background: #f0e2e1;
+    --text-color:#72757e;
+
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
     overflow-x: hidden;
     font-family: Libre Baskerville, sans-serif;  
-    background-color: #F2F2F2;
     }
 
     
@@ -25,35 +41,36 @@ body {
 header {
     position: fixed;
     width: 100%;
-    background-color: #fff;
     z-index: 1000; /* Added z-index */
 }
 
-nav {
-    display: flex;
-    list-style-type: none;
-    justify-content: space-around;
-    padding: 20px 0;
-}
 
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    background-color: #fff;
+    padding: 1rem;
+    background-color: #D5D7C0;
     z-index: 1000; /* Added z-index */
 }
 
 nav a {
     text-decoration: none;
-    color: black;
+    padding: 0px 20px;
+}
+
+.nav-links{
+    display: flex;
+    list-style-type: none;
+    font-size: 0.9rem;
 }
 
 #logo{
+
+    margin-right: auto;
     text-transform: uppercase; 
     font-weight: bold;
+    font-size: 1.2em;
     letter-spacing: 3px;
     align-items: center;
     background: linear-gradient(to bottom right, #845EC2, #b39cd0, #ff8066,#00c9a7);
@@ -74,15 +91,8 @@ nav a {
     }
   }
 
-
-  
-#stay-in-touch{
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
 .social a{
-    color: var(--subheadline-color);
+    color: var(--headline-color);
     font-size: 22px;
 }
 
@@ -117,21 +127,48 @@ nav a {
     margin-bottom: .5rem;
 }
 
-/* Add this to your CSS file */
-::-webkit-scrollbar {
-    height: 10px;
+#scroll-indicator {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 2em;
+    z-index: 1000;
 }
 
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
+.fas.fa-arrow-right {
+    color: #4B4453;
+    animation: bounce 2s infinite;
 }
 
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateX(30px);
+    }
+    60% {
+        transform: translateX(15px);
+    }
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
+.scroll-arrow {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 0.5rem;
+    transform: rotate(180deg);
+}
+
+.scroll-arrow.left {
+    transform: rotate(0deg);
+}
+
+#canvasContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Ensure the canvas is behind other content */
 }

@@ -9,60 +9,13 @@ body {
     background-repeat: no-repeat;
 }
 */
-
-
-.bg-image{
-    background-image: url('/images/gaisma_profiel.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#about-header{
-    background-color: #f2eef588;
-    padding: 0 15vw;
-
-}
-
-/* about-test css */
-.full-body{
-    background-image: url(/images/gaisma_profiel.jpeg);
-    background-color: #f2eef5;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #f2eef5;
-    background-color: #0c2737;
-    opacity: .7;
+.flex-container {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
-}
-
-.header-section::before{
-    content: '';
-    background: inherit;
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    z-index: -1;
-  }  
-
+  }
   
 
-/* #navbar-list{
-    background-color: #f2eef5a1;
-    border-radius: 10px;
-    padding: 2px 10px;
-} */
 
 .head-text{
     align-items: center;
@@ -74,7 +27,7 @@ body {
 }
 
 img{
-    width: 460px;
+    width: 360px;
 }
 
 .about-title{
@@ -82,21 +35,14 @@ img{
 
 }
 
-.about-border{
-    height:3px;
-    width:10%;
-    background-color:#712d2d;
-    margin-bottom:1rem;
-    border-radius: 10px;
-}
 
 
 #about-text{
-    color:var(--subheadline-color);
-    background-color: #f6efef94;
-    padding: 10px 20px 20px;
-    max-width: 650px;
+    padding: 10px 4rem;
+    max-width: 600px;
     margin: 80px 0px 30px;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
 }
 
 #footer--text{

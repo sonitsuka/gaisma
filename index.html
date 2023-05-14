@@ -5,58 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaisma Artist Website</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/about.css">
 
     <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-    <link rel="stylesheet" 
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    >
-    
     <link
     rel="stylesheet"
     href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 </head>
 <body>
     <header>
         <nav>
+          <ul class="nav-links">
             <a href="#home" id="logo">Gaisma</a>
             <a href="#music">Music</a>
             <a href="#performance">Performance</a>
             <a href="#photography">Photography</a>
             <a href="#collages">Collages</a>
-            <a href="#about">About</a>
+            <a href="aboutme.html" target="_self">About</a>
+            <a href="#news">News</a>
             <a href="#users">Space for users</a>
+          </ul>
         </nav>
     </header>
     <main>
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" id="home">Home</div>
+              <section class="swiper-slide" id="home">
+                <div id="canvasContainer"></div>
+              </section>
+         
                 <section id="music" class="swiper-slide">Music</section>
                 <section id="performance" class="swiper-slide">Performance</section>
                 <section id="photography" class="swiper-slide">Photography</section>
                 <section id="collages" class="swiper-slide">Collages</section>
-                <section id="about" class="swiper-slide">About</section>
+                <section id="about" class="swiper-slide">
+                  <div class="container">
+                    <div class="flex-container">
+                      <div class="flex-item" id="about-image">
+                        <img src="/images/_7A_00287.jpg" alt="gaisma profile pic">
+                      </div>
+                    
+                      <div class="flex-item" id="about-text">
+                        <h1>About Me</h1>
+            
+                        <p>Born in Latvia, Alisa has been involved with music and dance since childhood. During her first visit to the Theater she fell in love with ballet and decided to become a ballet dancer. At the age of fifteen, she moved to Germany to study ballet at the Hochschule für Musik und Theater München. She danced at the Bavarian State Opera in Munich and the State Opera in Stuttgart.
+                        </p>
+                        <p>
+                          After six years of ballet carrier, she made a decision to follow her heart and apply to the Academy of Fine Arts in Stuttgart. For the rest of her time, she invested in music production. She learned piano and violin at a young age at the music school in Latvia, guitar and producing she taught herself. She quickly developed a passion for analogue equipment, which she uses in her live sets. Her music can’t be defined within the usual genre categories, as she constantly renews and expands her repertoire. During her live performances, Alisa (also known by her artist name Gaisma in translation from Latvian means “Light”) invites the audience for an adventure with herself.
+            
+                        </p>
+                        <p>  Besides her musical work, she is also engaged in visual projects. These include analogue photography, mostly behind the camera, sometimes in front of it, as well as collages and video works, which she often puts into context with her music. Symbioses of auditory and visual material emerge, in which she presents herself in an increasingly contemporary form of movement. Alisa acts as composer, cinematographer and performer in her works, which are found between choreography and improvisation.
+                        </p>
+                      </div>
+                    </div>
+                    
+                     
+                    
+                  </div>
+                </section>
+                <section id="news" class="swiper-slide">News</section>
                 <section id="users" class="swiper-slide">Space for users</section>
             </div>
         </div>
+
     </main>
+
     <footer class="container pt-4" id="footer-section">
-      <div class="row justify-content-center">
-        <div class="col-md-9 text-center">
+      <div class="scroll-arrow left" id="scroll-indicator">
+        <i class="fas fa-arrow-right"></i>
+      </div>
+      <div class="row justify-content-start">
+        <div class="col-md-9">
           <section class="social mb-3">
               <a href = "gaisma@posteo.de"><i class="fa fa-envelope"></i></a>
-              <span class="social-icon in"> <a href="https://www.instagram.com/gaisma.lovin"><i class="fa fa-instagram"></i></a></span>
-              <span class="social-icon fb"> <a href="https://www.facebook.com/gaisma.lovin"><i class="fa fa-facebook-f"></i></a></span>
-              <span class="social-icon sc"> <a href="https://soundcloud.com/gaisma"><i class="fa fa-soundcloud"></i></a></span>
+              <span class="social-icon in"> <a href="https://www.instagram.com/gaisma.lovin"><i class="fab fa-instagram"></i></a></span>
+              <span class="social-icon fb"> <a href="https://www.facebook.com/gaisma.lovin"><i class="fab fa-facebook-f"></i></a></span>
+              <span class="social-icon sc"> <a href="https://soundcloud.com/gaisma"><i class="fab fa-soundcloud"></i></a></span>
               <span class="social-icon sp"> 
-                <a href="https://open.spotify.com/artist/01EmU1Segbe63mUG2eyJ58"><i class="fa fa-spotify"></i></a></span>
-              <span class="social-icon bc"><a href="https://gaisma.bandcamp.com/music"><i class="fa fa-bandcamp"></i></a></span>
-              <span class="social-icon yt"><a href="https://www.youtube.com/channel/UC4xlthzyUhxk7mI1pCV7W6w"><i class="fa fa-youtube"></i></a></span>
+                <a href="https://open.spotify.com/artist/01EmU1Segbe63mUG2eyJ58"><i class="fab fa-spotify"></i></a></span>
+              <span class="social-icon bc"><a href="https://gaisma.bandcamp.com/music"><i class="fab fa-bandcamp"></i></a></span>
+              <span class="social-icon yt"><a href="https://www.youtube.com/channel/UC4xlthzyUhxk7mI1pCV7W6w"><i class="fab fa-youtube"></i></a></span>
           </section>
           <div class="copyright">
-            <p class="mb-0">Gaisma &copy; 2023</p>
+            <p class="mb-0">Want to reach out about a collaboration, Booking or just want to say friendly hello?  Send me a digital pigeon letter! 
+              <br>Gaisma &copy; 2023</p>
           </div>
         </div>
       </div> 
@@ -64,5 +100,6 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    
 </body>
 </html>

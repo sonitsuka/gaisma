@@ -1,3 +1,30 @@
+// ハンバーガーメニューのトグル処理
+document.addEventListener('DOMContentLoaded', function () {
+    var navToggle = document.querySelector('.nav-toggle');
+    var navLinks = document.querySelector('.nav-links');
+  
+    navToggle.addEventListener('click', function () {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+  });
+
+  
+var main = document.querySelector('main');
+var arrow = document.querySelector('.scroll-arrow');
+
+window.addEventListener('scroll', function() {
+    var scrollPosition = window.scrollX;
+    var maxScrollPosition = main.scrollWidth - window.innerWidth;
+
+    if (scrollPosition >= maxScrollPosition) {
+        arrow.classList.add('left');
+    } else {
+        arrow.classList.remove('left');
+
+    }
+});
+
 
     
 // Initialize Swiper
@@ -30,10 +57,63 @@ swiper.on('slideChange', function () {
         '#FFF8B9', // Photography
         '#B4EDC0', // Collages
         '#AFCCDE', // About
-        '#221A85'  // Space for Users
+        '#221A85', // Event, news press
+        '#845EC2'  // Space for Users
     ];
     document.body.style.backgroundColor = sections[this.activeIndex];
 });
+  
+
+// home generation art 
+let nStep = 0.005;
+function setup() {
+    let canvas = createCanvas(windowWidth, windowHeight);
+    
+    canvas.parent('canvasContainer');
+    colorMode(HSB, 360, 100, 100, 100);
+    noLoop();
+  }
+
+  
+  function draw() {
+    let cellW = width / (285 * 2); // 半分にする
+    let cellH = height / (180 * 2); // 半分にする
+    let baseHue = random(360);
+  
+    background(0, 0, 0, 100);
+    noStroke();
+  
+    for (let x = 0; x < width; x += cellW) {
+      let nX = x * nStep;
+      for (let y = 0; y < height; y += cellH) {
+        let nY = y * nStep;
+  
+        let nP = noise(nX, nY) * 5;
+        let nValH = noise(10 + nP, nX, nY);
+        let nValS = noise(30 + nP, nX, nY);
+        let nValB = noise(40 + nP, nX, nY);
+  
+        let nHue = (baseHue + nValH * 240) % 360;
+        let nSat = 30 + 60 * nValS;
+        let nBri = 20 + 80 * nValB;
+  
+        fill(nHue, nSat, nBri, 100);
+        rect(x, y, cellW, cellH);
+      }
+    }
+  
+  }
+  
+  function mouseClicked() {
+    let dt = new Date();
+    noiseSeed(dt.getTime());
+    redraw();
+  }
+  
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
+  
 
 
 

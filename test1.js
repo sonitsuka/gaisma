@@ -1,4 +1,4 @@
-const canvas = document.getElementById("canvas");
+const canvas = document.querySelector('main');
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -36,7 +36,7 @@ canvas.addEventListener("mousemove", function (e) {
   let color = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
 
   for (let i = 0; i < 5; i++) {
-    let size = Math.random() * 200 + 100;
+    let size = Math.random() * 10 + 5;
     let particle = new Particle(x, y, size, color);
     particles.push(particle);
   }
