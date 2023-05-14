@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@200;400;500;800;900&family=Roboto:wght@100;300;400;500;700&display=swap');
 @import url('http://fonts.cdnfonts.com/css/athelas');
 
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
 :root{
     --main-color:#845EC2;
     --darkmain:#b39cd0;
@@ -9,7 +11,6 @@
     --accent-color:#00c9a7;
     --storke: #181818;
     --main-background: #f2eef5;
-
     --background-color:#f6efef;
     --headline-color:#2e2e2e;
     --subheadline-color:#4b4453;
@@ -22,7 +23,9 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: Libre Baskerville, sans-serif;  
+    overflow-y: hidden;
+    font-family: "Libre Baskerville", "Baskerville", "Athelas", sans-serif;
+
     }
 
     
@@ -57,20 +60,21 @@ footer {
 nav a {
     text-decoration: none;
     padding: 0px 20px;
+
 }
 
 .nav-links{
     display: flex;
     list-style-type: none;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 #logo{
-
+    font-family: 'Abril Fatface', cursive;
     margin-right: auto;
     text-transform: uppercase; 
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 2em;
     letter-spacing: 3px;
     align-items: center;
     background: linear-gradient(to bottom right, #845EC2, #b39cd0, #ff8066,#00c9a7);
@@ -124,7 +128,6 @@ nav a {
 .copyright {
     color: darken(#ccc, 20%);
     font-size: 0.7rem;
-    margin-bottom: .5rem;
 }
 
 #scroll-indicator {
@@ -171,4 +174,58 @@ nav a {
     width: 100%;
     height: 100%;
     z-index: 2; /* Ensure the canvas is behind other content */
+}
+
+
+
+.soap_wrap {
+	position: relative;
+	height: 160px; /*お好みで*/
+    
+}
+
+#follow  {
+	position: absolute;
+	left: calc(50% - 100px); /*お好みで*/
+	top: calc(50% - 100px); /*お好みで*/
+	width: 100px; /*お好みで*/
+	height: 100px; /*お好みで*/
+	border-radius: 50% 46% 48% 44%;
+	overflow: hidden;
+	background: radial-gradient(at 46% 54%, transparent 50%, rgba(112, 60, 242, 0.3) 70%, transparent 100%) 50% 50% no-repeat;
+	animation: soap_rotate 10s linear infinite;
+	z-index: 9999;
+}
+#follow ::before{
+	content: "";
+	position: absolute;
+	right: -10%;
+	bottom: -10%;
+	width: 60%;
+	height: 60%;
+	border-radius: 60% 0;
+	background: radial-gradient(at 0 0, rgba(0, 130, 255, 0.3) 40%, rgba(255, 154, 204, 0.7) 50%);
+	transform-origin: 0 0;
+	animation: soap_rotate 15s linear infinite;
+	filter: blur(15px);
+    z-index: 9999;
+}
+#follow ::after{
+	content: "";
+	position: absolute;
+	left: -10%;
+	top: -10%;
+	width: 60%;
+	height: 60%;
+	border-radius: 20% 0;
+	background: radial-gradient(at 100% 100%, rgba(255, 255, 100, 0.5) 40%, rgba(120, 255, 140, 0.7) 60%);
+	transform-origin: 100% 100%;
+	animation: soap_rotate 6s 0s ease-in-out infinite;
+	filter: blur(15px);
+    z-index: 9999;
+}
+
+@keyframes soap_rotate{
+	0%{transform: rotate(0);}
+	100%{transform: rotate(360deg);}
 }

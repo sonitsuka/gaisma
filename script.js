@@ -1,15 +1,12 @@
-// ハンバーガーメニューのトグル処理
-document.addEventListener('DOMContentLoaded', function () {
-    var navToggle = document.querySelector('.nav-toggle');
-    var navLinks = document.querySelector('.nav-links');
-  
-    navToggle.addEventListener('click', function () {
-      navToggle.classList.toggle('open');
-      navLinks.classList.toggle('open');
-    });
-  });
-
-  
+ // mouse move 
+ var follow = document.querySelector('#follow');
+ document.onmousemove = function(e){
+     var x = e.pageX;
+     var y = e.pageY;
+     follow.style.left = x + 'px';
+     follow.style.top = y + 'px';
+ };
+ 
 var main = document.querySelector('main');
 var arrow = document.querySelector('.scroll-arrow');
 
