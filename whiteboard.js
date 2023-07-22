@@ -1,3 +1,10 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 let drawing = false;
@@ -27,6 +34,9 @@ window.addEventListener('load', function() {
         img.src = savedData;
     }
 });
+
+document.getElementById('saveButton').addEventListener('click', saveCanvas);
+
 
 canvas.addEventListener('mousedown', function(e) {
     drawing = true;
@@ -125,4 +135,64 @@ canvas.addEventListener('click', function(e) {
             textObjects.push({text: text, x: e.clientX - canvas.offsetLeft, y: e.clientY - canvas.offsetTop});
         }
     });
+});
+
+let lineWidth = 1; // default line width
+
+document.getElementById('lineWidth').addEventListener('input', function(e) {
+    lineWidth = e.target.value;
+    context.lineWidth = lineWidth;
+    context.font = lineWidth + "px sans-serif";
+});
+
+
+// ------------
+// Firebase config, replace with your own config
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDCw74HmErJJDC2wSUny8tdzxL-VU5Gpsc",
+  authDomain: "gaisma-userspace.firebaseapp.com",
+  projectId: "gaisma-userspace",
+  storageBucket: "gaisma-userspace.appspot.com",
+  messagingSenderId: "677439752872",
+  appId: "1:677439752872:web:0d617255081d2ebc38d09d",
+  measurementId: "G-DBFYSD28C7"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+const db = firebase.firestore();
+
+async function saveCanvas() {
+    const canvasData = canvas.toDataURL();
+    try {
+        const docRef = await db.collection('canvases').add({
+            data: canvasData,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        console.log('Canvas data saved with ID:', docRef.id);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+window.addEventListener('load', async function() {
+    try {
+        const querySnapshot = await db.collection('canvases').orderBy('timestamp', 'desc').limit(1).get();
+        if (!querySnapshot.empty) {
+            const doc = querySnapshot.docs[0];
+            const canvasData = doc.data().data;
+            const img = new Image();
+            img.onload = function() {
+                context.drawImage(img, 0, 0);
+            };
+            img.src = canvasData;
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
 });
