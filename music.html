@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+    .header {
+      text-align: center;
+      font-size: 24px;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+    }
+    .nav a {
+      color: white;
+      text-decoration: none;
+    }
+    .albums {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+    .album {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid white;
+    }
+    .album img {
+      width: 100%;
+    }
+    .section {
+      margin-top: 20px;
+      border: 1px solid white;
+    }
+    .section h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">MY PROCESS</div>
+  <div class="nav">
+    <a href="#">HOME</a>
+    <a href="#">SERVICES</a>
+    <a href="#">PORTFOLIO</a>
+    <a href="#">ABOUT</a>
+    <a href="#">PROCESS</a>
+    <a href="#">BLOG</a>
+    <a href="#">CONTACT</a>
+  </div>
+  <div class="albums">
+    <div class="album">
+      <img src="come-together.jpg" alt="Come Together">
+      <div>The Beatles - Come Together</div>
+    </div>
+    <div class="album">
+      <img src="with-or-without-you.jpg" alt="With or Without You">
+      <div>U2 - With or Without You</div>
+    </div>
+    <div class="album">
+      <img src="feuer-frei.jpg" alt="Feuer Frei!">
+      <div>Rammstein - Feuer Frei!</div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>Briefing</h2>
+    <p>Text describing the briefing process...</p>
+  </div>
+  <div class="section">
+    <h2>Evaluation</h2>
+    <p>Text describing the evaluation process...</p>
+  </div>
+  <div class="section">
+    <h2>KickOff</h2>
+    <p>Text describing the kickoff process...</p>
+  </div>
+</body>
+</html>
+

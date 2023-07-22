@@ -106,6 +106,59 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+<body>
+  <script>
+    let nStep = 0.005;
+    function setup() {
+        let canvas = createCanvas(windowWidth, windowHeight);
+        
+        canvas.parent('canvasContainer');
+        colorMode(HSB, 360, 100, 100, 100);
+        noLoop();
+      }
+
+      
+      function draw() {
+        let cellW = width / (285 * 2); // 半分にする
+        let cellH = height / (180 * 2); // 半分にする
+        let baseHue = random(360);
+      
+        background(0, 0, 0, 100);
+        noStroke();
+      
+        for (let x = 0; x < width; x += cellW) {
+          let nX = x * nStep;
+          for (let y = 0; y < height; y += cellH) {
+            let nY = y * nStep;
+      
+            let nP = noise(nX, nY) * 5;
+            let nValH = noise(10 + nP, nX, nY);
+            let nValS = noise(30 + nP, nX, nY);
+            let nValB = noise(40 + nP, nX, nY);
+      
+            let nHue = (baseHue + nValH * 240) % 360;
+            let nSat = 30 + 60 * nValS;
+            let nBri = 20 + 80 * nValB;
+      
+            fill(nHue, nSat, nBri, 100);
+            rect(x, y, cellW, cellH);
+          }
+        }
+      
+      }
+      
+      function mouseClicked() {
+        let dt = new Date();
+        noiseSeed(dt.getTime());
+        redraw();
+      }
+      
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+      }
+  </script>
+
+</body>
     
 </body>
 </html>
