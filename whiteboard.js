@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+//import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -146,7 +145,7 @@ document.getElementById('lineWidth').addEventListener('input', function(e) {
 });
 
 
-// ------------
+/* ------------
 // Firebase config, replace with your own config
 
 // Your web app's Firebase configuration
@@ -163,8 +162,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
 const db = firebase.firestore();
 
 async function saveCanvas() {
@@ -196,3 +193,5 @@ window.addEventListener('load', async function() {
         console.error('Error:', error);
     }
 });
+
+*/
