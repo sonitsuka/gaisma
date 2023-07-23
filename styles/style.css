@@ -111,6 +111,7 @@ a.dropdown-item{
 footer{
     font-family: Libre Baskerville, sans-serif;
     color: var(--subheadline-color);
+    z-index: 1000;
 
 }
 
