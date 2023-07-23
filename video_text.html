@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @keyframes shake {
+      0% { transform: translate(1px, 1px) rotate(0deg); }
+      10% { transform: translate(-1px, -2px) rotate(-1deg); }
+      20% { transform: translate(-3px, 0px) rotate(1deg); }
+      30% { transform: translate(3px, 2px) rotate(0deg); }
+      40% { transform: translate(1px, -1px) rotate(1deg); }
+      50% { transform: translate(-1px, 2px) rotate(-1deg); }
+      60% { transform: translate(-3px, 1px) rotate(0deg); }
+      70% { transform: translate(3px, 1px) rotate(-1deg); }
+      80% { transform: translate(-1px, -1px) rotate(1deg); }
+      90% { transform: translate(1px, 2px) rotate(0deg); }
+      100% { transform: translate(1px, -2px) rotate(-1deg); }
+    }
+
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #myImage {
+      cursor: pointer;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+    }
+
+    #myImage:hover {
+      animation: shake 0.5s;
+      animation-iteration-count: infinite;
+    }
+
+    #myVideoPlayer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999; /* lower than the image */
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    iframe {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <img id="myImage" src="/images/demo_analogTV3.png" alt="Play video">
+
+  <div id="myVideoPlayer" class="hidden">
+    <!-- iframe for the YouTube video will be inserted here -->
+  </div>
+
+  <script>
+    document.getElementById('myImage').addEventListener('click', function() {
+      var player = document.getElementById('myVideoPlayer');
+      var image = document.getElementById('myImage');
+
+      // Insert YouTube video into the player when image is clicked
+      player.innerHTML = `
+        <iframe id="myVideo" width="100%" height="100%" src="https://www.youtube.com/embed/Sk9y7KH4ARk?autoplay=1&controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      `;
+
+      // Hide the image
+      image.classList.add('hidden');
+    });
+
+    // No way to detect when the video ends without YouTube API, so we just provide a way to close the video manually
+    document.getElementById('myVideoPlayer').addEventListener('click', function() {
+      var player = document.getElementById('myVideoPlayer');
+
+      player.innerHTML = '';
+      player.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
