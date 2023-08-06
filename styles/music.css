@@ -72,6 +72,8 @@ body {
  
     
 }
+
+/*---------- Music --------------------------------	*/
   #music {
     position: relative;
     width: 100%;
@@ -97,20 +99,41 @@ body {
   .music-card {
     display: flex;
     flex-direction: column;
-   
     align-items: flex-start;
     color: white;
     width: 30vw;
-    border: 1px solid white;
+    border: 1px solid #ddd;
     background-color: #E55139;
     padding: 0.5rem;
+    text-align: center;
   }
-  
-  .music-card img {
-    margin-left: auto;
-    margin-right: auto;
 
-  }
+.music-card a {
+    text-decoration: none;
+    color: inherit;
+    /* Added flex properties */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* This ensures the anchor tag takes the full width of its parent */
+}
+
+.music-card img {
+    width: 250px; /* Adjust this value as needed to set the width of the image */
+    height: 200px;
+    margin: 10px 0; /* Provides spacing above and below the image */
+}
+
+
+  .music-card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.music-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
   /*  */
   .music-card:nth-child(7) {
     margin-right: 10rem;
@@ -127,7 +150,9 @@ body {
   }
   img.cd_label {
     width: 200px;
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+
 }
 img.cd_label_3{
     width: 350px;
@@ -135,9 +160,12 @@ img.cd_label_3{
 }
 
 img.cd_label_4{
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 img.cd_label_5{
@@ -149,6 +177,7 @@ img.cd_label_5{
 .cd_title{
     font-size: 1rem;
     padding-left: 1rem;
+    text-align: center;
 }
 
  /* press */
