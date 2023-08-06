@@ -1,0 +1,116 @@
+
+
+
+nav {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.pushable {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    overflow: visible;
+}
+
+.front {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #4B4453;
+    background: #F2F2F2;
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+    padding: 10px 4px;
+    z-index: 1;
+}
+
+.shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(to left, hsl(0deg 0% 16%) 0%, hsl(0deg 0% 32%) 8%, hsl(0deg 0% 32%) 92%, hsl(0deg 0% 16%) 100%);
+    z-index: -1;
+}
+
+
+.pushable:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.pushable:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.pushable:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.pushable:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.pushable:focus:not(:focus-visible) {
+    outline: none;
+}
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) { /* Tablet */
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pushable {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) { /* Mobile */
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pushable {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.nav-link{
+    text-decoration: none;
+    color: #4b4453;
+    font-size: 13px;
+}

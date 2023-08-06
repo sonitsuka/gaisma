@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist's Website</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    
+</head>
+<body>
+    <nav>
+        <button class="pushable" data-target="home" data-color="Purple">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front">Home</span>
+        </button>
+        <button class="pushable" data-target="music" data-color="Red">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front">Music</span>
+        </button>
+        <button class="pushable" data-target="performance" data-color="Orange">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front">Performance</span>
+        </button>
+        <button class="pushable" data-target="press" data-color="Blue">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front">Press</span>
+        </button>
+        <button class="pushable" data-target="curation" data-color="lightYellow">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front">Curation</span>
+        </button>
+        <button class="pushable" data-target="about" data-color="lightBlue">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front">About</span>
+        </button>
+        <button class="pushable" data-target="about" data-color="lightBlue">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front">Space for Users</span>
+        </button>
+    </nav>
+
+    <div class="content">
+        <section id="home">
+            <h2 class="title">Home</h2>
+            <h3>Radio Show</h3>
+      
+            <p>Title 11</p>
+
+        </section>
+        <section id="music">
+            <h2 class="title">Music</h2>
+   
+            <p>Title 10</p>
+ 
+            <p>Title 12</p>
+
+
+        </section>
+        <section id="performance">
+            <h2 class="title">Performance</h2>
+            <h3>Radio Show</h3>
+            <p>Title 10</p>
+
+        </section>
+        <section id="press">
+            <h2 class="title">Press</h2>
+  
+            <p>Title 11</p>
+            <p>Title 12</p>
+        </section>
+        <section id="curation">
+            <h2 class="title">Curation</h2>
+
+            <p>Title 11</p>
+            <p>Title 12</p>
+        </section>
+        <section id="about">
+            <h2 class="title">About</h2>
+  
+            <p>Title 11</p>
+            <p>Title 12</p>
+        </section>
+    </div>
+    <script>
+        function setActiveButtonColor(button) {
+            const color = button.dataset.color;
+            button.querySelector('.front').style.background = color;
+        }
+    
+        function resetButtonColor(button) {
+            button.querySelector('.front').style.background = '#F2F2F2';
+        }
+    
+        document.querySelectorAll('.pushable').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = this.dataset.target;
+    
+                // Change color of the clicked button
+                setActiveButtonColor(this);
+    
+                // Reset colors of other buttons
+                document.querySelectorAll('.pushable').forEach(otherButton => {
+                    if (otherButton !== this) {
+                        resetButtonColor(otherButton);
+                    }
+                });
+    
+                // Scroll to the target section
+                const targetSection = document.getElementById(target);
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    
+        // Add a scroll event to change the navbar button colors based on the section in view
+        window.addEventListener('scroll', function() {
+            let activeSection = null;
+    
+            document.querySelectorAll('section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.25 && rect.bottom >= window.innerHeight * 0.75) {
+                    activeSection = section;
+                }
+            });
+    
+            document.querySelectorAll('.pushable').forEach(button => {
+                if (button.dataset.target === activeSection?.id) {
+                    setActiveButtonColor(button);
+                } else {
+                    resetButtonColor(button);
+                }
+            });
+        });
+    </script>
+    </body>
+</html>
