@@ -91,6 +91,20 @@ body {
     height: 100%;
     width: max-content;
   }
+
+  .video-thumbnail {
+    position: relative;
+}
+
+.video-thumbnail iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
   .title--music{
     padding: 1rem;
     color: var(--card-background);
@@ -180,6 +194,30 @@ img.cd_label_5{
     text-align: center;
 }
 
+/* Music- RAdio show */
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.gallery a {
+  flex: 1 1 calc(50% - 10px); /* Making two images per row with a 10px gap */
+  margin: 5px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery a:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Rounded corners for the images */
+}
+
  /* press */
  #press {
     position: relative;
@@ -190,7 +228,7 @@ img.cd_label_5{
     background-image: url(../images/bg-press.png) ;
     background-repeat: no-repeat;
     background-position: bottom center;
-    
+    color: var(--background-color);
     background-size: cover;
   }
 
@@ -223,13 +261,79 @@ img.cd_label_5{
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(to bottom, #E55139, #FF7900);
-    /* For cross-browser compatibility */
+    background-color: var(--background-color);
+     /*background: linear-gradient(to bottom, #E55139, #FF7900);
+    For cross-browser compatibility 
     background: -moz-linear-gradient(top, #E55139, #FF7900);
     background: -webkit-linear-gradient(top, #E55139, #FF7900, #FFF8B9);
     
-    background-size: cover;
+    background-size: cover;*/
   }
+  .video-category {
+    margin-bottom: 40px;
+}
+
+.video {
+    display: inline-block;
+    width: 32%;
+    margin-right: 2%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.video:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.video img {
+    width: 100%;
+    display: block;
+}
+
+.video p {
+    padding: 10px;
+    margin: 0;
+}
+
+.credit {
+    font-size: 0.8em;
+    color: #666;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  width: 70%;
+  margin: auto;
+  min-height: 400px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #bbb;
+}
+
+
    /* NEWS  */
 #news{
  background-color: #FFF8B9;
