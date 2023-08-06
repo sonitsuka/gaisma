@@ -15,6 +15,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
 
 
 </head>
@@ -57,9 +58,15 @@
         </div>
         <div class="music-card">
           <h3>Music Video Gaisma</h3>
-          <!-- Video 1 -->
-          <img id="thumbnail" src="https://img.youtube.com/vi/OkJS3Njo17g/hqdefault.jpg" alt="YouTube Thumbnail">
+          <!-- Video 1 
+                    <img id="thumbnail" src="https://img.youtube.com/vi/OkJS3Njo17g/hqdefault.jpg" alt="YouTube Thumbnail">
           <div id="video-info"></div>
+          -->
+          <div class="video-thumbnail" data-video-id="Sk9y7KH4ARk">
+            <div id="player-Sk9y7KH4ARk"></div>
+            <img src="https://img.youtube.com/vi/Sk9y7KH4ARk/0.jpg" alt="Music Video Gaisma Thumbnail">
+            <p>thamnail Test</p>
+          </div>
 
           <a href="https://www.youtube.com/watch?v=Sk9y7KH4ARk" target="_blank">
               <img src="https://img.youtube.com/vi/Sk9y7KH4ARk/0.jpg" alt="Video 1 Thumbnail">
@@ -105,27 +112,23 @@
     <section id="press">
       <h2 class="title">Interviews & Press</h2>
       <div class="press--list">
-        <p><strong>1.</strong> fjlglsdljksf</p>
-        <p>xwdslkfjlglsdljksfkjdljlfdsjlkfdslfdsjlkljfk</p>
+        <p><strong>1.</strong> fAl-Tiba9 Contemporary Art - Alisa Scetinina Performace music body</p>
+        <p>April 12, 2023</p>
       </div>
       <div class="press--list">
-        <p>xwdslkfjlglsdljksfkjdljlfdsjlkfdslfdsjlkljfk</p>
-        <p>xwdslkfjlglsdljksfkjdljlfdsjlkfdslfdsjlkljfk</p>
+        <p>An interview with SCETI -  their debut on the Exlove label with a fantastic four-track synthesized disco EP</p>
+        <p>August 12, 2021</p>
       </div>
       <div class="press--list">
-        <p>xwdslkfjlglsdljksfkjdljlfdsjlkfdslfdsjlkljfk</p>
-        <p>xwdslkfjlglsdljksfkjdljlfdsjlkfdslfdsjlkljfk</p>
-      </div>news
-      <div class="press--list">
-        <p>xwdslkfjlglsdljksfkjdljlfdsjlkfdslfdsjlkljfk</p>
+        <p>dmcworld magazine - BACK TO MINE WITH SCETI</p>
+        <p>August 27, 2021</p>
       </div>
       <div class="press--list">
-        <p>xwdslkfjlglsdljksfkjdljlfdsjlkfdslfdsjlkljfk</p>
+        <p>WOMAN OF MUSIC</p>
+        <p>May, 2019</p>
       </div>
 
-        <div class="press-insert-img">
-          <img src="images/gaisma-press.jpg" alt="some image insert">
-        </div>
+
     </section>
 
     <section id="performance">
@@ -317,6 +320,31 @@ window.addEventListener('scroll', function() {
   });
 });
 
+ // Video youtu
+ function onYouTubeIframeAPIReady() {
+    const thumbnails = document.querySelectorAll('.video-thumbnail');
+    thumbnails.forEach(thumbnail => {
+        const videoId = thumbnail.getAttribute('data-video-id');
+        const player = new YT.Player('player-' + videoId, {
+            videoId: videoId,
+            playerVars: {
+                'controls': 0,
+                'disablekb': 1,
+                'modestbranding': 1,
+                'rel': 0
+            }
+        });
+
+        thumbnail.addEventListener('mouseover', function() {
+            player.mute();
+            player.playVideo();
+        });
+
+        thumbnail.addEventListener('mouseout', function() {
+            player.pauseVideo();
+        });
+    });
+}
 
  
 
