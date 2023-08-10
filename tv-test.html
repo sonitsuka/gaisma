@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Overlay</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script>
+    <script>
+        let scene, camera, renderer;
+
+        // 1. three.jsのシーンを初期化
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // 2. pixi.jsのシーンとYouTubeの動画を初期化
+        let app = new PIXI.Application({ width: window.innerWidth, height: window.innerHeight, transparent: true });
+        document.body.appendChild(app.view);
+        let videoTexture = PIXI.Texture.from('https://www.youtube.com/embed/OkJS3Njo17g?autoplay=1&controls=0&loop=1');
+        let videoSprite = new PIXI.Sprite(videoTexture);
+        app.stage.addChild(videoSprite);
+
+        // 3. 背景画像を読み込む
+        let tvTexture = new THREE.TextureLoader().load('/images/transparent_tv.png');
+        let tvMaterial = new THREE.MeshBasicMaterial({ map: tvTexture, transparent: true });
+        let tvGeometry = new THREE.PlaneGeometry(2, 2);
+        let tvMesh = new THREE.Mesh(tvGeometry, tvMaterial);
+        scene.add(tvMesh);
+
+        camera.position.z = 3;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+            app.render();
+        }
+
+        animate();
+    </script>
+</body>
+</html>
