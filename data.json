@@ -1,0 +1,74 @@
+{
+    "music": [
+      {
+        "category": "Gaisma Album & EP",
+        "type": "gallery",
+        "items": [
+            {
+              "link": "https://open.spotify.com/intl-de/album/47S3HkEBEkwxPv6vQup7zB",
+              "image": "images/cd1.png",
+              "description": "Mirrors Of The Cosmic Cinema Gaisma"
+            },
+            {
+              "link": "https://open.spotify.com/intl-de/album/0c3Bd93SHLw5vlVhrHN26P",
+              "image": "images/cd1.png",
+              "description": "Not My Cup Of Tea"
+            },
+            {}
+        ]
+      },
+      {
+        "category": "Sceti Music",
+        "type": "single",
+        "items": [
+          {
+            "link": "https://www.youtube.com/watch?v=Sk9y7KH4ARk",
+            "image": "images/sceti.png",
+            "description": "Feel Alive"
+          }
+        ]
+      },
+      ...
+    ],
+    "press": [
+      {
+        "title": "Al-Tiba9 Contemporary Art - Alisa Scetinina Performace music body",
+        "link": "https://www.altiba9.com/artist-interviews/alisa-scetinina-performace-music-body",
+        "date": "April 12, 2023"
+      },
+      ...
+    ],
+    "performance": {
+      "videos": [
+        {
+          "category": "Performance",
+          "items": [
+            {
+              "title": "Emotional Traffic - Alisa Scetinina",
+              "link": "https://youtu.be/h98Q9zuAS54",
+              "thumbnail": "https://img.youtube.com/vi/h98Q9zuAS54/0.jpg",
+              "credits": ""
+            },
+            ...
+          ]
+        },
+        {
+          "category": "Art & Film",
+          "items": [
+            {
+              "title": "ISRA - Journey Through The Night - Art House Short Film",
+              "link": "https://vimeo.com/639004437",
+              "thumbnail": "/images/ISRA-perfomance.png",
+              "credits": "Direction/Production Manager - Reiner Bocka..."
+            },
+            ...
+          ]
+        },
+        ...
+      ]
+    },
+    "curation": {
+      "description": ""  // Add curation content here
+    }
+  }
+  

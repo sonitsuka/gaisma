@@ -25,9 +25,12 @@
         // 2. pixi.jsのシーンとYouTubeの動画を初期化
         let app = new PIXI.Application({ width: window.innerWidth, height: window.innerHeight, transparent: true });
         document.body.appendChild(app.view);
-        let videoTexture = PIXI.Texture.from('https://www.youtube.com/embed/OkJS3Njo17g?autoplay=1&controls=0&loop=1');
+        let videoTexture = PIXI.Texture.from('path_to_your_video_file.mp4');
         let videoSprite = new PIXI.Sprite(videoTexture);
         app.stage.addChild(videoSprite);
+        videoSprite.scale.set(someScaleValue);
+        videoSprite.position.set(someXValue, someYValue);
+
 
         // 3. 背景画像を読み込む
         let tvTexture = new THREE.TextureLoader().load('/images/transparent_tv.png');
