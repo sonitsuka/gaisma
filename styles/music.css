@@ -453,11 +453,11 @@ q.quote{
     justify-content: space-between;
     align-items: center;
   }
+  
+  #footer-section a, #footer-section .social-icon {
 
-      #footer-section a, #footer-section .social-icon {
-        font-size: 1rem;
-        margin: 0 0.1rem;
-      }
+    margin: 0 0.1rem;
+  }
       
  /* Nav Bar*******************************
 /* Style the navigation bar */
@@ -492,7 +492,6 @@ q.quote{
   #footer-section .nav-links a {
     color: gray;
     text-decoration: none;
-    font-size: 0.8rem;
   }
   
   /* Style the a tags on hover */
