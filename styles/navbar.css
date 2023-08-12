@@ -1,12 +1,13 @@
-
-
-
 nav {
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
     align-items: center;
+    padding: 4px;
+    
 }
+
+
 
 .pushable {
     position: relative;
@@ -20,6 +21,7 @@ nav {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+
 .front {
     display: inline-flex;
     justify-content: center;
@@ -28,14 +30,14 @@ nav {
     border-radius: 5px;
     font-size: 13px;
     color: #4B4453;
-    background: #F2F2F2;
+    background: linear-gradient(145deg, #F5F5F5, #E0E0E0); /* Subtle gradient for convex appearance */
     will-change: transform;
-    transform: translateY(-4px);
-    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+    transform: translateY(-1px);
+    transition: transform 200ms cubic-bezier(.3, .7, .4, 1);
     padding: 10px 4px;
     z-index: 1;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Realistic depth */
+    border: 1px solid #B0B0B0; /* Slightly emphasized border */
 }
 
 .shadow {
@@ -109,10 +111,6 @@ nav {
     nav {
         flex-direction: column;
         align-items: center;
-    }
-    .pushable {
-        width: 100%;
-        text-align: center;
     }
 }
 
