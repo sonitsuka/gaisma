@@ -123,10 +123,51 @@ body {
     color: white;
     width: 30vw;
     border: 1px solid #ddd;
-    background-color: #E55139;
+    background-color: #d15543;
     padding: 0.5rem;
     text-align: center;
   }
+
+.music-card h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.gallery a {
+    flex: 0 0 calc(50% - 10px);  /* 2 items per row by default */
+    max-width: calc(50% - 10px);  /* Ensure items don't stretch */
+    margin: 5px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Tablet devices */
+@media (max-width: 768px) {
+    .gallery a {
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .gallery a {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
 
 .music-card a {
     text-decoration: none;
@@ -139,9 +180,7 @@ body {
 }
 
 .music-card img {
-    width: 250px; /* Adjust this value as needed to set the width of the image */
-    height: 200px;
-    margin: 10px 0; /* Provides spacing above and below the image */
+    width: 90%; /* Adjust this value as needed to set the width of the image */
 }
 
 
@@ -155,14 +194,16 @@ body {
 }
 
   /*  */
-  .music-card:nth-child(7) {
+  .music-card:nth-child(8) {
     margin-right: 10rem;
   }
 
+  .music--subtitle{
+    margin: 0;
+  }
 
   .cd_group {
     display: flex;
-
     align-items: end;
     padding: 1rem;
 
@@ -174,54 +215,20 @@ body {
     box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
 
 }
-img.cd_label_3{
-    width: 350px;
-    
-}
 
 img.cd_label_4{
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
     border-radius: 5px;
     margin-left: auto;
     margin-right: auto;
 }
 
-img.cd_label_5{
-    width: 350px;
-    height: 200px;
-    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
-}
-
 .cd_title{
     font-size: 1rem;
     padding-left: 1rem;
     text-align: center;
-}
-
-/* Music- RAdio show */
-.gallery {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.gallery a {
-  flex: 1 1 calc(50% - 10px); /* Making two images per row with a 10px gap */
-  margin: 5px;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.gallery a:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px; /* Rounded corners for the images */
 }
 
  /* press */
