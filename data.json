@@ -1,74 +1,221 @@
 {
-    "music": [
+  "music": [
       {
-        "category": "Gaisma Album & EP",
-        "type": "gallery",
-        "items": [
-            {
-              "link": "https://open.spotify.com/intl-de/album/47S3HkEBEkwxPv6vQup7zB",
-              "image": "images/cd1.png",
-              "description": "Mirrors Of The Cosmic Cinema Gaisma"
-            },
-            {
-              "link": "https://open.spotify.com/intl-de/album/0c3Bd93SHLw5vlVhrHN26P",
-              "image": "images/cd1.png",
-              "description": "Not My Cup Of Tea"
-            },
-            {}
-        ]
+          "title": "Gaisma Album & EP",
+          "content": [
+              {
+                  "link": "https://open.spotify.com/intl-de/album/47S3HkEBEkwxPv6vQup7zB",
+                  "image": "images/mirrorsOfCosmic.jpg",
+                  "description": "Mirrors Of The Cosmic Cinema Gaisma"
+              },
+              {
+                  "link": "https://open.spotify.com/intl-de/album/0c3Bd93SHLw5vlVhrHN26P",
+                  "image": "images/notMyCupOfTea.jpg",
+                  "description": "Not My Cup Of Tea"
+              },
+              {
+                  "link": "https://open.spotify.com/intl-de/album/2bOnhokrEQOnHuvl8H6oZn",
+                  "image": "images/empathy.jpg",
+                  "description": "Empathy"
+              },
+              {
+                  "link": "https://open.spotify.com/intl-de/album/0ZLCVkecn8E0h0RXuPbgpi",
+                  "image": "images/monarchy.jpg",
+                  "description": "Monarchy"
+              }
+          ]
       },
       {
-        "category": "Sceti Music",
-        "type": "single",
-        "items": [
+          "title": "Sceti Music",
+          "content": [
+              {
+                  "link": "https://open.spotify.com/intl-de/artist/7LmgNFt2L76bFO3f27IsC4",
+                  "image": "images/sceti.png",
+                  "description": "Feel Alive"
+              }
+          ]
+      },
+      {
+          "title": "Music Video Gaisma",
+          "content": [
+              {
+                  "link": "https://www.youtube.com/watch?v=Sk9y7KH4ARk",
+                  "image": "https://img.youtube.com/vi/Sk9y7KH4ARk/0.jpg",
+                  "description": "Sunny Side Up"
+              },
+              {
+                  "link": "https://www.youtube.com/watch?v=OkJS3Njo17g",
+                  "image": "https://img.youtube.com/vi/OkJS3Njo17g/0.jpg",
+                  "description": "Catnip"
+              },
+              {
+                  "link": "https://www.youtube.com/watch?v=wQ8LyXDO7Y4",
+                  "image": "https://img.youtube.com/vi/wQ8LyXDO7Y4/0.jpg",
+                  "description": "Monarchy"
+              }
+          ]
+      },
+      {
+          "title": "Music Video Sceti",
+          "content": [
+              {
+                  "link": "https://www.youtube.com/watch?v=1UKIHVtwK9M",
+                  "image": "https://img.youtube.com/vi/1UKIHVtwK9M/0.jpg",
+                  "description": "Dancing All Alone"
+              }
+          ]
+      },
+      {
+          "title": "DJ & Live",
+          "content": [
+              {
+                  "link": "https://www.youtube.com/watch?v=FyTQhsSNJGY&t=462s",
+                  "image": "https://img.youtube.com/vi/FyTQhsSNJGY/0.jpg",
+                  "description": "Stuttgart Rooftop Streams #10 - Gaisma & Mariano Fernandez (Live-Malerei)"
+              },
+              {
+                  "link": "https://www.youtube.com/watch?v=uifNs3R7t9U",
+                  "image": "https://img.youtube.com/vi/uifNs3R7t9U/0.jpg",
+                  "description": "TINY WINDOW CONCERTS II - Gaisma"
+              },
+              {
+                  "link": "https://soundcloud.com/mutantradio/gaisma-13122022",
+                  "image": "https://i1.sndcdn.com/artworks-zCmzohVQkIyQ25zK-ALphPQ-t500x500.jpg",
+                  "description": "Title 1"
+              },
+              {
+                  "link": "https://soundcloud.com/gaisma/umbaustuttgart21house?ref=clipboard&p=a&c=1",
+                  "image": "https://i1.sndcdn.com/artworks-000634171918-fbk03p-t500x500.jpg",
+                  "description": "Title 2"
+              },
+              {
+                  "link": "https://soundcloud.com/gaisma/house-party-2?ref=clipboard&p=a&c=1",
+                  "image": "https://i1.sndcdn.com/artworks-000678411697-sm98iw-t500x500.jpg",
+                  "description": "House Party"
+              },
+              {
+                  "link": "https://soundcloud.com/gaisma/fruit-salad-brombeere?ref=clipboard&p=a&c=1",
+                  "image": "https://i1.sndcdn.com/artworks-000380865012-ucttl1-t500x500.jpg",
+                  "description": "Title 4"
+              }
+          ]
+      },
+      {
+          "title": "Radio Show",
+          "content": [
+              {
+                  "link": "https://www.youtube.com/watch?v=FyTQhsSNJGY&t=462s",
+                  "image": "https://img.youtube.com/vi/FyTQhsSNJGY/0.jpg",
+                  "description": "Klang Parfüm"
+              },
+              {
+                  "link": "https://www.youtube.com/watch?v=uifNs3R7t9U",
+                  "image": "https://img.youtube.com/vi/uifNs3R7t9U/0.jpg",
+                  "description": "Klang Parfüm"
+              },
+              {
+                  "link": "https://soundcloud.com/mutantradio/gaisma-13122022",
+                  "image": "https://i1.sndcdn.com/artworks-zCmzohVQkIyQ25zK-ALphPQ-t500x500.jpg",
+                  "description": "Title 1"
+              },
+              {
+                  "link": "https://soundcloud.com/gaisma/umbaustuttgart21house?ref=clipboard&p=a&c=1",
+                  "image": "https://i1.sndcdn.com/artworks-000634171918-fbk03p-t500x500.jpg",
+                  "description": "Title 2"
+              },
+              {
+                  "link": "https://soundcloud.com/gaisma/house-party-2?ref=clipboard&p=a&c=1",
+                  "image": "https://i1.sndcdn.com/artworks-000678411697-sm98iw-t500x500.jpg",
+                  "description": "House Party"
+              },
+              {
+                  "link": "https://soundcloud.com/gaisma/fruit-salad-brombeere?ref=clipboard&p=a&c=1",
+                  "image": "https://i1.sndcdn.com/artworks-000380865012-ucttl1-t500x500.jpg",
+                  "description": "Title 4"
+                }
+            ]
+        }
+    ],
+    "press": {
+      "title": "Interviews & Press",
+      "content": [
           {
-            "link": "https://www.youtube.com/watch?v=Sk9y7KH4ARk",
-            "image": "images/sceti.png",
-            "description": "Feel Alive"
+              "link": "https://www.altiba9.com/artist-interviews/alisa-scetinina-performace-music-body",
+              "description": "Al-Tiba9 Contemporary Art - Alisa Scetinina Performace music body",
+              "date": "April 12, 2023"
+          },
+          {
+              "link": "https://www.altiba9.com/artist-interviews/alisa-scetinina-performace-music-body",
+              "description": "An interview with SCETI -  their debut on the Exlove label with a fantastic four-track synthesized disco EP",
+              "date": "August 12, 2021"
+          },
+          {
+              "link": "http://www.dmcworld.net/back-to-mine/back-to-mine-with-sceti/",
+              "description": "dmcworld magazine - BACK TO MINE WITH SCETI",
+              "date": "August 27, 2021"
+          },
+          {
+              "link": "https://womenofmusic.de/member_reader/alisa-pgeboren-in-lettland-hat-sich-alisa-scetinina-seit-ihrer-kindheit-mit-musik-und-lettischem-tanz-besch%C3%A4ftigt-w%C3%A4hrend-ihres-.html",
+              "description": "WOMAN OF MUSIC",
+              "date": "May, 2019"
           }
-        ]
-      },
-      ...
-    ],
-    "press": [
-      {
-        "title": "Al-Tiba9 Contemporary Art - Alisa Scetinina Performace music body",
-        "link": "https://www.altiba9.com/artist-interviews/alisa-scetinina-performace-music-body",
-        "date": "April 12, 2023"
-      },
-      ...
-    ],
-    "performance": {
-      "videos": [
-        {
-          "category": "Performance",
-          "items": [
-            {
-              "title": "Emotional Traffic - Alisa Scetinina",
-              "link": "https://youtu.be/h98Q9zuAS54",
-              "thumbnail": "https://img.youtube.com/vi/h98Q9zuAS54/0.jpg",
-              "credits": ""
-            },
-            ...
-          ]
-        },
-        {
-          "category": "Art & Film",
-          "items": [
-            {
-              "title": "ISRA - Journey Through The Night - Art House Short Film",
-              "link": "https://vimeo.com/639004437",
-              "thumbnail": "/images/ISRA-perfomance.png",
-              "credits": "Direction/Production Manager - Reiner Bocka..."
-            },
-            ...
-          ]
-        },
-        ...
       ]
-    },
-    "curation": {
-      "description": ""  // Add curation content here
+  },
+
+    "performance": {
+        "title": "Performance",
+        "categories": [
+            {
+                "categoryTitle": "Performance",
+                "videos": [
+                    {
+                        "link": "https://youtu.be/h98Q9zuAS54",
+                        "thumbnail": "https://img.youtube.com/vi/h98Q9zuAS54/0.jpg",
+                        "title": "Emotional Traffic - Alisa Scetinina",
+                        "credit": ""
+                    },
+                    {
+                        "link": "https://youtu.be/UVqem5Be9VI",
+                        "thumbnail": "https://img.youtube.com/vi/UVqem5Be9VI/0.jpg",
+                        "title": "Retaken Heart - A Journey into the heart // Azimuth Arts and Dance Ensemble - Gonçalo Cruzinha",
+                        "credit": ""
+                    }
+                ]
+            },
+            {
+                "categoryTitle": "Art & Film",
+                "videos": [
+                    {
+                        "link": "https://vimeo.com/639004437",
+                        "thumbnail": "/images/ISRA-perfomance.png",
+                        "title": "ISRA - Journey Through The Night - Art House Short Film",
+                        "credit": "Direction/Production Manager - Reiner Bocka\nCostume Designer - Stjepan Cuka\nChoreography, Performance  - Alisa Scetinina\nMusic - Maximilian Luz and Ellie Fords\nCamera - Peter Heizmann, Braian Zajak\nPost Production, Color Grading - Roman Brauch"
+                    },
+                    {
+                        "link": "https://vimeo.com/216516573",
+                        "thumbnail": "/images/alisa-perfomance.png",
+                        "title": "Alisa - filmed by Simon Pfister in Bavarian State Opera",
+                        "credit": "Text - Donna Mae Burrows\nCamera - Simon Pfister\nDancer - Alisa Scetinina"
+                    }
+                ]
+            },
+            {
+                "categoryTitle": "Music Video",
+                "videos": [
+                    {
+                        "link": "https://youtu.be/mK-petdPykc",
+                        "thumbnail": "https://img.youtube.com/vi/mK-petdPykc/0.jpg",
+                        "title": "Levin Goes Lightly - Geschichten (official)",
+                        "credit": "Music & Text - Levin Stadler\nDirected by Nicolas Ohnesorge\nStarring : Alena Hermes, Alisa Scetinina\nColor Grading : Harry Delgas"
+                    },
+                    {
+                        "link": "https://youtu.be/GIh38PjyJnQ",
+                        "thumbnail": "https://img.youtube.com/vi/GIh38PjyJnQ/0.jpg",
+                        "title": "Intact - Noverre - Young Choreographers Of Stuttgart Ballet 2017",
+                        "credit": "Choreography : Alisa Scetinina\nComposer - Alisa Scetinina\nDancers : Shaked Heller & Alisa Scetinina\nLight & Costume Concept - Alisa Scetinina"
+                    }
+                ]
+            }
+        ]
     }
   }
-  
