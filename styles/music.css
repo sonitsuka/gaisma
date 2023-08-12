@@ -354,9 +354,9 @@ img.cd_label_5{
 /* About section */
 #about {
   background-color: #FEC863;
-  background-image: linear-gradient(135deg, #b39cd0 25%, transparent 25%), 
-                    linear-gradient(225deg, #b39cd0 25%, transparent 25%), 
-                    linear-gradient(45deg, #b39cd0 25%, transparent 25%), 
+  background-image: linear-gradient(135deg, #b39cd0 25%, transparent 40%), 
+                    linear-gradient(225deg, #b39cd0 25%, transparent 40%), 
+                    linear-gradient(45deg, #b39cd0 25%, transparent 40%), 
                     linear-gradient(315deg, #b39cd0 25%, #FEC863 25%);
   background-position: 24px 0, 24px 0, 0 0, 0 0;
   background-size: 48px 48px;
@@ -367,7 +367,7 @@ img.cd_label_5{
 .container {
   font-family: "Libre Baskerville", "Baskerville", "Athelas", sans-serif;
   backdrop-filter: blur(10px);
-  padding: 2rem;
+  padding: 4rem;
   max-width: 1200px;
   width: 80%;
   margin: 0 auto;
@@ -394,7 +394,7 @@ img.cd_label_5{
 #about-text {
   padding: 0 2rem;
   max-width: 600px;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   line-height: 1.5rem;
 }
 
