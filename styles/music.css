@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:Libre+Baskervillewght@400;700&family=Montserrat:wght@200;400;500;800;900&family=Roboto:wght@100;300;400;500;700&display=swap');
-@import url('http://fonts.cdnfonts.com/css/athelas');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root{
     --main-color:#845EC2;
@@ -22,8 +23,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+  font-family: 'Oswald', sans-serif;    
+  margin: 0;
     padding: 0;
     overflow-x: hidden;
     background-color: #2e2e2e;
@@ -54,29 +55,15 @@ body {
     justify-content: center;
     align-items: center;
   }
-  #home{
-   
-        background-image: url('../images/demo_analogTV.png');
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 100vh;
-        background-attachment: fixed;
-            background: linear-gradient(to bottom, #845EC2, #b39cd0, #ff8066,#00c9a7);
-
-    }
     
 */
       
   #home{
-   
     background-image: url('../images/bg_tv.png');
     background-repeat: no-repeat;
     background-position: bottom center;
     
     background-size: cover;
-
- 
-    
 }
 
 /*---------- Music --------------------------------	*/
@@ -234,7 +221,7 @@ img.cd_label_4{
     margin: 0;
     position: relative;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     overflow: hidden;
     background-color: #00c9a7; /*#5d76cb;*/
     background-image: url(../images/bg-press.png) ;
@@ -276,11 +263,12 @@ img.cd_label_4{
   #performance {
     height: 100%;
     width: 100%;
-    font-family: 'Libre Baskerville', serif;  
+    font-family: 'Playfair Display', serif;  
     background-color: var(--background-color);
     color: #2e2e2e;
     margin: 0;
     padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .perfomance--text {
@@ -370,7 +358,7 @@ img.cd_label_4{
   background-size: 48px 48px;
   background-repeat: repeat;
   padding: 1% 0; /* Vertical padding to help center the container */
-
+  font-family: 'Playfair Display', serif;  
 }
 
 .container {
@@ -404,7 +392,7 @@ img.cd_label_4{
 #about-text {
   padding: 0 2rem;
   max-width: 600px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.5rem;
 }
 
@@ -438,9 +426,6 @@ img.cd_label_4{
   }
 }
 
-
-
-
 q.quote{
   text-align: center;
   display: block;
@@ -449,6 +434,103 @@ q.quote{
 
   font-style: italic;
 }
+
+  /* Curation */
+  #curation{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    padding: 1rem;
+
+    background-image: url('/images/sj-objio-XFWiZTa2Ub0-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Adjusting to 1/3 and 2/3 ratio */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 20px;
+  background-color: -var(--card-background);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.artwork-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns for the first 4 images */
+   /*grid-template-rows: auto 1fr; Two rows: one for the four images and another for the large image */
+ 
+  align-items: center;
+}
+
+.artwork-gallery img {
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.artwork-gallery img:last-child {
+  grid-column: 1 / 5; /* Spanning the entire width for the last image */
+}
+
+
+
+
+.exhibition-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.exhibition-details p {
+  text-align: justify;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.credits-section p{
+  line-height: 1rem;
+  margin: 0;
+}
+
+.exhibition-details img {
+  max-width: 100%;
+  transition: transform 0.3s;
+}
+
+.poster-credit {
+  font-size: 0.8rem;
+  margin-top: 8px;
+  color: #888;
+}
+
+
+.artwork-gallery img:hover {
+  -webkit-filter: invert(.9);
+  filter: invert(.9);
+}
+
+.credits-section {
+  font-size: 0.8rem;
+  padding: 0;
+}
+
+.credits-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.funding {
+  font-style: italic;
+  text-align: center;
+  padding-top: 1rem;
+}
+
 
 
   /****************************************************************
