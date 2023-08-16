@@ -16,6 +16,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
 
 
 </head>
@@ -152,81 +154,101 @@
       </div>
     </section>
 
-    
     <section id="performance">
       <div class="performance--title">
-        <h2 class="title">Performance</h2>
-        <h3>Performance</h3>
-        <h3>Art & Film</h3>
-        <h3>Music Video</h3>
+          <h2 class="title">Performance</h2>
+          <h3>Performance</h3>
+          <h3>Art & Film</h3>
+          <h3>Music Video</h3>
       </div>
       <div class="performance--card">
-        <p class="performance--text">For me, Performance is the way one carries oneself and connects to the inner voice, whether it is through music, dance, film, or any other source of expression. I believe that one can find it through self-exploration. The path that navigates us and teaches how to channel our energies and process our inner and outside worlds. We tend to view our body in parts, separating it into organs, limbs, and chemical elements, forgetting that underneath the skin there is a smart mechanism connecting it all.</p>
-      
-        <!-- Performance Videos -->
-        <div class="video-category">
-            
-            <div class="video">
-                <a href="https://youtu.be/h98Q9zuAS54" target="_blank" >
-                    <img src="https://img.youtube.com/vi/h98Q9zuAS54/0.jpg" alt="Emotional Traffic Thumbnail" class="video--thumbnail">
-                    <h4 class="p--title">Emotional Traffic - Alisa Scetinina</h4>
-                </a>
-            </div>
-    
-            <div class="video">
-                <a href="https://youtu.be/UVqem5Be9VI" target="_blank">
-                    <img src="https://img.youtube.com/vi/UVqem5Be9VI/0.jpg" alt="Retaken Heart Thumbnail" class="video--thumbnail">
-                    <h4 class="p--title">Retaken Heart - A Journey into the heart // Azimuth Arts and Dance Ensemble - Gonçalo Cruzinha</h4>
-                </a>
-            </div>
-  
-            <div class="video">
-              <a href="https://youtu.be/GIh38PjyJnQ" target="_blank">
-                  <img src="https://img.youtube.com/vi/GIh38PjyJnQ/0.jpg" alt="Intact Thumbnail" class="video--thumbnail">
-                  <h4 class="p--title">Intact - Noverre - Young Choreographers Of Stuttgart Ballet 2017</h4>
-              </a>
-              <p class="credit">Choreography : Alisa Scetinina<br>Composer - Alisa Scetinina<br>Dancers : Shaked Heller & Alisa Scetinina<br>Light & Costume Concept - Alisa Scetinina</p>
-           </div>
-        </div>
-        
-        <!-- Art & Film Videos -->
-        <div class="video-category">
-         
-    
-            <div class="video">
-                <a href="https://vimeo.com/639004437" target="_blank">
-                    <img src="/images/ISRA-perfomance.png" alt="ISRA Thumbnail" class="video--thumbnail"> <!-- Placeholder for Vimeo thumbnail -->
-                    <h4 class="p--title">ISRA - Journey Through The Night - Art House Short Film</h4>
-                </a>
-                <p class="credit">Direction/Production Manager - Reiner Bocka<br>Costume Designer - Stjepan Cuka<br>Choreography, Performance  - Alisa Scetinina<br>Music - Maximilian Luz and Ellie Fords<br>Camera - Peter Heizmann, Braian Zajak<br>Post Production, Color Grading - Roman Brauch</p>
-            </div>
-    
-            <div class="video">
-                <a href="https://vimeo.com/216516573" target="_blank" >
-                    <img src="/images/alisa-perfomance.png" alt="Alisa Thumbnail" class="video--thumbnail"> 
-                    <h4 class="p--title">Alisa - filmed by Simon Pfister in Bavarian State Opera</h4>
-                </a>
-                <p class="credit">Director - Donna Mae Burrows<br>Camera - Simon Pfister<br>Dancer - Alisa Scetinina</p>
-            </div>
-        </div>
-        
-        <!-- Music Video -->
-        <div class="video-category">
-           
-            <div class="video">
-              <input type="checkbox" id="video1" class="video-toggle">
-              <label for="video1">
-                <a href="https://youtu.be/mK-petdPykc" target="_blank">
-                  <img src="https://img.youtube.com/vi/mK-petdPykc/0.jpg" alt="Levin Goes Lightly Thumbnail" class="video--thumbnail">
-                  <h4 class="p--title">Levin Goes Lightly - Geschichten (official)</h4>
-                </a>
-                <p class="credit">Music & Text - Levin Stadler<br>Directed by Nicolas Ohnesorge<br>Starring : Alena Hermes, Alisa Scetinina<br>Color Grading : Harry Delgas</p>
-              </label>
-              </input>
-            </div>
-        </div>
+          <p class="performance--text">For me, Performance is the way one carries oneself and connects to the inner
+              voice, whether it is through music, dance, film, or any other source of expression. I believe that one
+              can find it through self-exploration. The path that navigates us and teaches how to channel our energies
+              and process our inner and outside worlds. We tend to view our body in parts, separating it into organs,
+              limbs, and chemical elements, forgetting that underneath the skin there is a smart mechanism connecting
+              it all.</p>
+
+          <!-- Performance Videos -->
+          <div class="video-category">
+
+              <div class="video">
+                  <a href="https://youtu.be/h98Q9zuAS54" target="_blank">
+                      <img src="https://img.youtube.com/vi/h98Q9zuAS54/0.jpg" alt="Emotional Traffic Thumbnail"
+                          class="video--thumbnail">
+                      <iframe class="video--iframe"
+                          src="https://www.youtube.com/embed/h98Q9zuAS54?autoplay=1&mute=1&controls=0&modestbranding=1"
+                          frameborder="0" allow="autoplay"></iframe>
+                      <h4 class="p--title">Emotional Traffic - Alisa Scetinina</h4>
+                  </a>
+              </div>
+
+              <div class="video">
+                  <a href="https://youtu.be/UVqem5Be9VI" target="_blank">
+                      <img src="https://img.youtube.com/vi/UVqem5Be9VI/0.jpg" alt="Retaken Heart Thumbnail"
+                          class="video--thumbnail">
+                      <iframe class="video--iframe"
+                          src="https://www.youtube.com/embed/UVqem5Be9VI?autoplay=1&mute=1&controls=0&modestbranding=1"
+                          frameborder="0" allow="autoplay"></iframe>
+                      <h4 class="p--title">Retaken Heart - A Journey into the heart // Azimuth Arts and Dance Ensemble
+                          - Gonçalo Cruzinha</h4>
+                  </a>
+              </div>
+
+              <div class="video">
+                  <a href="https://youtu.be/GIh38PjyJnQ" target="_blank">
+                      <img src="https://img.youtube.com/vi/GIh38PjyJnQ/0.jpg" alt="Intact Thumbnail"
+                          class="video--thumbnail">
+                      <iframe class="video--iframe"
+                          src="https://www.youtube.com/embed/GIh38PjyJnQ?autoplay=1&mute=1&controls=0&modestbranding=1"
+                          frameborder="0" allow="autoplay"></iframe>
+                      <h4 class="p--title">Intact - Noverre - Young Choreographers Of Stuttgart Ballet 2017</h4>
+                  </a>
+                  <p class="credit">Choreography : Alisa Scetinina<br>Composer - Alisa Scetinina<br>Dancers : Shaked Heller & Alisa Scetinina<br>Light & Costume Concept - Alisa Scetinina</p>
+              </div>
+          </div>
+
+          <!-- Art & Film Videos -->
+          <div class="video-category">
+
+              <div class="video">
+                  <a href="https://vimeo.com/639004437" target="_blank">
+                      <img src="/images/ISRA-perfomance.png" alt="ISRA Thumbnail" class="video--thumbnail">
+                      <h4 class="p--title">ISRA - Journey Through The Night - Art House Short Film</h4>
+                  </a>
+                  <p class="credit">Direction/Production Manager - Reiner Bocka<br>Costume Designer - Stjepan Cuka<br>Choreography, Performance - Alisa Scetinina<br>Music - Maximilian Luz and Ellie Fords<br>Camera - Peter Heizmann, Braian Zajak<br>Post Production, Color Grading - Roman Brauch</p>
+              </div>
+
+              <div class="video">
+                  <a href="https://vimeo.com/216516573" target="_blank">
+                      <img src="/images/alisa-perfomance.png" alt="Alisa Thumbnail" class="video--thumbnail">
+                      <h4 class="p--title">Alisa - filmed by Simon Pfister in Bavarian State Opera</h4>
+                  </a>
+                  <p class="credit">Director - Donna Mae Burrows<br>Camera - Simon Pfister<br>Dancer - Alisa Scetinina</p>
+              </div>
+          </div>
+
+          <!-- Music Video -->
+          <div class="video-category">
+
+              <div class="video">
+                  <input type="checkbox" id="video1" class="video-toggle">
+                  <label for="video1">
+                      <a href="https://youtu.be/mK-petdPykc" target="_blank">
+                          <img src="https://img.youtube.com/vi/mK-petdPykc/0.jpg" alt="Levin Goes Lightly Thumbnail"
+                              class="video--thumbnail">
+                          <iframe class="video--iframe"
+                              src="https://www.youtube.com/embed/mK-petdPykc?autoplay=1&mute=1&controls=0&modestbranding=1"
+                              frameborder="0" allow="autoplay"></iframe>
+                          <h4 class="p--title">Levin Goes Lightly - Geschichten (official)</h4>
+                      </a>
+                      <p class="credit">Music & Text - Levin Stadler<br>Directed by Nicolas Ohnesorge<br>Starring : Alena Hermes, Alisa Scetinina<br>Color Grading : Harry Delgas</p>
+                  </label>
+              </div>
+          </div>
       </div>
   </section>
+    
   
   <section id="curation">
     <div class="nav-title">
@@ -496,74 +518,78 @@ window.addEventListener('scroll', function() {
   });
 });
 
- // Video youtue
+document.addEventListener('DOMContentLoaded', () => {
+    const thumbnails = document.querySelectorAll('.video--thumbnail');
 
- // Get video thumbnails
-const thumbnails = document.querySelectorAll('.video--thumbnail');
-
-// Add event listeners 
-thumbnails.forEach(thumbnail => {
-
-  thumbnail.addEventListener('mouseenter', e => {
-    
-    // Get parent anchor tag
-    const parent = thumbnail.closest('a');
-    
-    // Create video element
-    let video = document.createElement('video');
-    video.src = parent.href;
-    video.autoplay = true;
-    video.muted = true;
-
-    // Styling
-    video.style.cssText = `
-      position: absolute;
-      max-width: 150px; 
-      z-index: 10;
-    `; 
-
-    // Append to parent
-    parent.appendChild(video);
-
-  });
-
-  thumbnail.addEventListener('mouseleave', e => {
-    
-    // Remove video element
-    thumbnail.closest('a').querySelector('video').remove();
-
-  })
-
-});
- function onYouTubeIframeAPIReady() {
-    const thumbnails = document.querySelectorAll('.video-thumbnail');
     thumbnails.forEach(thumbnail => {
-        const videoId = thumbnail.getAttribute('data-video-id');
-        const player = new YT.Player('player-' + videoId, {
-            videoId: videoId,
-            playerVars: {
-                'controls': 0,
-                'disablekb': 1,
-                'modestbranding': 1,
-                'rel': 0
+        let player;
+
+        thumbnail.addEventListener('mouseenter', e => {
+            const parent = thumbnail.closest('a');
+
+            if (parent.href.includes('youtu.be') || parent.href.includes('youtube.com')) {
+              const videos = document.querySelectorAll('.video');
+
+              videos.forEach(video => {
+                  video.addEventListener("mouseover", function() {
+                      let iframe = video.querySelector(".video--iframe");
+                      if (iframe) {
+                          iframe.style.display = "block";
+                      }
+                  });
+
+                  video.addEventListener("mouseout", function() {
+                      let iframe = video.querySelector(".video--iframe");
+                      if (iframe) {
+                          iframe.style.display = "none";
+                          iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*'); // This stops the video playback
+                      }
+                  });
+              });
+
+            } else if (parent.href.includes('vimeo.com')) {
+                const videoId = parent.href.split('/').pop(); // Extracts the Vimeo video ID from the URL
+
+                // Check if a Vimeo player container already exists
+                let div = parent.querySelector('.vimeo-container');
+                if (!div) {
+                    div = document.createElement('div');
+                    div.className = 'vimeo-container';
+                    div.style.width = '100%';
+                    div.style.height = '250px';
+                    parent.appendChild(div);
+
+                    // Create Vimeo player
+                    player = new Vimeo.Player(div, {
+                        id: videoId,
+                        width: '100%',
+                        height: '250',
+                        autoplay: true,
+                        muted: true
+                    });
+                } else if (player) {
+                    player.play(); // Play video if player already exists
+                }
             }
         });
 
-        thumbnail.addEventListener('mouseover', function() {
-            player.mute();
-            player.playVideo();
-        });
-
-        thumbnail.addEventListener('mouseout', function() {
-            player.pauseVideo();
+        thumbnail.addEventListener('mouseleave', e => {
+            if (player) {
+                player.pause();  // Pause the video instead of destroying the player
+            }
         });
     });
-}
+});
+
+            
+
+
+  
 
  
 
 </script>
-<script src="utils.js"></script>
+
 
 </body>
 </html>

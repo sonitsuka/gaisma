@@ -320,6 +320,7 @@ img.cd_label_4{
 .performance--card .video {
     flex-basis: calc(33.33% - 20px); 
       border: #888 solid 1px;
+      
 }
 
 .performance--text {
@@ -350,9 +351,16 @@ img.cd_label_4{
   object-fit: cover;
 }
 
-.credit {
-
+.vimeo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 10;
 }
+
+
 
 
 .p--title {
@@ -360,7 +368,20 @@ img.cd_label_4{
   padding-top: 10px;
 }
 
+.video--iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  display: none;
+  z-index: 10;
+  pointer-events: none; /* This will allow you to click the link below the iframe */
+}
 
+.vimeo-player {
+  pointer-events: none;
+}
 
 /* Adjustments for tablets */
 @media (max-width: 768px) {
