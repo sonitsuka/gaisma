@@ -42,6 +42,10 @@ body {
     padding: 0px 20px;
   }
 
+  .nav-title{
+    width: 10%;
+  }
+
   h2.title {
     text-align: left;
     margin-top: 1rem;
@@ -49,6 +53,17 @@ body {
     padding: 1rem 1rem 0 0;
   }
   
+  .press--card, .performance--card, .curation--card {
+    margin-left: 2rem;
+  }
+
+  .flex-section {
+    display: flex;
+    align-items: start;
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem 0;
+}
   /*
     section {
     height: 100vh;
@@ -73,13 +88,10 @@ body {
     position: relative;
     width: 100%;
     overflow: hidden;
-
   }
   
   #music-content {
     display: flex;
-  
-
     top: 0;
     left: 0;
     height: 100%;
@@ -225,14 +237,18 @@ img.cd_label_4{
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background-color: #00c9a7; /*#5d76cb;*/
-    background-image: url(../images/bg-press.png) ;
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    color: var(--background-color);
-    background-size: cover;
+
   }
 
+.press--card {
+  height: 100vh;
+  background-color: #00c9a7; /*#5d76cb;*/
+  background-image: url(../images/bg-press.png) ;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  color: var(--background-color);
+  background-size: cover;
+}
 
   .press--list{
     list-style: none;
@@ -266,11 +282,15 @@ img.cd_label_4{
     height: 100%;
     width: 100%;
     font-family: 'Playfair Display', serif;  
-    background-color: var(--background-color);
-    color: #2e2e2e;
+
     margin: 0;
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+.performance--card{
+  background-color: var(--background-color);
+  color: #2e2e2e;
+  width: 90%;
 }
 
 .perfomance--text {
@@ -351,6 +371,7 @@ img.cd_label_4{
 
 /* About section */
 #about {
+  margin-left: 10%;
   background-color: #FEC863;
   background-image: linear-gradient(135deg, #b39cd0 25%, transparent 40%), 
                     linear-gradient(225deg, #b39cd0 25%, transparent 40%), 
@@ -360,7 +381,6 @@ img.cd_label_4{
   background-size: 48px 48px;
   background-repeat: repeat;
   padding: 1% 0; /* Vertical padding to help center the container */
-  font-family: 'Playfair Display', serif;  
 }
 
 .container {
@@ -444,6 +464,9 @@ q.quote{
     height: 100%;
     font-family: 'Arial', sans-serif;
     padding: 1rem;
+
+  }
+  .curation--card{
 
     background-image: url('/images/sj-objio-XFWiZTa2Ub0-unsplash.jpg');
     background-repeat: no-repeat;
