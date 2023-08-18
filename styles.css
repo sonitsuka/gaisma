@@ -52,9 +52,9 @@ body {
     width: 180px;
     border: var(--background-color) 0.1px solid;
     flex-shrink: 0; /* Prevent title from shrinking */
-    display: flex;
+
     align-items: center; /* Vertically center the title */
-    height: fit-content;
+
   }
 
   #about, #performance, #curation,#press{
@@ -99,7 +99,7 @@ body {
 
 /*---------- Music --------------------------------	*/
 
-#music {
+#music, #video {
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -122,7 +122,7 @@ body {
 }
 
 .music-card {
-  flex: 0 0 400px;  /* fixed width */
+  flex:1;  /* fixed width */
   min-width: 400px;    /* fixed width */
   display: flex;
   flex-direction: column;
@@ -396,6 +396,12 @@ body {
 .about--card{
   padding: 4rem;
   background-color: #FFF8B9;
+
+  margin: 0;
+  background-image: url('/images/sj-objio-XFWiZTa2Ub0-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   width: 100%;
 }
 
