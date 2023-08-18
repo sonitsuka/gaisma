@@ -29,6 +29,7 @@ body {
     padding: 0;
     overflow-x: hidden;
     background-color: #2e2e2e;
+    overflow-x: hidden;
   }
 
   a {
@@ -40,26 +41,24 @@ body {
     height: 100vh;
   }
 
-  h2.title, h2.music--title {
+  h2.title {
     text-align: left;
     margin-top: 1rem;
     color: var(--background-color);
     padding: 1rem;
     white-space: nowrap;
-    text-overflow: ellipsis;
   }
 
-  .performance--card{
-    display: table-cell; 
-    vertical-align: top;
-  }
-
-  .nav-title, .music--title {
+  .nav-title {
     width: 180px;
     border: var(--background-color) 0.1px solid;
+    flex-shrink: 0; /* Prevent title from shrinking */
+    display: flex;
+    align-items: center; /* Vertically center the title */
+    height: fit-content;
   }
 
-  #about, #music, #performance, #curation,#press{
+  #about, #performance, #curation,#press{
     display: flex;
     align-items: start;
   }
@@ -100,20 +99,64 @@ body {
 
 
 /*---------- Music --------------------------------	*/
-  #music {
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  #music-content {
-    display: flex;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: max-content;
-  }
 
-  .video-thumbnail {
+#music {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+#music--container {
+  display: flex;
+  align-items: flex-start;
+}
+
+
+#music-content {
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.music-card {
+  flex: 0 0 400px;  /* fixed width */
+  min-width: 400px;    /* fixed width */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  border: 1px solid #ddd;
+  background-color: #d15543;
+  padding: 0.5rem;
+}
+
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.gallery a {
+  flex: 0 0 calc(50% - 10px);
+  max-width: calc(50% - 10px);
+  margin: 5px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+}
+  
+.video-thumbnail {
     position: relative;
 }
 
@@ -126,49 +169,6 @@ body {
     z-index: 1;
 }
 
-  .title--music{
-    padding: 1rem;
-    color: #f0e2e1;
-    font-size: 2rem;
-  }
-  .music-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    color: white;
-    width: 400px;
-    border: 1px solid #ddd;
-    background-color: #d15543;
-    padding: 0.5rem;
-    text-align: center;
-  }
-
-.music-card h3 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.gallery {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.gallery a {
-    flex: 0 0 calc(50% - 10px);  /* 2 items per row by default */
-    max-width: calc(50% - 10px);  /* Ensure items don't stretch */
-    margin: 5px;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-
 .music-card a {
     text-decoration: none;
     color: inherit;
@@ -177,10 +177,6 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%; /* This ensures the anchor tag takes the full width of its parent */
-}
-
-.music-card img {
-    width: 90%; /* Adjust this value as needed to set the width of the image */
 }
 
 
@@ -193,42 +189,25 @@ body {
     color: inherit;
 }
 
-  /*  */
-  .music-card:nth-child(8) {
+.music-card:nth-child(4) {
+  margin-right: 10rem;
+}
+  /*  
+    .music-card:nth-child() {
     margin-right: 10rem;
   }
+  */
+
 
   .music--subtitle{
     margin: 0;
   }
-
-  .cd_group {
-    display: flex;
-    align-items: end;
-    padding: 1rem;
-
-
-  }
-  img.cd_label {
-    width: 200px;
-    border-radius: 5px;
-    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
-
-}
-
-img.cd_label_4{
-    width: 250px;
-    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .cd_title{
     font-size: 1rem;
     padding-left: 1rem;
     text-align: center;
 }
+
 
  /* press */
  #press {
