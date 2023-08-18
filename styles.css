@@ -29,7 +29,6 @@ body {
     padding: 0;
     overflow-x: hidden;
     background-color: #2e2e2e;
-    overflow-x: hidden;
   }
 
   a {
@@ -268,9 +267,9 @@ body {
     grid-column: 1; 
     display: grid;
     grid-template-rows: auto repeat(3, 1fr); /* One row for the main title and 3 rows for the h3 tags */
-    gap: 10px;
     text-align: center;
     align-items: center;
+    border: #888 solid 1px;
 }
 
  .performance--title h3{
