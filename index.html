@@ -6,7 +6,6 @@
     <title>Gaisma Artist Website</title>
     <link rel="stylesheet" href="/styles/music.css"> 
     <link rel="stylesheet" href="styles/navbar.css">
-
     <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
@@ -20,17 +19,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.2/pixi.min.js"></script>
 
 
-
-
 </head>
 <body>
 
     <section id="home">
       <video id="video" crossOrigin="anonymous" muted playsinline loop preload="auto" style="display:none;">
-        <source src="/images/Visualizer540p.mp4" type="video/mp4">
+        <source src="/images/toppage_video.mp4" type="video/mp4">
       </video>
 
-      <canvas id="canvas" width="1437" height="1011"></canvas>
+      <canvas id="canvas" width="1440" height="1000"></canvas>
     </section>
     <section id="about">
       <div class="nav-title">
@@ -598,8 +595,8 @@ document.addEventListener('DOMContentLoaded', () => {
  const video = document.querySelector('#video');
         const app = new PIXI.Application({
             view: document.getElementById('canvas'),
-            width: 1437,
-            height: 1011,
+            width: 1440,
+            height: 1000,
             transparent: true
         });
 
@@ -615,19 +612,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // NOTE: Adjust these values based on the exact position and skew of the TV screen in the bg_tv.png image.
             // These are placeholder values and might not fit perfectly.
-            videoSprite.x = 520;         // Example x position, adjust as needed
+            videoSprite.x = 530;         // Example x position, adjust as needed
             videoSprite.y = 390;         // Example y position, adjust as needed
-            videoSprite.width = 1437*0.35;    // Example width, adjust as needed
-            videoSprite.height = 1011*0.41;    // Example height, adjust as needed
-
-            // Skew the video to fit the TV screen perspective
-            //videoSprite.skew.x = -0.05;   // Example skew value, adjust as needed
-            //videoSprite.skew.y = 0.05;   // Example skew value, adjust as needed
+            videoSprite.width = 490;    // Example width, adjust as needed
+            videoSprite.height = 414;    // Example height, adjust as needed
 
             // Create a mask with rounded corners
             const mask = new PIXI.Graphics();
             mask.beginFill(0xFFFFFF);
-            mask.drawRoundedRect(videoSprite.x, videoSprite.y, videoSprite.width, videoSprite.height, 30);  // 50 is the border-radius, adjust as needed
+
+            /*
+            // Starting point (top-left)
+            mask.moveTo(startX, startY);
+
+            // Move to top-right
+            mask.lineTo(rightTopX, rightTopY);
+
+            // Move to bottom-right
+            mask.lineTo(rightBottomX, rightBottomY);
+
+            // Curve for bottom-left
+            mask.quadraticCurveTo(controlPointX, controlPointY, leftBottomX, leftBottomY);
+
+            // Curve for top-left
+            mask.quadraticCurveTo(controlPoint2X, controlPoint2Y, startX, startY);
+
+
+// Start at the top-left, after the curve
+mask.moveTo(x + borderRadius, y);
+
+// Draw top line to the top-right corner
+mask.lineTo(x + width, y);
+
+// Draw right line to the bottom-right corner
+mask.lineTo(x + width, y + height);
+
+// Draw bottom line to the start of the bottom-left curve
+mask.lineTo(x + borderRadius, y + height);
+
+// Draw bottom-left curve
+mask.quadraticCurveTo(x, y + height, x, y + height - borderRadius);
+
+// Draw left line to the start of the top-left curve
+mask.lineTo(x, y + borderRadius);
+
+// Draw top-left curve
+      mask.quadraticCurveTo(x, y, x + borderRadius, y);      
+      */      
+            mask.drawRoundedRect(videoSprite.x, videoSprite.y, videoSprite.width, videoSprite.height, 42); 
             mask.endFill();
 
             app.stage.addChild(mask);

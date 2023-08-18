@@ -67,13 +67,11 @@ body {
   width: 100%;
 }
 
-
-
   #home{
     backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(10px);
-  margin: 0;
-  height: 100vh;
+    -webkit-backdrop-filter: blur(10px);
+    margin: 0;
+    height: 100vh;
 }
 
 /*---------- Music --------------------------------	*/
@@ -106,7 +104,7 @@ body {
 
   .title--music{
     padding: 1rem;
-    color: var(--card-background);
+    color: #f0e2e1;
     font-size: 2rem;
   }
   .music-card {
@@ -271,11 +269,9 @@ img.cd_label_4{
   #performance {
     height: 100%;
     margin: 0;
-  
-
       display: grid;
       grid-template-columns: 180px 1fr; /* 6rem for the title column, and the remaining space for the content */
-      grid-template-rows: 4 auto;
+      grid-template-rows: 4fr auto;
        border: #888 solid 1px;
       width: 100%;
   }
@@ -623,7 +619,7 @@ q.quote{
 }
 
 .copyright {
-    color: darken(#ccc, 20%);
+    color: #f0e2e1;
     font-size: 0.7rem;
     margin-bottom: .5rem;
 }
@@ -654,7 +650,6 @@ q.quote{
   }
   
   #footer-section a, #footer-section .social-icon {
-
     margin: 0 0.1rem;
   }
       
