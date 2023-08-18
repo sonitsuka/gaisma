@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaisma Artist Website</title>
-    <link rel="stylesheet" href="/styles/music.css"> 
-    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="navbar.css">
     <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
@@ -34,6 +34,9 @@
         <h2 class="title">About Me</h2>
       </div>  
       <div class="about--card">
+      <div className="about-bg bgcolor-1"></div>
+      <div className="about-bg bgcolor-2"></div>
+      <div className="about-bg bgcolor-3"></div>
         <div class="about--content">
           <div class="flex-container">
             <div class="flex-item" id="about-image">
@@ -93,6 +96,46 @@
           </a>
         </div>
         <div class="music-card">
+          <h3>DJ Set</h3>
+          <div class="gallery">
+            <a href="https://soundcloud.com/mutantradio/gaisma-13122022" target="_blank">
+              <img src="https://i1.sndcdn.com/artworks-zCmzohVQkIyQ25zK-ALphPQ-t500x500.jpg" alt="Music Thumbnail">
+              <p class="">Mutant Radio 13.12.2022</p>
+            </a>
+            <a href="https://soundcloud.com/gaisma/umbaustuttgart21house?ref=clipboard&p=a&c=1" target="_blank">
+                <img src="https://i1.sndcdn.com/artworks-000634171918-fbk03p-t500x500.jpg" alt="Music Thumbnail">
+                <p>Umbau/Stuttgart21/House</p>
+            </a>
+            <a href="https://soundcloud.com/gaisma/house-party-2?ref=clipboard&p=a&c=1" target="_blank">
+                <img src="https://i1.sndcdn.com/artworks-000678411697-sm98iw-t500x500.jpg" alt="Music Thumbnail">
+                <p>House Party</p>
+            </a>
+            <a href="https://soundcloud.com/gaisma/fruit-salad-brombeere?ref=clipboard&p=a&c=1" target="_blank">
+                <img src="https://i1.sndcdn.com/artworks-000380865012-ucttl1-t500x500.jpg" alt="Music Thumbnail">
+                <p>Fruit Salad - Brombeere</p>
+            </a>
+          </div>
+        </div>
+        <div class="music-card">
+          <div class="gallery">
+            <a href="https://soundcloud.com/gaisma/klang-parfum-viola?si=6f9125d763594aa49fd5ed212dcdd003" target="_blank">
+                <img src="https://i1.sndcdn.com/artworks-7GTYzvqqVXi50Nqz-YhW2ag-t500x500.jpg" alt="Music Thumbnail">
+                <p class="">Viola {Klang Parfüm}</p>
+            </a>
+            <a href="https://soundcloud.com/gaisma/lowenzahn?si=a0b5e4a4ed034af38a0590ba02741f1c" target="_blank">
+                <img src="https://i1.sndcdn.com/artworks-higItXLEX9aWs7yN-1vctxw-t500x500.jpg" alt="Music Thumbnail">
+                <p>Löwenzahn {Klang Parfüm}</p>
+            </a>
+            <a href="https://soundcloud.com/gaisma/klang-parfum-winter-blues?si=d992466869854eb2b737741869d0184c" target="_blank">
+                <img src="https://i1.sndcdn.com/artworks-ySt4VSmhirshKoW4-XY4Hkg-t500x500.jpg" alt="Music Thumbnail">
+                <p>Winter Blues {Klang Parfüm}</p>
+            </a>
+          </div>
+        </div>
+        <div class="nav-title">
+          <h2 class="title">Video</h2>
+        </div>          
+        <div class="music-card">
           <h3>Music Video Gaisma</h3>
           <div class="gallery ">
             <a href="https://www.youtube.com/watch?v=Sk9y7KH4ARk" target="_blank">
@@ -122,28 +165,8 @@
               <p>Feel Alive</p>
             </a>
           </div>
-      </div>
-      <div class="music-card">
-        <h3>DJ Set</h3>
-        <div class="gallery">
-          <a href="https://soundcloud.com/mutantradio/gaisma-13122022" target="_blank">
-            <img src="https://i1.sndcdn.com/artworks-zCmzohVQkIyQ25zK-ALphPQ-t500x500.jpg" alt="Music Thumbnail">
-            <p class="">Mutant Radio 13.12.2022</p>
-          </a>
-          <a href="https://soundcloud.com/gaisma/umbaustuttgart21house?ref=clipboard&p=a&c=1" target="_blank">
-              <img src="https://i1.sndcdn.com/artworks-000634171918-fbk03p-t500x500.jpg" alt="Music Thumbnail">
-              <p>Umbau/Stuttgart21/House</p>
-          </a>
-          <a href="https://soundcloud.com/gaisma/house-party-2?ref=clipboard&p=a&c=1" target="_blank">
-              <img src="https://i1.sndcdn.com/artworks-000678411697-sm98iw-t500x500.jpg" alt="Music Thumbnail">
-              <p>House Party</p>
-          </a>
-          <a href="https://soundcloud.com/gaisma/fruit-salad-brombeere?ref=clipboard&p=a&c=1" target="_blank">
-              <img src="https://i1.sndcdn.com/artworks-000380865012-ucttl1-t500x500.jpg" alt="Music Thumbnail">
-              <p>Fruit Salad - Brombeere</p>
-          </a>
         </div>
-      </div>  
+      
       <div class="music-card">
         <h3>DJ & Live</h3>
         <div class="gallery">
@@ -173,20 +196,7 @@
               <p>Klang Parfüm No2</p>
           </a>
         </div>  
-        <div class="gallery">
-            <a href="https://soundcloud.com/gaisma/klang-parfum-viola?si=6f9125d763594aa49fd5ed212dcdd003" target="_blank">
-                <img src="https://i1.sndcdn.com/artworks-7GTYzvqqVXi50Nqz-YhW2ag-t500x500.jpg" alt="Music Thumbnail">
-                <p class="">Viola {Klang Parfüm}</p>
-            </a>
-            <a href="https://soundcloud.com/gaisma/lowenzahn?si=a0b5e4a4ed034af38a0590ba02741f1c" target="_blank">
-                <img src="https://i1.sndcdn.com/artworks-higItXLEX9aWs7yN-1vctxw-t500x500.jpg" alt="Music Thumbnail">
-                <p>Löwenzahn {Klang Parfüm}</p>
-            </a>
-            <a href="https://soundcloud.com/gaisma/klang-parfum-winter-blues?si=d992466869854eb2b737741869d0184c" target="_blank">
-                <img src="https://i1.sndcdn.com/artworks-ySt4VSmhirshKoW4-XY4Hkg-t500x500.jpg" alt="Music Thumbnail">
-                <p>Winter Blues {Klang Parfüm}</p>
-            </a>
-        </div>
+        
       </div>
     </section>
 

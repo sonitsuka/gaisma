@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+h2.title, h2.music--title {
+    text-align: left;
+    margin-top: 1rem;
+    color: var(--background-color);
+    padding: 1rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.nav-title, .music--title {
+    width: 180px;
+    border: var(--background-color) 0.1px solid;
+}
+
+#about, #music, #performance, #curation, #press {
+    display: flex;
+    align-items: start;
+}
+
+#music {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#music-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.music-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    width: 400px;
+    border: 1px solid #ddd;
+    background-color: #d15543;
+    padding: 0.5rem;
+    text-align: center;
+    margin: 20px;
+}
+
+.music-card h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.gallery a {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+    margin: 5px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+    </style>
+
+</head>
+<body><section id="music">
+    <div id="music-content">
+        <h2 class="music--title">Music</h2>
+        <div class="music-card">
+            <h3>Gaisma Album & EP</h3>
+            <div class="gallery">
+                <!-- Album links and images -->
+                <!-- ... (Rest remains the same) -->
+            </div>
+        </div>
+        
+        <div class="music-card">
+            <h3>Sceti EP</h3>
+            <!-- Single Album link and image -->
+            <!-- ... (Rest remains the same) -->
+        </div>
+        
+        <div class="music-card">
+            <h3>Music Video Gaisma</h3>
+            <div class="gallery">
+                <!-- Video links and thumbnails -->
+                <!-- ... (Rest remains the same) -->
+            </div>
+        </div>
+
+        <div class="music-card">
+            <h3>Music Video Sceti</h3>
+            <div class="gallery">
+                <!-- Video links and thumbnails -->
+                <!-- ... (Rest remains the same) -->
+            </div>
+        </div>
+        
+        <div class="music-card">
+            <h3>DJ Set</h3>
+            <div class="gallery">
+                <!-- DJ Set links and images -->
+                <!-- ... (Rest remains the same) -->
+            </div>
+        </div>
+        
+        <div class="music-card">
+            <h3>DJ & Live</h3>
+            <div class="gallery">
+                <!-- DJ Live links and thumbnails -->
+                <!-- ... (Rest remains the same) -->
+            </div>
+        </div>
+        
+        <div class="music-card">
+            <h3>Radio Show</h3>
+            <div class="gallery">
+                <!-- Radio Show links and thumbnails -->
+                <!-- ... (Rest remains the same) -->
+            </div>
+            <div class="gallery">
+                <!-- Radio Show audio links and thumbnails -->
+                <!-- ... (Rest remains the same) -->
+            </div>
+        </div>
+    </div>
+</section>
+    
+</body>
+</html>
+
