@@ -75,12 +75,6 @@ body, html {
       padding: 0.5rem 1rem; /* add some padding */
   }
 }
-
-
-  #about, #performance, #curation,#press{
-    display: flex;
-    align-items: start;
-  }
   
 #canvas {
   display: block;
@@ -243,7 +237,8 @@ body, html {
     position: relative;
     height: 100vh;
     overflow: hidden;
-
+    display: flex;
+    align-items: start;
   }
 
   .press--card {
@@ -412,7 +407,7 @@ body, html {
 }
 
 
-@media (min-width:768px) and (max-width: 1024px) {
+@media (min-width:768px) and (max-width: 1023px) {
   body #performance {
     grid-template-columns: 120px 1fr;
   }
@@ -434,14 +429,18 @@ body, html {
     /* */
 
 /* About section */
+/* Existing CSS */
+
+/* About section */
 #about {
   height: 100%;
+  display: flex;
+  align-items: start;
 }
 
 .about--card{
   padding: 4rem;
   background-color: #FFF8B9;
-
   margin: 0;
   background-image: url('/images/sj-objio-XFWiZTa2Ub0-unsplash.jpg');
   background-repeat: no-repeat;
@@ -463,13 +462,11 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-
 }
 
 #about-image img {
   max-width: 400px;
 }
-
 
 .about-title {
   padding: 0;
@@ -485,22 +482,103 @@ body, html {
   line-height: 1.5rem;
 }
 
-
-
 q.quote{
   text-align: center;
   display: block;
   font-size: 0.75rem;  
   margin-top: 2rem;
-
   font-style: italic;
 }
+
+/* Responsive CSS */
+
+/* Mobile */
+/* Mobile */
+@media (max-width: 768px) {
+  #about {
+      flex-direction: column; /* Make sure the content stacks vertically */
+      align-items: center; /* Center-align the content */
+  }
+  
+  .nav-title {
+      margin-bottom: 1rem; /* Add some space below the title */
+  }
+
+  .flex-container {
+      flex-direction: column;
+      align-items: center;
+      width: 100%; /* Ensure the flex-container takes up the full width */
+  }
+
+  #about-image, #about-text {
+      margin-bottom: 1.5rem;
+  }
+
+  #about-image img {
+    max-width: 100%; /* Ensure the image takes the full width of its container */
+    display: block; /* Make the image a block element */
+    margin: 0 auto; /* Center the image */
+}
+  #about-text {
+      padding: 0rem;
+      max-width: 100%;
+  }
+
+  .about-title {
+      font-size: 1.5rem;
+  }
+
+  .about--content {
+      padding: 1rem 2rem;
+  }
+  .about--card{
+    padding: 0.5rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #about-image {
+      flex-grow: 0; /* Reset flex-grow */
+      flex-basis: 40%; /* Set width to 40% */
+  }
+
+  #about-text {
+      flex-grow: 0; /* Reset flex-grow */
+      flex-basis: 60%; /* Set width to 60% */
+      padding: 0 1.5rem;
+  }
+  #about-image img {
+      max-width: 100%; /* Ensure the image takes the full width of its container */
+      display: block; /* Make the image a block element */
+      margin: 0 auto; /* Center the image */
+  }
+
+  #about-text {
+      padding: 0 1.5rem;
+  }
+
+  .about-title {
+      font-size: 1.75rem;
+  }
+
+  .about--content {
+      padding: 1rem 3rem;
+  }
+  .about--card{
+    padding: 1rem;
+  }
+}
+
+
 
   /* Curation */
   #curation{
     margin: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: start;
   }
   .curation--card{
     margin: 0;
