@@ -59,7 +59,7 @@ body, html {
 }
 
 
-@media (min-width: 481px) and (max-width: 900px) {
+@media (min-width: 481px) and (max-width: 1024px) {
   .nav-title {
       width: 120px; /* adjusted width for tablets */
       font-size: 1rem;
@@ -259,23 +259,46 @@ body, html {
   }
 
 .press--list:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* グレーライトグレーのフィルター */
+  background-color: rgba(255, 255, 255, 0.1); 
+}
+
+/* ... [All your existing styles] ... */
+
+/* Mobile */
+@media (max-width: 767px) {
+  #press {
+      flex-direction: column; /* Stack child elements vertically */
+      height: auto; /* Reset to auto so it doesn't force a specific height */
+  }
+
+  .press--card {
+      height: auto; /* Reset height to auto */
+      padding: 1rem 0.5rem; /* Adjust padding */
+      overflow-y: auto; /* Enable vertical scroll if content exceeds the viewport height */
+  }
+
+  .press--list {
+      flex-direction: column; /* Stack items vertically */
+      padding: 0.5rem 0; /* Adjust padding */
+  }
+
+  .press--list p:first-child {
+      margin-bottom: 2rem; /* Spacing between title and date */
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .press--card {
+      padding: 1.5rem; /* Adjust padding */
+  }
+
+  .press--list {
+      padding: 0.5rem 0; /* Adjust padding */
+  }
 }
 
 
-  .picture-frame {
-    float: right;
-    width: 40%;
-    transform: rotate(5deg);
-    z-index: -1;
-  }
-
-  .press-insert-img {
-    float: left;
-    transform: rotate(-5deg);
-    z-index: -1;
-  }
-  
   /* performance */
   #performance {
     height: 100%;
@@ -494,7 +517,7 @@ q.quote{
 
 /* Mobile */
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #about {
       flex-direction: column; /* Make sure the content stacks vertically */
       align-items: center; /* Center-align the content */
@@ -670,7 +693,7 @@ q.quote{
 }
 
   /* Mobile */
-@media (min-width: 350px) and (max-width: 768px) {
+@media (min-width: 350px) and (max-width: 767px) {
   #curation {
     flex-direction: column; /* Stack child elements vertically */
     align-items: center; /* Center-align the content */
@@ -709,10 +732,15 @@ q.quote{
 }
 
 /* Tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 821px) {
   .grid-container {
-      gap: 15px;
-      padding: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+  .artwork-gallery img:last-child {
+    margin-top: 1rem;
   }
 
   .exhibition-details h3 {
