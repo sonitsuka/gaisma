@@ -201,7 +201,6 @@
           </div>  
         </div>
         <div class="music-card">
-  
           <div class="gallery">
             <a href="https://youtu.be/wFM9VDz1308" target="_blank">
               <img src="https://img.youtube.com/vi/wFM9VDz1308/0.jpg" alt="Klang Parfüm">
@@ -466,13 +465,13 @@
 </footer>
 
 <script>
-    gsap.registerPlugin(ScrollTrigger);
-
+gsap.registerPlugin(ScrollTrigger);
+if (window.innerWidth > 1800) {
     let musicSection = gsap.timeline({
       scrollTrigger: {
         trigger: "#music",
         start: "top top",
-        end: "+=" + document.querySelector("#music").offsetWidth,
+        end: "+=" + document.querySelector("#music").offsetWidth, 
         scrub: true,
         pin: true
       }
@@ -482,6 +481,7 @@
       x: -window.innerWidth,
       ease: "none"
     });
+  }
 
 
 

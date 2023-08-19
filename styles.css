@@ -19,16 +19,19 @@
     --text-color:#72757e;
 }
 
-*{
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+        border: 1px solid red !important;
 }
 
-body {
+body, html {
   font-family: 'Petrona',serif; 
   margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-color: #2e2e2e;
+    max-width: 100%;
   }
 
   a {
@@ -98,8 +101,7 @@ body {
 
 
 /*---------- Music --------------------------------	*/
-
-#music, #video {
+#music {
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -111,19 +113,19 @@ body {
 #music--container {
   display: flex;
   align-items: flex-start;
+  width: 100%;
 }
-
 
 #music-content {
   display: flex;
   top: 0;
   left: 0;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .music-card {
-  flex:1;  /* fixed width */
-  min-width: 400px;    /* fixed width */
+  flex: 1 0 100%; /* Default for mobile: take the full width */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -133,15 +135,13 @@ body {
   padding: 0.5rem;
 }
 
-
 .gallery {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .gallery a {
-  flex: 0 0 calc(50% - 10px);
+  flex: 1 0 calc(50% - 10px); 
   max-width: calc(50% - 10px);
   margin: 5px;
   display: block;
@@ -154,7 +154,57 @@ body {
   border-radius: 5px;
   box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
 }
-  
+
+.video-thumbnail {
+  position: relative;
+}
+
+.video-thumbnail iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.music-card a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Ensures the anchor tag takes the full width of its parent */
+}
+
+.music-card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.cd_title {
+  font-size: 1rem;
+  padding-left: 1rem;
+  text-align: center;
+}
+
+
+/* For medium to large screens (768px to 1200px) */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .music-card {
+      flex: 1 0 calc(50% - 1rem); /* Each card takes up half the width of its parent minus a little for spacing */
+      margin: 0;
+    }
+}
+
+/* For extra-large screens (greater than 1200px) */
+@media (min-width: 1201px) {
+  .music-card {
+      flex: 1 0 calc(25% - 1rem); /* Each card takes up a quarter of the width of its parent minus a little for spacing */
+    }
+}
+ 
+
+
 .video-thumbnail {
     position: relative;
 }
@@ -168,44 +218,6 @@ body {
     z-index: 1;
 }
 
-.music-card a {
-    text-decoration: none;
-    color: inherit;
-    /* Added flex properties */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; /* This ensures the anchor tag takes the full width of its parent */
-}
-
-
-  .music-card:hover {
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.music-card a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.music-card:nth-child(4) {
-  margin-right: 10rem;
-}
-  /*  
-    .music-card:nth-child() {
-    margin-right: 10rem;
-  }
-  */
-
-
-  .music--subtitle{
-    margin: 0;
-  }
-.cd_title{
-    font-size: 1rem;
-    padding-left: 1rem;
-    text-align: center;
-}
 
 
  /* press */
@@ -367,19 +379,20 @@ body {
   pointer-events: none;
 }
 
-/* Adjustments for tablets */
-@media (max-width: 768px) {
-    #performance {
-        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
-    }
+
+@media (max-width: 963px) {
+  #performance {
+    grid-template-columns: 1fr;
+  }
+  .performance--card .video-category {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .performance--card .video {
+    flex: 1 0 100%;
+  }
 }
 
-/* Adjustments for mobiles */
-@media (max-width: 480px) {
-    #performance {
-        grid-template-columns: 1fr; /* Single column for mobiles */
-    }
-}
 
    /* NEWS  */
 #news{
@@ -440,35 +453,7 @@ body {
   line-height: 1.5rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {  /* Tablet and below */
-  .flex-container {
-      flex-direction: column;
-      align-items: center;
-  }
 
-  #about-image img {
-      width: 80%;  /* Adjust based on your preference */
-  }
-
-  .container {
-      width: 90%;
-  }
-}
-@media (max-width: 480px) {  /* Mobile and below */
-  #about {
-      padding: 5% 0;  /* Reduce padding for mobile view to accommodate content */
-  }
-  
-  #about-image img {
-      width: 90%; 
-  }
-
-  .container {
-      width: 95%;
-      padding: 0.5rem;
-  }
-}
 
 q.quote{
   text-align: center;
@@ -631,11 +616,11 @@ q.quote{
     backdrop-filter: blur(5px);
     background-color: whitesmoke;
     color: gray;
-    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
+    height: auto;
+    padding: 1rem 0;
   }
 
   #footer-section .social {
@@ -695,6 +680,7 @@ q.quote{
   
   /* Show the hamburger menu in tablet and mobile view */
   @media screen and (max-width: 768px) {
+  
     #footer-section .hamburger {
       display: block;
       cursor: pointer;
