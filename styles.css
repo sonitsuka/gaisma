@@ -166,6 +166,10 @@ body, html {
   box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
 }
 
+.gallery p {
+  padding:  0.5rem;
+}
+
 .video-thumbnail {
   position: relative;
 }
@@ -192,12 +196,30 @@ body, html {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-.cd_title {
-  font-size: 1rem;
-  padding-left: 1rem;
-  text-align: center;
-}
 
+
+/* Mobile */
+@media (max-width: 768px) {
+  #music--container {
+      flex-direction: column; /* Stack the nav-title and music-content vertically */
+  }
+
+  #music-content {
+      flex-direction: column; /* Stack the music cards vertically */
+  }
+
+  .music-card {
+      padding: 2rem; /* Adjust padding for mobile */
+  }
+
+
+  .gallery a {
+    padding: 1rem;
+      flex: 1 0 100%; /* Each gallery item takes up the full width */
+      max-width: 100%;
+  }
+
+}
 
 /* For medium to large screens (768px to 1200px) */
 @media (min-width: 768px) and (max-width: 1200px) {
