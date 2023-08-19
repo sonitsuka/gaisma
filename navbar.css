@@ -4,9 +4,7 @@ nav {
     flex-wrap: wrap;
     align-items: center;
     padding: 4px;
-    
 }
-
 
 
 .pushable {
@@ -95,23 +93,91 @@ nav {
     font-size: 13px;
 }
 
+
+.social a{
+    color: var(--subheadline-color);
+    font-size: 18px;
+}
+
+.social a:hover{
+    color: var(--main-color);
+}
+
+.social-icon.in a:hover{
+    color: #d82d7e;
+}
+.social-icon.fb a:hover{
+    color: #395185;
+}
+.social-icon.sc a:hover{
+    color: #f04923;
+}
+.social-icon.sp a:hover{
+    color: #1ed760;
+}
+.social-icon.bc a:hover{
+    color: #1f80aa;
+}
+.social-icon.yt a:hover{
+    color: #ff0000;
+}
+
+.copyright {
+    color: #f0e2e1;
+    font-size: 0.7rem;
+    margin-bottom: .5rem;
+}
+
+#footer--text{
+    font-size: .9rem;
+}
+
+/* Make the footer fixed at the bottom of the page */
+#footer-section {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    background-color: whitesmoke;
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 1rem 0;
+  }
+
+  #footer-section .social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #footer-section a, #footer-section .social-icon {
+    margin: 0 0.1rem;
+  }
+      
+ /* Nav Bar*******************************
+/* Style the navigation bar */
+#footer-section nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+  
+  /* Style the navigation links */
+  #footer-section .nav-links {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+  }
+  
+  #footer-section .nav-links li {
+    margin: 0 0.5rem;
+  }
+  
+  
 /* Responsive Design */
-@media screen and (max-width: 768px) { /* Tablet */
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-    .pushable {
-        width: 100%;
-        text-align: center;
-    }
-}
-
-@media screen and (max-width: 480px) { /* Mobile */
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
 

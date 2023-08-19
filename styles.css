@@ -47,8 +47,7 @@ body, html {
     text-align: left;
     margin-top: 1rem;
     color: var(--background-color);
-    padding: 1rem;
-    white-space: nowrap;
+
   }
 
   .nav-title {
@@ -56,12 +55,14 @@ body, html {
     border: var(--background-color) 0.1px solid;
     flex-shrink: 0; /* Prevent title from shrinking */
     align-items: center; /* Vertically center the title */
+    padding: 0.5rem;
 }
 
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 900px) {
   .nav-title {
       width: 120px; /* adjusted width for tablets */
+      font-size: 1rem;
   }
 }
 
@@ -289,13 +290,13 @@ body, html {
       grid-template-rows: 4fr auto;
       border: #888 solid 1px;
       width: 100%;
+      align-items: stretch;
   }
   
   .performance--title {
     grid-column: 1; 
     display: grid;
     grid-template-rows: auto repeat(3, 1fr); /* One row for the main title and 3 rows for the h3 tags */
-    text-align: center;
     align-items: center;
     border: #888 solid 1px;
 }
@@ -332,11 +333,8 @@ body, html {
 }
 
 .performance--text {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
     padding-bottom: 1rem;
     line-height: 1.5rem;
-
 }
 
 .video-category {
@@ -391,22 +389,41 @@ body, html {
   pointer-events: none; /* This will allow you to click the link below the iframe */
 }
 
-.vimeo-player {
-  pointer-events: none;
+/* For Mobile */
+@media (min-width:350px) and (max-width: 767px) {
+  #performance {
+      grid-template-columns: 1fr; /* Stack the title and content vertically */
+      grid-template-rows: auto; 
+  }
+
+  .performance--title, .performance--card {
+      grid-column: 1; /* Both the title and card span the full width */
+      text-align: left;
+  }
+
+  .performance--card .video-category {
+      grid-template-columns: 1fr; /* One video per row */
+      grid-auto-rows: auto;
+  }
+
+  .performance--card .video {
+      flex-basis: 100%; /* Each video takes the full width of its container */
+  }
+
+  .performance--text {
+      grid-template-columns: 1fr; /* The performance text takes the full width */
+  }
 }
 
 
-@media (max-width: 963px) {
-  #performance {
-    grid-template-columns: 1fr;
+@media (min-width:768px) and (max-width: 963px) {
+  body #performance {
+    grid-template-columns: 120px 1fr;
   }
-  .performance--card .video-category {
-    display: flex;
-    flex-wrap: wrap;
+  .performance--text {
+    text-align: left;
   }
-  .performance--card .video {
-    flex: 1 0 100%;
-  }
+
 }
 
 
@@ -577,148 +594,9 @@ q.quote{
   padding-top: 1rem;
 }
 
-
-
-  /****************************************************************
   /* */
-#stay-in-touch{
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
 
-.social a{
-    color: var(--subheadline-color);
-    font-size: 18px;
-}
-
-.social a:hover{
-    color: var(--main-color);
-}
-
-.social-icon.in a:hover{
-    color: #d82d7e;
-}
-.social-icon.fb a:hover{
-    color: #395185;
-}
-.social-icon.sc a:hover{
-    color: #f04923;
-}
-.social-icon.sp a:hover{
-    color: #1ed760;
-}
-.social-icon.bc a:hover{
-    color: #1f80aa;
-}
-.social-icon.yt a:hover{
-    color: #ff0000;
-}
-
-.copyright {
-    color: #f0e2e1;
-    font-size: 0.7rem;
-    margin-bottom: .5rem;
-}
-
-#footer--text{
-    font-size: .9rem;
-}
-
-/* Make the footer fixed at the bottom of the page */
-#footer-section {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    backdrop-filter: blur(5px);
-    background-color: whitesmoke;
-    color: gray;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: auto;
-    padding: 1rem 0;
-  }
-
-  #footer-section .social {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
   
-  #footer-section a, #footer-section .social-icon {
-    margin: 0 0.1rem;
-  }
-      
- /* Nav Bar*******************************
-/* Style the navigation bar */
-#footer-section nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.8rem;
-  }
   
-  /* Style the navigation links */
-  #footer-section .nav-links {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
-  }
   
-  #footer-section .nav-links li {
-    margin: 0 0.5rem;
-  }
-  
-  /* Style the navigation links when in smaller screens */
-  @media screen and (max-width: 1024px) {
-    #footer-section .nav-links {
-      flex-direction: column;
-      align-items: start;
-    }
-  }
-  
-  /* Style the a tags */
-  #footer-section .nav-links a {
-    color: gray;
-    text-decoration: none;
-  }
-  
-  /* Style the a tags on hover */
-  #footer-section .nav-links a:hover {
-    color: #eee;
-  }
-
-  /* Hide the hamburger menu by default */
-#footer-section .hamburger {
-    display: none;
-  }
-  
-  /* Show the hamburger menu in tablet and mobile view */
-  @media screen and (max-width: 768px) {
-  
-    #footer-section .hamburger {
-      display: block;
-      cursor: pointer;
-    }
-  
-    #footer-section .nav-links {
-      position: absolute;
-      right: 0px;
-      height: 92vh;
-      top: 8vh;
-      background-color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 50%;
-      transform: translateX(100%);
-      transition: transform 0.5s ease-in;
-    }
-  
-    /* Show the navigation links when the hamburger menu is clicked */
-    #footer-section .nav-links.show {
-      transform: translateX(0%);
-    }
-  }
   
