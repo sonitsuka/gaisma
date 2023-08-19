@@ -47,7 +47,7 @@ body, html {
 
   h2.title {
     text-align: left;
-    margin-top: 1rem;
+    padding: 0.5rem;
     color: var(--background-color);
 
   }
@@ -327,7 +327,9 @@ body, html {
     grid-template-rows: auto repeat(3, 1fr); 
     align-items: center;
     border-top: #888 solid 1px;
+    text-align: center;
 }
+
 
 .performance--title h3 {
     color: #D3D3D3;
@@ -337,7 +339,7 @@ body, html {
     grid-column: 2; 
     display: grid;
     grid-template-rows: auto repeat(3, 1fr); 
-    gap: 0;
+    gap: 20px;
     background-color: var(--background-color);
     padding: 20px;
 }
@@ -349,7 +351,7 @@ body, html {
 .performance--card .video-category {
     display: flex;
     flex-wrap: wrap; 
-    gap: 0;
+    gap: 20px;
     width: 100%;
 }
 
@@ -372,6 +374,7 @@ body, html {
 }
 .video {
   position: relative;
+  box-sizing: border-box;
 }
 
 .video--thumbnail {
@@ -398,6 +401,7 @@ body, html {
 }
 
 .credit{
+  margin-top: 1rem;
   padding-left: 1rem;
 }
 
@@ -410,6 +414,7 @@ body, html {
   display: none;
   z-index: 10;
   pointer-events: none; /* This will allow you to click the link below the iframe */
+  padding: 0.5rem;
 }
 
 /* For Mobile */
