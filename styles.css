@@ -78,24 +78,76 @@ body, html {
   }
 }
   
+
+/* HOME */
+#home {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+  margin: 0;
+  height: 100vh;
+  position: relative; 
+  overflow: hidden;
+}
+
 #canvas {
   display: block;
   margin: 0 auto;
   height: 100%;
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; /* Positioned to overlap the video */
 }
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 620px) {
 
   #home{
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(10px);
-    margin: 0;
-    height: 100vh;
+    height: 90vh;
+  }
+  #canvas {
+      display: none;
+  }
+
+  video {
+    object-fit: cover;
+    position: absolute;
+    top: 50%; /* Centering vertically */
+    left: 50%; /* Centering horizontally */
+    transform: translate(-50%, -50%);
+    min-width: 100%; /* Ensures video covers the full width */
+    padding: 0;  /* Removing padding */
+  }     
+
 }
 
+@media (min-width:621px) and (max-width: 821px) {
+  #home {
+    height: auto;  /* reset the height */
+    padding-top: 56.25%;  /* for 16:9 aspect ratio video; adjust as needed */
+  }
 
+  #canvas {
+      display: none;
+  }
 
+  video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;  /* make the video take the full height */
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0;  /* removing padding for the video to ensure it covers the entire space */
+  }
 
-
+}
 
 /*---------- Music --------------------------------	*/
 #music {
@@ -130,6 +182,10 @@ body, html {
   border: 1px solid #ddd;
   background-color: #d15543;
   padding: 0.5rem;
+}
+
+.music-card h3{
+  margin-bottom: 0.5rem;
 }
 
 .gallery {
@@ -398,12 +454,10 @@ body, html {
 .p--title {
   color: #181818;
   padding-top: 5px;
-  padding-left: 1rem;
 }
 
 .credit{
   margin-top: 1rem;
-  padding-left: 1rem;
 }
 
 .video--iframe {
@@ -455,7 +509,7 @@ body, html {
   }
   .performance--card .video {
     flex-basis: calc(50% - 1rem); /* Two videos per row on tablet */
-}
+  }
 
 }
 
@@ -502,7 +556,7 @@ body, html {
 }
 
 #about-image img {
-  max-width: 400px;
+  max-width: 360px;
 }
 
 .about-title {
@@ -548,7 +602,7 @@ q.quote{
   }
 
   #about-image img {
-    max-width: 100%; /* Ensure the image takes the full width of its container */
+    max-width: 100%; 
     display: block; /* Make the image a block element */
     margin: 0 auto; /* Center the image */
 }
@@ -573,7 +627,7 @@ q.quote{
 @media (min-width: 768px) and (max-width: 1024px) {
     #about-image {
       flex-grow: 0; /* Reset flex-grow */
-      flex-basis: 40%; /* Set width to 40% */
+      flex-basis: 36%; /* Set width to 40% */
   }
 
   #about-text {
@@ -651,8 +705,6 @@ q.quote{
 .artwork-gallery img:last-child {
   grid-column: 1 / 5; /* Spanning the entire width for the last image */
 }
-
-
 
 
 .exhibition-details h3 {

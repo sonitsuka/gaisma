@@ -21,14 +21,12 @@
 
 </head>
 <body>
-
-    <section id="home">
-      <video id="video" crossOrigin="anonymous" muted playsinline loop preload="auto" style="display:none;">
+  <section id="home">
+    <video id="video" crossOrigin="anonymous" muted playsinline loop preload="auto" autoplay>
         <source src="/images/toppage_video.mp4" type="video/mp4">
-      </video>
-
-      <canvas id="canvas" width="1440" height="1000"></canvas>
-    </section>
+    </video>
+    <canvas id="canvas" width="1440" height="1000"></canvas>
+  </section>
     <section id="about">
       <div class="nav-title">
         <h2 class="title">About Me</h2>
@@ -466,23 +464,6 @@
 </footer>
 
 <script>
-gsap.registerPlugin(ScrollTrigger);
-if (window.innerWidth > 1800) {
-    let musicSection = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#music",
-        start: "top top",
-        end: "+=" + document.querySelector("#music").offsetWidth, 
-        scrub: true,
-        pin: true
-      }
-    });
-
-    musicSection.fromTo("#music-content", {x: 0}, {
-      x: -window.innerWidth,
-      ease: "none"
-    });
-  }
 
 
 
