@@ -55,10 +55,26 @@ body, html {
     width: 180px;
     border: var(--background-color) 0.1px solid;
     flex-shrink: 0; /* Prevent title from shrinking */
-
     align-items: center; /* Vertically center the title */
+}
 
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .nav-title {
+      width: 120px; /* adjusted width for tablets */
   }
+}
+
+@media (max-width: 480px) {
+  .nav-title {
+      width: 100%; /* make it full width on mobile devices */
+      display: flex;
+      flex-direction: column; /* stack content vertically */
+      align-items: center; /* align items to the center */
+      padding: 0.5rem 1rem; /* add some padding */
+  }
+}
+
 
   #about, #performance, #curation,#press{
     display: flex;
