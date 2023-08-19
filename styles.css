@@ -23,7 +23,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-        border: 1px solid red !important;
+        /*border: 1px solid red !important;*/
 }
 
 body, html {
@@ -32,6 +32,8 @@ body, html {
     padding: 0;
     overflow-x: hidden;
     max-width: 100%;
+    background: rgb(46,46,46);
+    background: radial-gradient(circle, rgba(46,46,46,1) 0%, rgba(46,46,46,1) 100%);
   }
 
   a {
@@ -52,7 +54,7 @@ body, html {
 
   .nav-title {
     width: 180px;
-    border: var(--background-color) 0.1px solid;
+    border-top: var(--background-color) 0.1px solid;
     flex-shrink: 0; /* Prevent title from shrinking */
     align-items: center; /* Vertically center the title */
     padding: 0.5rem;
@@ -90,24 +92,8 @@ body, html {
     height: 100vh;
 }
 
-/*---------- bg --------------------------------	*/
-.about-bg {
-  position: absolute;
-  width: 300px; 
-  height: 300px;
-}
 
-.bgcolor-1 {
-  top: 0;
-  left: 0;
-  background: red;
-}
 
-.bgcolor-2 {
-  bottom: 0; 
-  right: 0;
-  background: blue;
-}
 
 
 
@@ -273,6 +259,7 @@ body, html {
   }
 
   .press--list{
+    line-height: 3rem;
     list-style: none;
     margin-bottom: 10px;
     border-bottom: whitesmoke solid 1px ;
@@ -339,7 +326,7 @@ body, html {
     display: grid;
     grid-template-rows: auto repeat(3, 1fr); 
     align-items: center;
-    border: #888 solid 1px;
+    border-top: #888 solid 1px;
 }
 
 .performance--title h3 {
@@ -474,8 +461,9 @@ body, html {
 }
     /* */
 
+    /*---------- bg --------------------------------	*/
 /* About section */
-/* Existing CSS */
+
 
 /* About section */
 #about {
@@ -486,12 +474,9 @@ body, html {
 
 .about--card{
   padding: 4rem;
-  background-color: #FFF8B9;
-  margin: 0;
-  background-image: url('/images/sj-objio-XFWiZTa2Ub0-unsplash.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background: linear-gradient(to bottom, #FD7C6E, transparent), linear-gradient(to top left, rgba(127, 255, 127, 1), transparent), linear-gradient(to top right, rgba(127, 127, 255, 1), transparent); 
+  background-blend-mode: screen;
+    margin: 0;
   width: 100%;
 }
 
