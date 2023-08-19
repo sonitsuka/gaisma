@@ -199,7 +199,7 @@ body, html {
 
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   #music--container {
       flex-direction: column; /* Stack the nav-title and music-content vertically */
   }
@@ -257,18 +257,19 @@ body, html {
  #press {
     margin: 0;
     position: relative;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     display: flex;
     align-items: start;
   }
 
   .press--card {
-    height: 100vh;
+    min-height: 50vh;
     width: 100%;
     background: url(../images/bg-press.png) no-repeat bottom center; 
     background-size: cover;
     padding: 1rem;
+    margin-bottom: 2rem;
   }
 
   .press--list{
@@ -543,10 +544,6 @@ q.quote{
   #about {
       flex-direction: column; /* Make sure the content stacks vertically */
       align-items: center; /* Center-align the content */
-  }
-  
-  .nav-title {
-      margin-bottom: 1rem; /* Add some space below the title */
   }
 
   .flex-container {

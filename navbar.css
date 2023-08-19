@@ -1,9 +1,9 @@
 nav {
     display: flex;
-    gap: 6px;
+    gap: 2px;
     flex-wrap: wrap;
     align-items: center;
-    padding: 4px;
+    padding: 2px;
 }
 
 
@@ -144,7 +144,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: auto;
-    padding: 1rem 0;
+    padding: 1rem 0 0;
   }
 
   #footer-section .social {
@@ -178,6 +178,42 @@ nav {
     margin: 0 0.5rem;
   }
   
-  
+
 /* Responsive Design */
+@media (max-width: 745px) {
+
+    /* Adjust the footer structure to display content in a column order */
+    #footer-section {
+        flex-direction: column;
+    }
+
+    /* Adjust the social icons for better layout */
+    #footer-section .social {
+        margin: 0.5rem 0;  /* Add some margin for spacing */
+    }
+
+    .mobile-hide {
+        display: none;
+    }
+    /* Style for scrollbars (for browsers that support it) */
+    nav {
+        gap: 1px;
+    }
+    nav.nav--button::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    nav.nav--button::-webkit-scrollbar-track {
+        background-color: #f0f0f0;
+    }
+
+    nav.nav--button::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 4px;
+    }
+
+    nav.nav--button::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+}
 
