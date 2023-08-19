@@ -285,52 +285,52 @@ body, html {
   #performance {
     height: 100%;
     margin: 0;
-      display: grid;
-      grid-template-columns: 180px 1fr; /* 6rem for the title column, and the remaining space for the content */
-      grid-template-rows: 4fr auto;
-      border: #888 solid 1px;
-      width: 100%;
-      align-items: stretch;
-  }
-  
-  .performance--title {
+    display: grid;
+    grid-template-columns: 180px 1fr; 
+    grid-template-rows: 4fr auto;
+    border: #888 solid 1px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.performance--title {
     grid-column: 1; 
     display: grid;
-    grid-template-rows: auto repeat(3, 1fr); /* One row for the main title and 3 rows for the h3 tags */
+    grid-template-rows: auto repeat(3, 1fr); 
     align-items: center;
     border: #888 solid 1px;
 }
 
- .performance--title h3{
-  color:#D3D3D3;
- 
- }
+.performance--title h3 {
+    color: #D3D3D3;
+}
+
 .performance--card {
     grid-column: 2; 
     display: grid;
-    grid-template-rows: auto repeat(3, 1fr); /* One row for the performance text and 3 rows for the video categories */
-    gap: 20px;
+    grid-template-rows: auto repeat(3, 1fr); 
+    gap: 0;
     background-color: var(--background-color);
     padding: 20px;
-    
 }
 
 .performance--card .performance--text {
-    grid-row: 1; /* Position the performance text in the first row */
+    grid-row: 1; 
 }
 
 .performance--card .video-category {
     display: flex;
     flex-wrap: wrap; 
-    gap: 20px;
+    gap: 0;
     width: 100%;
 }
 
 .performance--card .video {
     flex-basis: calc(33.33% - 20px); 
-      border: #cacaca solid 0.5px;
-      
+    border: #cacaca solid 0.5px;
+    padding: 0.5rem; 
 }
+
 
 .performance--text {
     padding-bottom: 1rem;
@@ -345,11 +345,6 @@ body, html {
 .video {
   position: relative;
 }
-
-.video-toggle {
-  display: none;
-}
-
 
 .video--thumbnail {
   width: 100%;
@@ -392,37 +387,41 @@ body, html {
 /* For Mobile */
 @media (min-width:350px) and (max-width: 767px) {
   #performance {
-      grid-template-columns: 1fr; /* Stack the title and content vertically */
-      grid-template-rows: auto; 
+    grid-template-columns: 1fr; /* Stack the title and content vertically */
+}
+  .video-category {
+      display: grid;
+      grid-template-columns: 1fr; /* One video per row on mobile */
   }
-
   .performance--title, .performance--card {
-      grid-column: 1; /* Both the title and card span the full width */
-      text-align: left;
-  }
-
-  .performance--card .video-category {
-      grid-template-columns: 1fr; /* One video per row */
-      grid-auto-rows: auto;
-  }
-
+    grid-column: 1; /* Both the title and card span the full width */
+}
   .performance--card .video {
-      flex-basis: 100%; /* Each video takes the full width of its container */
+      flex-basis: 100%; 
   }
-
-  .performance--text {
-      grid-template-columns: 1fr; /* The performance text takes the full width */
+  h2.title {
+    text-align: center;
+  }
+  .performance--title {
+    text-align: center;/* Both the title and card span the full width */
+  }
+  .last-video-category {
+    height:100%;
+    margin-bottom: -120px; /* Adjust this value accordingly to reduce the space */
   }
 }
 
 
-@media (min-width:768px) and (max-width: 963px) {
+@media (min-width:768px) and (max-width: 1024px) {
   body #performance {
     grid-template-columns: 120px 1fr;
   }
   .performance--text {
     text-align: left;
   }
+  .performance--card .video {
+    flex-basis: calc(50% - 1rem); /* Two videos per row on tablet */
+}
 
 }
 
