@@ -180,7 +180,27 @@ nav {
   
 /* Styles for Extra Small (XS) Devices */
 @media (max-width: 480px) {
-    /* Your XS-specific styles go here */
+  #footer-section {
+    flex-direction: column;
+    padding: 1rem 0 0;
+    }
+
+    #footer-section .social {
+        margin: 0.5rem 0;  /* Add some margin for spacing */
+    }
+
+    .mobile-hide {
+        display: none;
+    }
+
+    nav {
+        gap: 1px;
+    }
+
+    nav.nav--button::-webkit-scrollbar {
+        height: 8px;
+    }
+
 }
 
 /* Styles for Small (S) Devices */
@@ -205,18 +225,4 @@ nav {
     nav.nav--button::-webkit-scrollbar {
         height: 8px;
     }
-
-    nav.nav--button::-webkit-scrollbar-track {
-        background-color: #f0f0f0;
-    }
-
-    nav.nav--button::-webkit-scrollbar-thumb {
-        background-color: #888;
-        border-radius: 4px;
-    }
-
-    nav.nav--button::-webkit-scrollbar-thumb:hover {
-        background-color: #555;
-    }
-
 }

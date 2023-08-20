@@ -681,27 +681,7 @@ q.quote{
       margin-bottom: 2rem; /* Spacing between title and date */
   }
 
-  /* NAvbar button */
-  #footer-section {
-      flex-direction: column;
-      padding: 1rem 0 0;
-  }
-
-  #footer-section .social {
-      margin: 0.5rem 0;  /* Add some margin for spacing */
-  }
-
-  .mobile-hide {
-      display: none;
-  }
-
-  nav {
-      gap: 1px;
-  }
-
-  nav.nav--button::-webkit-scrollbar {
-      height: 8px;
-  }
+ 
 }
 
 /* Styles for Small (S) Devices */
@@ -845,24 +825,7 @@ q.quote{
       margin-bottom: 2rem; /* Spacing between title and date */
   }
 
-  #footer-section {
-    flex-direction: column;
-    padding: 1rem 0 0;
 }
-
-/* Adjust the social icons for better layout */
-#footer-section .social {
-      margin: 0.5rem 0;  /* Add some margin for spacing */
-  }
-
-  .mobile-hide {
-      display: none;
-  }
-  /* Style for scrollbars (for browsers that support it) */
-  nav {
-      gap: 1px;
-  }
-  }
 
 /* Styles for Medium (M) to Large (L) Devices Tablet */
 @media (min-width: 768px) and (max-width: 1200px) {
