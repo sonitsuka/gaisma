@@ -81,7 +81,7 @@ body, html {
   left: 0; /* Positioned to overlap the video */
 }
 
-video {
+video{
   display: none; /* Hidden by default */
   object-fit: cover;
   width: 100%;
@@ -326,7 +326,7 @@ video {
   top: 0;
   left: 0;
   width: 100% !important;
-  height: 100% !important;
+  height: 100%;
   z-index: 10;
 }
 
@@ -700,7 +700,7 @@ q.quote{
       display: none;
   }
 
-  video {
+video {
       display: block;
       top: 0;
       left: 0;
