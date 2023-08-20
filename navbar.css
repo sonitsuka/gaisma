@@ -178,11 +178,13 @@ nav {
     margin: 0 0.5rem;
   }
   
+/* Styles for Extra Small (XS) Devices */
+@media (max-width: 480px) {
+    /* Your XS-specific styles go here */
+}
 
-/* Responsive Design */
-@media (max-width: 745px) {
-
-    /* Adjust the footer structure to display content in a column order */
+/* Styles for Small (S) Devices */
+@media (max-width: 767px) {
     #footer-section {
         flex-direction: column;
         padding: 1rem 0 0;
@@ -216,6 +218,5 @@ nav {
     nav.nav--button::-webkit-scrollbar-thumb:hover {
         background-color: #555;
     }
-   
-}
 
+}

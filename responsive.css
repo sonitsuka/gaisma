@@ -1,0 +1,348 @@
+@media (min-width: 481px) and (max-width: 1024px) {
+  .nav-title {
+      width: 120px; /* adjusted width for tablets */
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-title {
+      width: 100%; /* make it full width on mobile devices */
+      display: flex;
+      flex-direction: column; /* stack content vertically */
+      align-items: center; /* align items to the center */
+      padding: 0.5rem 1rem; /* add some padding */
+  }
+}
+/* For smaller mobile devices */
+@media (max-width: 620px) {
+    #home {
+        height: 90vh;
+    }
+  
+    #canvas {
+        display: none;
+    }
+  
+    video {
+      display: block;
+      top: 50%; /* Centering vertically */
+      left: 50%; /* Centering horizontally */
+      transform: translate(-50%, -50%);
+      min-width: 100%; /* Ensures video covers the full width */
+      padding: 0;  /* Removing padding */
+      width: 100%;  /* Set the video width to 100% of the device width */
+      height: auto;
+    }
+  }
+  
+  /* For larger mobiles and tablets */
+  @media (min-width: 621px) and (max-width: 821px) {
+    #home {
+        height: auto;
+        padding-top: 56.25%; /* For 16:9 aspect ratio video */
+    }
+  
+    #canvas {
+        display: none;
+    }
+  
+    video {
+        display: block;
+        top: 0;
+        left: 0;
+    }
+  }
+
+
+
+/* Mobile */
+@media (max-width: 480px) {
+  #music--container {
+      flex-direction: column; /* Stack the nav-title and music-content vertically */
+  }
+
+  #music-content {
+      flex-direction: column; /* Stack the music cards vertically */
+  }
+
+  .music-card {
+      padding: 2rem; /* Adjust padding for mobile */
+  }
+
+
+  .gallery a {
+    padding: 1rem;
+      flex: 1 0 100%; /* Each gallery item takes up the full width */
+      max-width: 100%;
+  }
+
+}
+
+/* For medium to large screens (768px to 1200px) */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .music-card {
+      flex: 1 0 calc(50% - 1rem); /* Each card takes up half the width of its parent minus a little for spacing */
+      margin: 0;
+    }
+}
+
+/* For extra-large screens (greater than 1200px) */
+@media (min-width: 1201px) {
+  .music-card {
+      flex: 1 0 calc(25% - 1rem); /* Each card takes up a quarter of the width of its parent minus a little for spacing */
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 767px) {
+  #press {
+      flex-direction: column; /* Stack child elements vertically */
+      height: auto; /* Reset to auto so it doesn't force a specific height */
+  }
+
+  .press--card {
+      height: auto; /* Reset height to auto */
+      padding: 1rem 0.5rem; /* Adjust padding */
+      overflow-y: auto; /* Enable vertical scroll if content exceeds the viewport height */
+  }
+
+  .press--list {
+      flex-direction: column; /* Stack items vertically */
+      padding: 0.5rem 0; /* Adjust padding */
+  }
+
+  .press--list p:first-child {
+      margin-bottom: 2rem; /* Spacing between title and date */
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .press--card {
+      padding: 1.5rem; /* Adjust padding */
+  }
+
+  .press--list {
+      padding: 0.5rem 0; /* Adjust padding */
+  }
+}
+
+
+/* For Mobile */
+@media (min-width:350px) and (max-width: 767px) {
+  #performance {
+    grid-template-columns: 1fr; /* Stack the title and content vertically */
+}
+  .video-category {
+      display: grid;
+      grid-template-columns: 1fr; /* One video per row on mobile */
+  }
+  .performance--title, .performance--card {
+    grid-column: 1; /* Both the title and card span the full width */
+}
+  .performance--card .video {
+      flex-basis: 100%; 
+  }
+  h2.title {
+    text-align: center;
+  }
+  .performance--title {
+    text-align: center;/* Both the title and card span the full width */
+  }
+  .last-video-category {
+    height:100%;
+    margin-bottom: -120px; /* Adjust this value accordingly to reduce the space */
+  }
+}
+
+
+@media (min-width:768px) and (max-width: 1023px) {
+  body #performance {
+    grid-template-columns: 120px 1fr;
+  }
+  .performance--text {
+    text-align: left;
+  }
+  .performance--card .video {
+    flex-basis: calc(50% - 1rem); /* Two videos per row on tablet */
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  #about {
+      flex-direction: column; /* Make sure the content stacks vertically */
+      align-items: center; /* Center-align the content */
+  }
+
+  .flex-container {
+      flex-direction: column;
+      align-items: center;
+      width: 100%; /* Ensure the flex-container takes up the full width */
+  }
+
+  #about-image, #about-text {
+      margin-bottom: 1.5rem;
+  }
+
+  #about-image img {
+    max-width: 100%; 
+    display: block; /* Make the image a block element */
+    margin: 0 auto; /* Center the image */
+}
+  #about-text {
+      padding: 0rem;
+      max-width: 100%;
+  }
+
+  .about-title {
+      font-size: 1.5rem;
+  }
+
+  .about--content {
+      padding: 1rem 2rem;
+  }
+  .about--card{
+    padding: 0.5rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #about-image {
+      flex-grow: 0; /* Reset flex-grow */
+      flex-basis: 36%; /* Set width to 40% */
+  }
+
+  #about-text {
+      flex-grow: 0; /* Reset flex-grow */
+      flex-basis: 60%; /* Set width to 60% */
+      padding: 0 1.5rem;
+  }
+  #about-image img {
+      max-width: 100%; /* Ensure the image takes the full width of its container */
+      display: block; /* Make the image a block element */
+      margin: 0 auto; /* Center the image */
+  }
+
+  #about-text {
+      padding: 0 1.5rem;
+  }
+
+  .about-title {
+      font-size: 1.75rem;
+  }
+
+  .about--content {
+      padding: 1rem 3rem;
+  }
+  .about--card{
+    padding: 1rem;
+  }
+}
+
+
+/* Mobile */
+@media (min-width: 350px) and (max-width: 767px) {
+  #curation {
+    flex-direction: column; /* Stack child elements vertically */
+    align-items: center; /* Center-align the content */
+  }
+
+  .grid-container {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+  }
+
+  .exhibition-details {
+      order: 2; /* Move exhibition details below the gallery on mobile */
+      margin-top: 1rem;
+  }
+  .artwork-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .artwork-gallery img:last-child {
+    margin-top: 1rem;
+    grid-column: 1 / 3; /* Spanning the two columns for the last image */
+  }
+
+  .exhibition-details h3, .exhibition-details h4 {
+      font-size: 1.2rem;
+  }
+
+  .exhibition-details p, .poster-credit, .credits-section p {
+      font-size: 0.9rem;
+  }
+
+  .credits-section h4 {
+      font-size: 1rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 821px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+  .artwork-gallery img:last-child {
+    margin-top: 1rem;
+  }
+
+  .exhibition-details h3 {
+      font-size: 1.4rem;
+  }
+
+  .exhibition-details h4 {
+      font-size: 1rem;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 745px) {
+
+    /* Adjust the footer structure to display content in a column order */
+    #footer-section {
+        flex-direction: column;
+        padding: 1rem 0 0;
+    }
+
+    /* Adjust the social icons for better layout */
+    #footer-section .social {
+        margin: 0.5rem 0;  /* Add some margin for spacing */
+    }
+
+    .mobile-hide {
+        display: none;
+    }
+    /* Style for scrollbars (for browsers that support it) */
+    nav {
+        gap: 1px;
+    }
+    nav.nav--button::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    nav.nav--button::-webkit-scrollbar-track {
+        background-color: #f0f0f0;
+    }
+
+    nav.nav--button::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 4px;
+    }
+
+    nav.nav--button::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+    }
+   
+}
+  
