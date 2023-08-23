@@ -577,10 +577,10 @@ q.quote{
   }
 
   .about--content {
-      padding: 1rem 2rem;
+      padding: 1rem;
   }
   .about--card{
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
   }
 
   #music--container {
@@ -591,16 +591,15 @@ q.quote{
       flex-direction: column; /* Stack the music cards vertically */
   }
 
-  .music-card {
-      padding: 2rem; /* Adjust padding for mobile */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .gallery a {
-      padding: 1rem;
-      flex: 1 0 100%; /* Each gallery item takes up the full width */
-      max-width: 100%;
+      padding: 0.5rem;
+      max-width: 50%;
   }
-
 
     /* PERFORMANCE */
     #performance {
