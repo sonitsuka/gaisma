@@ -484,6 +484,11 @@ q.quote{
   margin: 0;
 }
 
+.credits-section a{
+  color: inherit;
+  font-weight: 500;
+}
+
 .exhibition-details img {
   max-width: 100%;
   transition: transform 0.3s;
