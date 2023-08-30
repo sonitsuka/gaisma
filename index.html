@@ -30,7 +30,7 @@
     <canvas id="canvas" width="1440" height="1000"></canvas>
   </section>
   <section id="about">
-    <div class="nav-title">
+    <div class="nav-title no-border">
       <h2 class="title">About Me</h2>
     </div>
     <div class="about--card">
@@ -165,7 +165,7 @@
       <div class="nav-title">
         <h2 class="title">Video</h2>
       </div>
-      <div id="music-content">
+      <div id="video--content">
 
         <div class="music-card">
           <h3>Music Video Gaisma</h3>
@@ -382,11 +382,12 @@
         <div class="exhibition-details">
           <h4 class="">Festival</h4>
           <h3>We Are The Future</h3>
-          <p>Family Festival in the German city of Waiblingen, offering
+          <p>Family Festival in the German city of Waiblingen, offering Skate, BMX, Streetboard, Hip - Hop, Graffiti, Parkour, Fashion and Recycling Workshops, as well as Music Shows and Sport contests 
+            
           </p>
 
           <div class="credits-section">
-            <p class="funding">as well as Music Shows and Sport contests<br />
+            <p class="funding">
               <a href="https://www.wearethefuture-festival.de" target="_blank"><p>Learn more: https://www.wearethefuture-festival.de</p></a> 
           </div>
         </div>
@@ -507,7 +508,7 @@
 
 
 
-    // Functionality for the FAQ section
+    // Functionality for the press section
     const faq = document.querySelector('#press');
     faq.addEventListener('click', event => {
       if (event.target.tagName === 'BUTTON') {
@@ -576,69 +577,69 @@
       });
     });
 
+    // Youtube Preview mouseover
+    // Dictionary to store YouTube players
+    let ytPlayers = {};
+
+    // Function to initialize YouTube player
+    function initYTPlayer(iframe, videoId) {
+      const player = new YT.Player(iframe, {
+        videoId: videoId,
+        events: {
+          'onReady': (event) => {
+            event.target.mute(); // Mute the video
+          }
+        }
+      });
+      ytPlayers[videoId] = player;
+    }
+
+    // Initialize YouTube iFrame API
+    function onYouTubeIframeAPIReady() {
+      const iframes = document.querySelectorAll('.video--iframe');
+
+      iframes.forEach(iframe => {
+        const videoId = iframe.getAttribute('data-video-id'); // Assumes data-video-id contains the YouTube video ID
+        initYTPlayer(iframe, videoId);
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       const thumbnails = document.querySelectorAll('.video--thumbnail');
 
       thumbnails.forEach(thumbnail => {
-        let player;
-
         thumbnail.addEventListener('mouseenter', e => {
           const parent = thumbnail.closest('a');
+          const videoId = parent.getAttribute('data-video-id'); // Assumes data-video-id contains the YouTube video ID
 
           if (parent.href.includes('youtu.be') || parent.href.includes('youtube.com')) {
-            const videos = document.querySelectorAll('.video');
-
-            videos.forEach(video => {
-              video.addEventListener("mouseover", function () {
-                let iframe = video.querySelector(".video--iframe");
-                if (iframe) {
-                  iframe.style.display = "block";
-                }
-              });
-
-              video.addEventListener("mouseout", function () {
-                let iframe = video.querySelector(".video--iframe");
-                if (iframe) {
-                  iframe.style.display = "none";
-                  iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*'); // This stops the video playback
-                }
-              });
-            });
-
-          } else if (parent.href.includes('vimeo.com')) {
-            const videoId = parent.href.split('/').pop(); // Extracts the Vimeo video ID from the URL
-
-            // Check if a Vimeo player container already exists
-            let div = parent.querySelector('.vimeo-container');
-            if (!div) {
-              div = document.createElement('div');
-              div.className = 'vimeo-container';
-              div.style.width = '100%';
-              div.style.height = '250px';
-              parent.appendChild(div);
-
-              // Create Vimeo player
-              player = new Vimeo.Player(div, {
-                id: videoId,
-                width: '100%',
-                height: '250',
-                autoplay: true,
-                muted: true
-              });
-            } else if (player) {
-              player.play(); // Play video if player already exists
+            const player = ytPlayers[videoId];
+            if (player) {
+              player.seekTo(0); // Rewind to the beginning
+              player.playVideo(); // Play video
             }
+          } else if (parent.href.includes('vimeo.com')) {
+            // Your existing Vimeo code here...
           }
         });
 
         thumbnail.addEventListener('mouseleave', e => {
-          if (player) {
-            player.pause();  // Pause the video instead of destroying the player
+          const parent = thumbnail.closest('a');
+          const videoId = parent.getAttribute('data-video-id'); // Assumes data-video-id contains the YouTube video ID
+
+          if (parent.href.includes('youtu.be') || parent.href.includes('youtube.com')) {
+            const player = ytPlayers[videoId];
+            if (player) {
+              player.stopVideo(); // Stop video
+            }
+          } else if (parent.href.includes('vimeo.com')) {
+            // Your existing Vimeo code here...
           }
         });
       });
     });
 
+    
     // canvas tv 
     const video = document.querySelector('#home--video');
     const app = new PIXI.Application({
