@@ -23,7 +23,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-        /*border: 1px solid red !important;*/
 }
 
 body, html {
@@ -117,7 +116,7 @@ video{
 }
 
 #video--content {
-  background: url(./images/bg-video_with_Lighter_Overlay.png) no-repeat bottom; 
+  background: url(./images/bg-video_with_Less_Transparent_Overlay.png) no-repeat bottom; 
   background-size: cover;
   display: flex;
   top: 0;
@@ -260,9 +259,10 @@ video{
     display: grid;
     grid-template-columns: 180px 1fr; 
     grid-template-rows: 4fr auto;
-    border: #888 solid 1px;
     width: 100%;
     align-items: stretch;
+    color: #D3D3D3;
+
 }
 
 .performance--title {
@@ -283,7 +283,6 @@ video{
 
 .performance--title h3 {
   border-bottom: var(--background-color) 0.1px solid;
-    color: #D3D3D3;
     hyphens: auto;
     word-wrap: break-word;  /* Older browsers */
     overflow-wrap: break-word;
@@ -294,9 +293,8 @@ video{
     display: grid;
     grid-template-rows: auto repeat(3, 1fr); 
     gap: 20px;
-    background: rgb(0,201,167);
-    background: linear-gradient(0deg, rgb(220, 246, 200) 0%, rgb(116, 203, 199) 60%, rgba(0,201,167,1) 100%);
     padding: 20px;
+    background: url(/images/bg-perf-gray_smoke.png);
 }
 
 .performance--card .performance--text {
@@ -314,12 +312,14 @@ video{
     flex-basis: calc(33.33% - 20px); 
     border: #cacaca solid 0.5px;
     padding: 0.5rem; 
+    background-color: #2e2e2e;
 }
 
 
 .performance--text {
-    padding-bottom: 1rem;
+    padding: 1rem ;
     line-height: 1.5rem;
+    background-color: #2e2e2e;
 }
 
 .video-category {
@@ -350,7 +350,6 @@ video{
 
 
 .p--title {
-  color: #181818;
   padding-top: 5px;
 }
 
