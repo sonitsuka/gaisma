@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video on TV</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.2/pixi.min.js"></script>
+    <style>
+        #canvas {
+            display: block;
+            margin: 0 auto;
+            background-color: #000;
+        }
+        
+        body{
+            margin: 0;           
+        background-image: url('../images/bg_tv.png');
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        
+        background-size: cover;
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(5px);
+}
+    </style>
+</head>
+<body>
+    <video id="video" crossOrigin="anonymous" muted playsinline loop preload="auto" style="display:none;">
+        <source src="/images/Visualizer540p.mp4" type="video/mp4">
+    </video>
+
+    <canvas id="canvas" width="1437" height="1011"></canvas>
+
+    <script>
+        const video = document.querySelector('#video');
+        const app = new PIXI.Application({
+            view: document.getElementById('canvas'),
+            width: 1437,
+            height: 1011,
+            transparent: true
+        });
+
+        video.addEventListener('loadeddata', function () {
+            // Background image
+            const bgTexture = PIXI.Texture.from('/images/bg_tv.png');
+            const bgSprite = new PIXI.Sprite(bgTexture);
+            app.stage.addChild(bgSprite);
+
+            // Video texture
+            const videoTexture = PIXI.Texture.from(video);
+            const videoSprite = new PIXI.Sprite(videoTexture);
+
+            // NOTE: Adjust these values based on the exact position and skew of the TV screen in the bg_tv.png image.
+            // These are placeholder values and might not fit perfectly.
+            videoSprite.x = 520;         // Example x position, adjust as needed
+            videoSprite.y = 390;         // Example y position, adjust as needed
+            videoSprite.width = 1437*0.35;    // Example width, adjust as needed
+            videoSprite.height = 1011*0.41;    // Example height, adjust as needed
+
+            // Skew the video to fit the TV screen perspective
+            //videoSprite.skew.x = -0.05;   // Example skew value, adjust as needed
+            //videoSprite.skew.y = 0.05;   // Example skew value, adjust as needed
+
+            // Create a mask with rounded corners
+            const mask = new PIXI.Graphics();
+            mask.beginFill(0xFFFFFF);
+            mask.drawRoundedRect(videoSprite.x, videoSprite.y, videoSprite.width, videoSprite.height, 30);  // 50 is the border-radius, adjust as needed
+            mask.endFill();
+
+            app.stage.addChild(mask);
+
+            // Apply the mask to the video sprite
+            videoSprite.mask = mask;
+            app.stage.addChild(videoSprite);
+
+            video.play();
+        });
+    </script>
+</body>
+</html>
