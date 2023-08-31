@@ -93,12 +93,66 @@ nav {
     font-size: 13px;
 }
 
-
-.social a{
-    color: var(--subheadline-color);
-    font-size: 18px;
+/* Footer social container */
+#footer-section .social {
+    display: flex;
+    justify-content: center; /* Centers the icons */
+    align-items: center;
 }
 
+.social a, .social .social-icon {
+    border-radius: 50%; /* Circular background */
+    display: inline-block; 
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    width: 28px; /* Circle width */
+    height: 28px; /* Circle height */
+    line-height: 28px;
+    text-align: center;
+    margin: 0 5px; /* Margin between icons */
+    transition: all 0.3s ease; /* Transition effect */
+    font-size: 16px;
+}
+
+/* Individual background colors */
+.social a {
+    background-color: #b39cd0;
+}
+
+.social-icon.in a {
+    background-color: #d82d7e;
+}
+
+.social-icon.fb a {
+    background-color: #395185;
+}
+
+.social-icon.sc a {
+    background-color: #f04923;
+}
+
+.social-icon.sp a {
+    background-color: #1ed760;
+}
+
+.social-icon.bc a {
+    background-color: #1f80aa;
+}
+
+.social-icon.yt a {
+    background-color: #ff0000;
+}
+
+/* Hover effect */
+.social a:hover {
+    color: #FFF; /* White color on hover */
+}
+
+.social-icon.in a:hover, .social-icon.fb a:hover, .social-icon.sc a:hover, .social-icon.sp a:hover, .social-icon.bc a:hover, .social-icon.yt a:hover {
+    color: #FFF;
+}
+
+/*
 .social a:hover{
     color: var(--main-color);
 }
@@ -121,11 +175,10 @@ nav {
 .social-icon.yt a:hover{
     color: #ff0000;
 }
-
+*/
 .copyright {
-    color: #555;
+    color: #F5F5F5;
     font-size: 0.7rem;
-    margin-bottom: .5rem;
 }
 
 #footer--text{
@@ -138,24 +191,16 @@ nav {
     bottom: 0;
     width: 100%;
     backdrop-filter: blur(5px);
-    background: linear-gradient(99deg, rgba(179,156,208,1) 0%, rgba(0,201,167,1) 100%);
+    background: url(./images/bg-footer.png) repeat;
     color: gray;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: auto;
-    padding: 1rem 0;
+    padding: 5px 10px;
   }
 
-  #footer-section .social {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  #footer-section a, #footer-section .social-icon {
-    margin: 0 0.1rem;
-  }
+
       
  /* Nav Bar*******************************
 /* Style the navigation bar */
