@@ -224,8 +224,8 @@
               <p>Bold Decisions - Gaisma aka Tumsi</p>
             </a>
             <a href="https://www.youtube.com/watch?v=aRcXE3MpmSI" target="_blank">
-              <img src="https://img.youtube.com/vi/aRcXE3MpmSI/0.jpg" alt=" Live Perfomance for Synthstrom Festival- Antidote">
-              <p>Synthstrom Festival- Antidote</p>
+              <img src="https://img.youtube.com/vi/aRcXE3MpmSI/0.jpg" alt="">
+              <p> Synthstrom Festival- Antidote</p>
             </a>
           </div>
         </div>
@@ -265,34 +265,25 @@
       <div class="video-category">
 
         <div class="video">
-          <a href="https://youtu.be/h98Q9zuAS54" target="_blank">
-            <img src="https://img.youtube.com/vi/h98Q9zuAS54/0.jpg" alt="Emotional Traffic Thumbnail"
-              class="video--thumbnail">
-            <iframe class="video--iframe"
-              src="https://www.youtube.com/embed/h98Q9zuAS54?autoplay=1&mute=1&controls=0&modestbranding=1"
-              frameborder="0" allow="autoplay"></iframe>
+          <a href="https://youtu.be/h98Q9zuAS54" target="_blank" >
+            <img src="https://img.youtube.com/vi/h98Q9zuAS54/0.jpg" alt="Emotional Traffic Thumbnail" class="video--thumbnail">
+            <iframe class="video--iframe" src="https://www.youtube.com/embed/h98Q9zuAS54?autoplay=1&mute=1&controls=0&modestbranding=1" frameborder="0" allow="autoplay" data-video-id="h98Q9zuAS54"></iframe>
             <h4 class="p--title">Emotional Traffic - Alisa Scetinina</h4>
           </a>
         </div>
-
+      
         <div class="video">
-          <a href="https://youtu.be/UVqem5Be9VI" target="_blank">
-            <img src="https://img.youtube.com/vi/UVqem5Be9VI/0.jpg" alt="Retaken Heart Thumbnail"
-              class="video--thumbnail">
-            <iframe class="video--iframe"
-              src="https://www.youtube.com/embed/UVqem5Be9VI?autoplay=1&mute=1&controls=0&modestbranding=1"
-              frameborder="0" allow="autoplay"></iframe>
-            <h4 class="p--title">Retaken Heart - A Journey into the heart // Azimuth Arts and Dance Ensemble
-              - Gonçalo Cruzinha</h4>
+          <a href="https://youtu.be/UVqem5Be9VI" target="_blank" >
+            <img src="https://img.youtube.com/vi/UVqem5Be9VI/0.jpg" alt="Retaken Heart Thumbnail" class="video--thumbnail">
+            <iframe class="video--iframe" src="https://www.youtube.com/embed/UVqem5Be9VI?autoplay=1&mute=1&controls=0&modestbranding=1" frameborder="0" allow="autoplay" data-video-id="UVqem5Be9VI"></iframe>
+            <h4 class="p--title">Retaken Heart - A Journey into the heart // Azimuth Arts and Dance Ensemble - Gonçalo Cruzinha</h4>
           </a>
         </div>
-
+      
         <div class="video">
-          <a href="https://youtu.be/GIh38PjyJnQ" target="_blank">
+          <a href="https://youtu.be/GIh38PjyJnQ" target="_blank" >
             <img src="https://img.youtube.com/vi/GIh38PjyJnQ/0.jpg" alt="Intact Thumbnail" class="video--thumbnail">
-            <iframe class="video--iframe"
-              src="https://www.youtube.com/embed/GIh38PjyJnQ?autoplay=1&mute=1&controls=0&modestbranding=1"
-              frameborder="0" allow="autoplay"></iframe>
+            <iframe class="video--iframe" src="https://www.youtube.com/embed/GIh38PjyJnQ?autoplay=1&mute=1&controls=0&modestbranding=1" frameborder="0" allow="autoplay" data-video-id="GIh38PjyJnQ"></iframe>
             <h4 class="p--title">Intact - Noverre - Young Choreographers Of Stuttgart Ballet 2017</h4>
           </a>
           <p class="credit">Choreography : Alisa Scetinina<br>Composer - Alisa Scetinina<br>Dancers : Shaked Heller &
@@ -329,12 +320,9 @@
 
         <div class="video">
           <label for="video1">
-            <a href="https://youtu.be/mK-petdPykc" target="_blank">
-              <img src="https://img.youtube.com/vi/mK-petdPykc/0.jpg" alt="Levin Goes Lightly Thumbnail"
-                class="video--thumbnail">
-              <iframe class="video--iframe"
-                src="https://www.youtube.com/embed/mK-petdPykc?autoplay=1&mute=1&controls=0&modestbranding=1"
-                frameborder="0" allow="autoplay"></iframe>
+            <a href="https://youtu.be/mK-petdPykc" target="_blank" >
+              <img src="https://img.youtube.com/vi/mK-petdPykc/0.jpg" alt="Levin Goes Lightly Thumbnail" class="video--thumbnail">
+              <iframe class="video--iframe" src="https://www.youtube.com/embed/mK-petdPykc?autoplay=1&mute=1&controls=0&modestbranding=1" frameborder="0" data-video-id="mK-petdPykc"></iframe>
               <h4 class="p--title">Levin Goes Lightly - Geschichten (official)</h4>
             </a>
             <p class="credit">Music & Text - Levin Stadler<br>Directed by Nicolas Ohnesorge<br>Starring : Alena Hermes,
@@ -590,66 +578,67 @@
     });
 
     // Youtube Preview mouseover
-    // Dictionary to store YouTube players
-    let ytPlayers = {};
+    window.onYouTubeIframeAPIReady = function() {
+  console.log("YouTube API is ready.");
+  const ytPlayers = {};
 
-    // Function to initialize YouTube player
-    function initYTPlayer(iframe, videoId) {
-      const player = new YT.Player(iframe, {
-        videoId: videoId,
-        events: {
-          'onReady': (event) => {
-            event.target.mute(); // Mute the video
-          }
-        }
-      });
-      ytPlayers[videoId] = player;
-    }
+  // Initialize all players
+  document.querySelectorAll('.video--iframe').forEach(iframe => {
+      const videoId = iframe.getAttribute('data-video-id');
+      console.log(`Initializing player for iframe: ${iframe.outerHTML} and video ID: ${videoId}`);
 
-    // Initialize YouTube iFrame API
-    function onYouTubeIframeAPIReady() {
-      const iframes = document.querySelectorAll('.video--iframe');
-
-      iframes.forEach(iframe => {
-        const videoId = iframe.getAttribute('data-video-id'); // Assumes data-video-id contains the YouTube video ID
-        initYTPlayer(iframe, videoId);
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const thumbnails = document.querySelectorAll('.video--thumbnail');
-
-      thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('mouseenter', e => {
-          const parent = thumbnail.closest('a');
-          const videoId = parent.getAttribute('data-video-id'); // Assumes data-video-id contains the YouTube video ID
-
-          if (parent.href.includes('youtu.be') || parent.href.includes('youtube.com')) {
-            const player = ytPlayers[videoId];
-            if (player) {
-              player.seekTo(0); // Rewind to the beginning
-              player.playVideo(); // Play video
+      if (videoId) {  // only initialize if videoId is not null
+        ytPlayers[videoId] = new YT.Player(iframe, {
+          videoId,
+          events: {
+            'onReady': function(event) {
+              console.log(`Player for video ID ${videoId} is ready.`);
+              event.target.mute();
+              ytPlayers[videoId] = event.target;
+              
+              // Add the onStateChange event listener here
+              event.target.addEventListener("onStateChange", function(event) {
+                if (event.data == YT.PlayerState.PLAYING) {
+                  console.log("Video is playing");
+                }
+              });
             }
-          } else if (parent.href.includes('vimeo.com')) {
-            // Your existing Vimeo code here...
           }
         });
-
-        thumbnail.addEventListener('mouseleave', e => {
-          const parent = thumbnail.closest('a');
-          const videoId = parent.getAttribute('data-video-id'); // Assumes data-video-id contains the YouTube video ID
-
-          if (parent.href.includes('youtu.be') || parent.href.includes('youtube.com')) {
-            const player = ytPlayers[videoId];
-            if (player) {
-              player.stopVideo(); // Stop video
-            }
-          } else if (parent.href.includes('vimeo.com')) {
-            // Your existing Vimeo code here...
-          }
-        });
-      });
+      }
     });
+
+  // Add mouseenter and mouseleave event listeners
+  document.querySelectorAll('.video--thumbnail').forEach(thumbnail => {
+    thumbnail.addEventListener('mouseenter', function(e) {
+      const parent = thumbnail.closest('a');
+      const videoId = parent.getAttribute('data-video-id');
+
+      if (videoId && ytPlayers[videoId]) {
+        const player = ytPlayers[videoId];
+        console.log('Attempting to play video.');
+        player.seekTo(0);
+        player.playVideo();
+      }
+    });
+
+    thumbnail.addEventListener('mouseleave', function(e) {
+      const parent = thumbnail.closest('a');
+      const videoId = parent.getAttribute('data-video-id');
+
+      if (videoId && ytPlayers[videoId]) {
+        const player = ytPlayers[videoId];
+        console.log('Attempting to stop video.');
+        player.stopVideo();
+      }
+    });
+  });
+};
+
+    
+
+
+
 
     
     // canvas tv 
