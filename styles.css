@@ -11,7 +11,6 @@
     --accent-color:#00c9a7;
     --storke: #181818;
     --main-background: #f2eef5;
-
     --background-color:#f6efef;
     --headline-color:#2e2e2e;
     --subheadline-color:#4b4453;
@@ -32,7 +31,7 @@ body, html {
     overflow-x: hidden;
     max-width: 100%;
     background: radial-gradient(circle, rgba(46,46,46,1) 0%, rgba(46,46,46,1) 100%);
-  }
+}
 
   a {
     text-decoration: none;
@@ -107,12 +106,26 @@ video{
   flex-direction: column;
   height: 100%;
   position: relative;
+  color: #fff;
 }
 
 #music--container {
   display: flex;
   align-items: flex-start;
   width: 100%;
+
+}
+
+#music-content {
+  background: url(./images/perlin_noise_lighter.png) repeat ; 
+  background-size: cover;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  flex-wrap: wrap;
+
+
 }
 
 #video-content {
@@ -125,22 +138,13 @@ video{
   flex-wrap: wrap;
 }
 
-#music-content {
-  background: url(./images/bg-music_dark_overlay.png) no-repeat bottom; 
-  background-size: cover;
-  display: flex;
-  top: 0;
-  left: 0;
-  width: 100%;
-  flex-wrap: wrap;
-}
+
 
 .music-card {
   flex: 1 0 100%; /* Default for mobile: take the full width */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
   border: 1px solid #ddd;
   padding: 0.5rem;
   flex: 1 0 calc(25% - 1rem); 
@@ -319,6 +323,7 @@ video{
 .performance--text {
     padding: 1rem ;
     line-height: 1.5rem;
+    font-size: 1.1rem;
     color: #fff;
     backdrop-filter: blur(5px);
 }
@@ -405,7 +410,7 @@ video{
   background-color: rgba(44, 42, 42, 0.7); /* Adjusted transparency */
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3px);
-  color: #cacaca;
+  color: #ddd;
 }
 
 .flex-container {
