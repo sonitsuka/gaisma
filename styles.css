@@ -115,7 +115,7 @@ video{
   width: 100%;
 }
 
-#video--content {
+#video-content {
   background: url(./images/bg-video_with_Less_Transparent_Overlay.png) no-repeat bottom; 
   background-size: cover;
   display: flex;
@@ -140,7 +140,7 @@ video{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  color: white;
+
   border: 1px solid #ddd;
   padding: 0.5rem;
   flex: 1 0 calc(25% - 1rem); 
@@ -319,7 +319,8 @@ video{
 .performance--text {
     padding: 1rem ;
     line-height: 1.5rem;
-    background-color: #2e2e2e;
+    color: #fff;
+    backdrop-filter: blur(5px);
 }
 
 .video-category {
@@ -612,6 +613,10 @@ q.quote{
   #music-content {
       flex-direction: column; /* Stack the music cards vertically */
   }
+
+  #video-content {
+    flex-direction: column; /* Stack the music cards vertically */
+}
 
   .gallery {
     display: flex;
