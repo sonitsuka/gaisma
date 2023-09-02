@@ -191,7 +191,6 @@ nav {
     bottom: 0;
     width: 100%;
     backdrop-filter: blur(5px);
-    background: url(./images/bg-footer.png) repeat;
     color: gray;
     display: flex;
     justify-content: space-between;
