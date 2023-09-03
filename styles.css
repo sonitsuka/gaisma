@@ -30,7 +30,7 @@ body, html {
     padding: 0;
     overflow-x: hidden;
     max-width: 100%;
-    background: radial-gradient(circle, rgba(46,46,46,1) 0%, rgba(46,46,46,1) 100%);
+    background: url(./images/bg-body.png) repeat ; 
 }
 
   a {
@@ -218,7 +218,6 @@ video{
 }
 
 
-
  /* press */
  #press {
     margin: 0;
@@ -279,17 +278,18 @@ video{
     padding: 0.5rem;
 }
 
-.performance--title h2 {
+.performance--title h2, .performance--title h3 {
   hyphens: auto;
-  word-wrap: break-word;  /* Older browsers */
+  word-wrap: break-word;
   overflow-wrap: break-word;
+  width: 100%;  
+  overflow: visible;  /* Allow overflow */
+  min-width: 0;  /* Allow element to shrink */
 }
+
 
 .performance--title h3 {
   border-bottom: var(--background-color) 0.1px solid;
-    hyphens: auto;
-    word-wrap: break-word;  /* Older browsers */
-    overflow-wrap: break-word;
 }
 
 .performance--card {
@@ -317,6 +317,8 @@ video{
     border: #cacaca solid 0.5px;
     padding: 0.5rem; 
     background-color: #2e2e2e;
+    position: relative;
+    box-sizing: border-box;
 }
 
 
@@ -635,17 +637,24 @@ q.quote{
 
     /* PERFORMANCE */
     #performance {
-      grid-template-columns: 1fr; /* Stack the title and content vertically */
+      grid-template-columns: 1fr; 
     }
     .video-category {
-        display: grid;
-        grid-template-columns: 1fr; /* One video per row on mobile */
+        display: block;
+        margin-bottom: 20px;
     }
-    .performance--title, .performance--card {
-      grid-column: 1; /* Both the title and card span the full width */
+
+    .performance--card {
+      display: block;  
+      grid-column: 1
+  }
+    .performance--title {
+      grid-column: 1; 
     }
+
     .performance--card .video {
-        flex-basis: 100%; 
+      width: 100%;
+      flex-basis: auto; 
     }
     h2.title {
       text-align: center;
@@ -653,9 +662,8 @@ q.quote{
     .performance--title {
       text-align: center;/* Both the title and card span the full width */
     }
-    .last-video-category {
-      height:100%;
-      margin-bottom: -120px; /* Adjust this value accordingly to reduce the space */
+    .video--iframe {
+      height: auto; 
     }
 
 
@@ -789,18 +797,18 @@ video {
     grid-column: 1; /* Both the title and card span the full width */
   }
   .performance--card .video {
-      flex-basis: 100%; 
-  }
+    flex-basis: calc(50% - 1rem);
+    }
   h2.title {
     text-align: center;
   }
   .performance--title {
     text-align: center;/* Both the title and card span the full width */
   }
-  .last-video-category {
-    height:100%;
-    margin-bottom: -120px; /* Adjust this value accordingly to reduce the space */
-  }
+
+  .video--iframe {
+      height: auto; 
+    }
 
   /** Curation */
   #curation {
@@ -880,7 +888,6 @@ video {
   }
 
   #about-text {
-      flex-grow: 0; /* Reset flex-grow */
       flex-basis: 60%; /* Set width to 60% */
       padding: 0 1.5rem;
   }

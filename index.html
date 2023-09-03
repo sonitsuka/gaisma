@@ -318,7 +318,7 @@
       <div class="video-category last-video-category">
 
         <div class="video">
-          <label for="video1">
+          
             <a href="https://youtu.be/mK-petdPykc" target="_blank" >
               <img src="https://img.youtube.com/vi/mK-petdPykc/0.jpg" alt="Levin Goes Lightly Thumbnail" class="video--thumbnail">
               <iframe class="video--iframe" src="https://www.youtube.com/embed/mK-petdPykc?autoplay=1&mute=1&controls=0&modestbranding=1" frameborder="0" data-video-id="mK-petdPykc"></iframe>
@@ -326,7 +326,7 @@
             </a>
             <p class="credit">Music & Text - Levin Stadler<br>Directed by Nicolas Ohnesorge<br>Starring : Alena Hermes,
               Alisa Scetinina<br>Color Grading : Harry Delgas</p>
-          </label>
+         
         </div>
       </div>
     </div>
@@ -576,70 +576,7 @@
       });
     });
 
-    // Youtube Preview mouseover
-    window.onYouTubeIframeAPIReady = function() {
-  console.log("YouTube API is ready.");
-  const ytPlayers = {};
-
-  // Initialize all players
-  document.querySelectorAll('.video--iframe').forEach(iframe => {
-      const videoId = iframe.getAttribute('data-video-id');
-      console.log(`Initializing player for iframe: ${iframe.outerHTML} and video ID: ${videoId}`);
-
-      if (videoId) {  // only initialize if videoId is not null
-        ytPlayers[videoId] = new YT.Player(iframe, {
-          videoId,
-          events: {
-            'onReady': function(event) {
-              console.log(`Player for video ID ${videoId} is ready.`);
-              event.target.mute();
-              ytPlayers[videoId] = event.target;
-              
-              // Add the onStateChange event listener here
-              event.target.addEventListener("onStateChange", function(event) {
-                if (event.data == YT.PlayerState.PLAYING) {
-                  console.log("Video is playing");
-                }
-              });
-            }
-          }
-        });
-      }
-    });
-
-  // Add mouseenter and mouseleave event listeners
-  document.querySelectorAll('.video--thumbnail').forEach(thumbnail => {
-    thumbnail.addEventListener('mouseenter', function(e) {
-      const parent = thumbnail.closest('a');
-      const videoId = parent.getAttribute('data-video-id');
-
-      if (videoId && ytPlayers[videoId]) {
-        const player = ytPlayers[videoId];
-        console.log('Attempting to play video.');
-        player.seekTo(0);
-        player.playVideo();
-      }
-    });
-
-    thumbnail.addEventListener('mouseleave', function(e) {
-      const parent = thumbnail.closest('a');
-      const videoId = parent.getAttribute('data-video-id');
-
-      if (videoId && ytPlayers[videoId]) {
-        const player = ytPlayers[videoId];
-        console.log('Attempting to stop video.');
-        player.stopVideo();
-      }
-    });
-  });
-};
-
-    
-
-
-
-
-    
+      
     // canvas tv 
     const video = document.querySelector('#home--video');
     const app = new PIXI.Application({

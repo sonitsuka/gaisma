@@ -142,3 +142,62 @@ fetch('data.json')
         // Handle errors, like issues with fetching the file
         console.log('There was a problem with the fetch operation:', error.message);
     });
+
+
+    // Youtube Preview mouseover
+    window.onYouTubeIframeAPIReady = function() {
+        console.log("YouTube API is ready.");
+        const ytPlayers = {};
+      
+        // Initialize all players
+        document.querySelectorAll('.video--iframe').forEach(iframe => {
+            const videoId = iframe.getAttribute('data-video-id');
+            console.log(`Initializing player for iframe: ${iframe.outerHTML} and video ID: ${videoId}`);
+      
+            if (videoId) {  // only initialize if videoId is not null
+              ytPlayers[videoId] = new YT.Player(iframe, {
+                videoId,
+                events: {
+                  'onReady': function(event) {
+                    console.log(`Player for video ID ${videoId} is ready.`);
+                    event.target.mute();
+                    ytPlayers[videoId] = event.target;
+                    
+                    // Add the onStateChange event listener here
+                    event.target.addEventListener("onStateChange", function(event) {
+                      if (event.data == YT.PlayerState.PLAYING) {
+                        console.log("Video is playing");
+                      }
+                    });
+                  }
+                }
+              });
+            }
+          });
+      
+        // Add mouseenter and mouseleave event listeners
+        document.querySelectorAll('.video--thumbnail').forEach(thumbnail => {
+          thumbnail.addEventListener('mouseenter', function(e) {
+            const parent = thumbnail.closest('a');
+            const videoId = parent.getAttribute('data-video-id');
+      
+            if (videoId && ytPlayers[videoId]) {
+              const player = ytPlayers[videoId];
+              console.log('Attempting to play video.');
+              player.seekTo(0);
+              player.playVideo();
+            }
+          });
+      
+          thumbnail.addEventListener('mouseleave', function(e) {
+            const parent = thumbnail.closest('a');
+            const videoId = parent.getAttribute('data-video-id');
+      
+            if (videoId && ytPlayers[videoId]) {
+              const player = ytPlayers[videoId];
+              console.log('Attempting to stop video.');
+              player.stopVideo();
+            }
+          });
+        });
+      };
