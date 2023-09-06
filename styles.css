@@ -30,7 +30,7 @@ body, html {
     padding: 0;
     overflow-x: hidden;
     max-width: 100%;
-    background: url(./images/bg-body.png) repeat ; 
+    background-color: #2e2e2e;
 }
 
   a {
@@ -57,6 +57,8 @@ body, html {
     flex-shrink: 0; /* Prevent title from shrinking */
     align-items: center; /* Vertically center the title */
     padding: 0.5rem;
+    background: url(/images/bg-body.png);
+    height: 100%;
 }
 
   .no-border {
@@ -393,15 +395,6 @@ video{
   margin: 0;
   width: 100%;
   padding: 4rem;
-}
-
-.background-test-about{
-  background: 
-    linear-gradient(to bottom, #FD7C6E, transparent), 
-    linear-gradient(to top left, rgba(127, 255, 127, 1), transparent),
-    linear-gradient(to top right, rgba(127, 127, 255, 1), transparent);
-  background-blend-mode: screen;
-  -webkit-background-blend-mode: screen;
 }
 
 .about--content {
