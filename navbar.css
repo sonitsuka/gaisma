@@ -152,30 +152,6 @@ nav {
     color: #FFF;
 }
 
-/*
-.social a:hover{
-    color: var(--main-color);
-}
-
-.social-icon.in a:hover{
-    color: #d82d7e;
-}
-.social-icon.fb a:hover{
-    color: #395185;
-}
-.social-icon.sc a:hover{
-    color: #f04923;
-}
-.social-icon.sp a:hover{
-    color: #1ed760;
-}
-.social-icon.bc a:hover{
-    color: #1f80aa;
-}
-.social-icon.yt a:hover{
-    color: #ff0000;
-}
-*/
 .copyright {
     color: #F5F5F5;
     font-size: 0.7rem;
@@ -222,51 +198,58 @@ nav {
     margin: 0 0.5rem;
   }
   
-/* Styles for Extra Small (XS) Devices */
-@media (max-width: 480px) {
-  #footer-section {
-    flex-direction: column;
-    padding: 1rem 0 0;
-    }
 
-    #footer-section .social {
-        margin: 0.5rem 0;  /* Add some margin for spacing */
-    }
+/* XS-L responsive design */
 
-    .mobile-hide {
-        display: none;
-    }
+  @media (max-width: 480px), 
+       (min-width: 481px) and (max-width: 767px),
+       (min-width: 768px) and (max-width: 1200px) {
 
-    nav {
-        gap: 1px;
-    }
-
-    nav.nav--button::-webkit-scrollbar {
+        #footer-section .social,
+        nav.nav--button::-webkit-scrollbar {
+        margin: 0.5rem 0;
         height: 8px;
     }
 
+    .social a, .social .social-icon  {
+        margin: 0;
+    }
+    
+
+        .mobile-hide {
+            display: none;
+        }
+
+
 }
 
-/* Styles for Small (S) Devices */
-@media (max-width: 767px) {
+@media (max-width: 480px), 
+(min-width: 481px) and (max-width: 767px){
+
     #footer-section {
         flex-direction: column;
         padding: 1rem 0 0;
     }
 
-    /* Adjust the social icons for better layout */
-    #footer-section .social {
-        margin: 0.5rem 0;  /* Add some margin for spacing */
-    }
-
-    .mobile-hide {
-        display: none;
-    }
-    /* Style for scrollbars (for browsers that support it) */
     nav {
         gap: 1px;
+        margin-bottom: 0.5rem;
     }
-    nav.nav--button::-webkit-scrollbar {
-        height: 8px;
+
+    .social a, .social .social-icon {
+        border-radius: 5px;
+        width: 20px; /* Circle width */
+        height: 20px; /* Circle height */
+        line-height: 20px;
+        text-align: center;
+        margin: 0 5px; /* Margin between icons */
+        font-size: 14px;
     }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .social a, .social .social-icon  {
+        margin: 0;
+    }
+    
 }
