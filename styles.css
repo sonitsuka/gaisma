@@ -24,13 +24,16 @@
     box-sizing: border-box;
 }
 
-body, html {
-  font-family: 'Petrona',serif; 
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%; 
+  background: transparent;
   margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    max-width: 100%;
-    background-color: #2e2e2e;
+  padding: 0;
+  font-family: 'Petrona',serif; 
 }
 
   a {
@@ -46,7 +49,7 @@ body, html {
     flex-shrink: 0;
     width: 180px;
     display: flex;
-    background: url(/images/bg-navtitle.png) repeat;
+    background: url(/images/bg-navtitle.jpg) repeat;
     border-top: 1px solid #ddd;
   }  
 
@@ -227,7 +230,7 @@ video{
 
  /* press */
  #press {
-    margin: 0;
+    margin: 0 0 -5rem 0 ;
     position: relative;
     height: 100%;
     overflow: hidden;
@@ -283,7 +286,8 @@ video{
     border-top: var(--background-color) 0.1px solid;
     text-align: center;
     padding: 0.5rem;
-    background: url(images/bg-navtitle.png) repeat;
+    background: url(images/bg-navtitle.jpg) repeat;
+
 }
 
 .performance--title h2, .performance--title h3 {
@@ -307,7 +311,8 @@ video{
     grid-template-rows: auto repeat(3, 1fr); 
     gap: 20px;
     padding: 20px;
-    background: url(/images/bg-perf-gray_smoke.png);
+    background: url(/images/bg-performance.jpg) ;
+    background-size: contain;
 }
 
 .performance--card .performance--text {
@@ -394,10 +399,7 @@ video{
 }
 
 .about--card {
-  background: url(./images/bg_analog_tv_pattern.png); 
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background: url(/images/bg-navtitle.jpg) repeat;
   margin: 0;
   width: 100%;
   padding: 4rem;
@@ -911,7 +913,7 @@ video {
     flex-shrink: 0;
     width: 120px; 
     display: flex;
-    background: url(/images/bg-navtitle.png) repeat;
+    background: url(/images/bg-navtitle.jpg) repeat;
     border-top: 1px solid #ddd;
   }  
   .nav-title {
