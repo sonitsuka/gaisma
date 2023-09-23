@@ -502,6 +502,66 @@
   </footer>
 
   <script>
+     // Function to set active button color
+     function setActiveButtonColor(button) {
+        const color = button.dataset.color;
+        button.querySelector('.front').style.background = color;
+    }
+    
+    // Function to reset button color
+    function resetButtonColor(button) {
+        button.querySelector('.front').style.background = '#F2F2F2';
+    }
+    
+    // Event listener for each button
+    document.querySelectorAll('.pushable').forEach(button => {
+        button.addEventListener('click', function () {
+        const target = this.dataset.target;
+    
+        // Change color of the clicked button
+        setActiveButtonColor(this);
+    
+        // Reset colors of other buttons
+        document.querySelectorAll('.pushable').forEach(otherButton => {
+            if (otherButton !== this) {
+            resetButtonColor(otherButton);
+            }
+        });
+    
+        // Use GSAP to smoothly scroll to the target section
+        const targetSection = document.getElementById(target);
+        if (targetSection) { 
+            gsap.to(window, {
+            duration: 1,
+            scrollTo: targetSection,
+            ease: "power2.out"
+            });
+        }
+        });
+    });
+
+    
+    // Add a scroll event to change the navbar button colors based on the section in view
+    window.addEventListener('scroll', function () {
+        let activeSection = null;
+    
+        document.querySelectorAll('section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.25 && rect.bottom >= window.innerHeight * 0.75) {
+            activeSection = section;
+        }
+        });
+    
+        document.querySelectorAll('.pushable').forEach(button => {
+        if (button.dataset.target === activeSection?.id) {
+            setActiveButtonColor(button);
+        } else {
+            resetButtonColor(button);
+        }
+        });
+    });
+
+
     // canvas tv
     const video = document.querySelector('#home--video');
     const app = new PIXI.Application({
@@ -515,12 +575,15 @@
             // Background image
             const bgTexture = PIXI.Texture.from('/images/bg_tv.png');
             const bgSprite = new PIXI.Sprite(bgTexture);
+            bgSprite.alpha = 0;
             app.stage.addChild(bgSprite);
        
             // Video texture
             const videoTexture = PIXI.Texture.from(video);
             const videoSprite = new PIXI.Sprite(videoTexture);
        
+            videoSprite.alpha = 0; 
+
             videoSprite.x = 526;
             videoSprite.y = 390;
             videoSprite.width = 495;
@@ -556,13 +619,24 @@
             app.stage.addChild(videoSprite);
        
             video.play();
+            
+            // Fade-in effect for the background sprite
+            const fadeInDuration = 1; // Duration in seconds
+            let elapsedTime = 0;
+            app.ticker.add((delta) => {
+                elapsedTime += delta / 60; // Convert frame delta to seconds
+                const alphaValue = Math.min(elapsedTime / fadeInDuration, 1);
+                bgSprite.alpha = alphaValue;
+                videoSprite.alpha = alphaValue; // Fade in the video sprite
+                if (alphaValue === 1) {
+                    app.ticker.remove(this); // Stop the ticker when fade-in is complete
+                }
+            });
+
         });
     
   
   </script
-  <script src="script.js"></script>
- 
-
 
 </body>
 

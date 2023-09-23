@@ -70,12 +70,18 @@ body, html {
     overflow-wrap: break-word;
   }
 /* HOME */
+video {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
 #home {
   margin: 0;
   height: 100vh;
   position: relative; 
   overflow: hidden;
   background-size: cover;
+
 }
 
 #canvas {
