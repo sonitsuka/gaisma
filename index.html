@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gaisma Artist Website</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="navbar.css">
   <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
@@ -15,427 +14,427 @@
   <script  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
   <script  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
   <script  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
   <script  src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.2/pixi.min.js"></script>
-  
-
-
 </head>
 
 <body>
-  <section id="home">
-    <video id="home--video" crossOrigin="anonymous" muted playsinline loop preload="auto" autoplay>
-        <source src="/images/toppage_video.mp4" type="video/mp4">
-    </video>
-    <canvas id="canvas" width="1440" height="1000"></canvas>
-  </section>
+  <div class="container">
+    <section id="home">
+      <video id="home--video" crossOrigin="anonymous" muted playsinline loop preload="auto" autoplay>
+          <source src="/images/toppage_video.mp4" type="video/mp4">
+      </video>
+      <canvas id="canvas" width="1440" height="1000"></canvas>
+    </section>
 
-  <section id="about">
-    <div class="nav-title-wrapper no-border">
-      <div class="nav-title ">
-        <h2 class="title">About Me</h2>
+    <section id="about">
+      <div class="nav-title-wrapper no-border">
+        <div class="nav-title ">
+          <h2 class="title">About Me</h2>
+        </div>
       </div>
-    </div>
-    <div class="about--card">
-      <div class="about--content">
-        <div class="flex-container">
-          <div class="flex-item" id="about-image">
-            <img src="/images/aboutMe.jpg" alt="gaisma profile pic">
+      <div class="about--card">
+        <div class="about--content">
+          <div class="flex-container">
+            <div class="flex-item" id="about-image">
+              <img src="/images/aboutMe.jpg" alt="gaisma profile pic">
+            </div>
+
+            <div class="flex-item" id="about-text">
+
+
+              <p>Born in Latvia, Alisa has been involved with music and dance since her childhood. From her first visit to the theater, she fell in love with the atmosphere and decided to pursue her dream of becoming a professional ballet dancer. At the age of fifteen, she left her family and moved to Germany to study at the Munich Ballet Academy. She has since signed contracts with the Bavarian and Stuttgart Ballet and has been on international tours with both companies. 
+              </p>
+              <br/>
+              <p>
+                After six years of dancing professionally, she made the difficult decision to drastically change her life by leaving the classical ballet world in pursuit of other artistic passions. She traveled the globe, exploring and learning new ways and techniques to heal the body, mind, and soul, and dove into the world of analog music production.
+              </p>
+              <br/>
+              <p> Besides her music work, she is also frequently engaged with projects in the visual arts. These include analog and digital photography, behind and in front of the camera; as well as collages and video works, which she often puts within the context of music. Symbioses of auditory and visual material emerge, in which she presents herself in an increasingly contemporary form of movement. She acts as a composer, cinematographer, and performer in her works, which fluctuate between choreography and improvisation.
+              </p>
+            </div>
           </div>
-
-          <div class="flex-item" id="about-text">
-
-
-            <p>Born in Latvia, Alisa has been involved with music and dance since her childhood. From her first visit to the theater, she fell in love with the atmosphere and decided to pursue her dream of becoming a professional ballet dancer. At the age of fifteen, she left her family and moved to Germany to study at the Munich Ballet Academy. She has since signed contracts with the Bavarian and Stuttgart Ballet and has been on international tours with both companies. 
-            </p>
-            <br/>
-            <p>
-              After six years of dancing professionally, she made the difficult decision to drastically change her life by leaving the classical ballet world in pursuit of other artistic passions. She traveled the globe, exploring and learning new ways and techniques to heal the body, mind, and soul, and dove into the world of analog music production.
-            </p>
-            <br/>
-            <p> Besides her music work, she is also frequently engaged with projects in the visual arts. These include analog and digital photography, behind and in front of the camera; as well as collages and video works, which she often puts within the context of music. Symbioses of auditory and visual material emerge, in which she presents herself in an increasingly contemporary form of movement. She acts as a composer, cinematographer, and performer in her works, which fluctuate between choreography and improvisation.
-            </p>
-          </div>
-        </div>
-        <blockquote>
-          <q class="quote">In times of unpredictability and chaos one thing that we can always be certain of is that the
-            power and growth behind our personality lies in our own hands.</q>
-        </blockquote>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="music">
-    <div id="music--container">
-      <div class="nav-title-wrapper">
-        <div class="nav-title">
-          <h2 class="title">Music</h2>
-        </div>
-      </div>  
-      <div id="music-content">
-
-        <div class="music-card">
-          <h3>Gaisma Album & EP</h3>
-          <div class="gallery">
-            <a href="https://open.spotify.com/intl-de/album/47S3HkEBEkwxPv6vQup7zB" target="_blank" rel="noopener noreferrer">
-              <img src="images/mirrorsOfCosmic.jpg" alt="Album Thumbnail" loading="lazy">
-              <p>Mirrors Of The Cosmic Cinema</p>
-            </a>
-            <a href="https://open.spotify.com/intl-de/album/0c3Bd93SHLw5vlVhrHN26P" target="_blank" rel="noopener noreferrer">
-              <img src="images/notMyCupOfTea.jpeg" alt="Album Thumbnail" loading="lazy">
-              <p>Not My Cup Of Tea</p>
-            </a>
-            <a href="https://open.spotify.com/intl-de/album/2bOnhokrEQOnHuvl8H6oZn" target="_blank" rel="noopener noreferrer">
-              <img src="images/empathy.jpg" alt="Album Thumbnail" loading="lazy">
-              <p>Empathy</p>
-            </a>
-            <a href="https://open.spotify.com/intl-de/album/0ZLCVkecn8E0h0RXuPbgpi" target="_blank" rel="noopener noreferrer">
-              <img src="images/monarchy.jpg" alt="Album Thumbnail" loading="lazy">
-              <p>Monarchy</p>
-            </a>
-          </div>
-        </div>
-        <div class="music-card">
-          <h3>Sceti EP</h3>
-          <div class="gallery">
-
-            <a href="https://open.spotify.com/intl-de/artist/7LmgNFt2L76bFO3f27IsC4" target="_blank" rel="noopener noreferrer">
-              <img src="images/sceti.png" alt="Video 1 Thumbnail" class="cd_label_4" loading="lazy">
-              <p>Feel Alive<p>
-            </a>
-          </div>
-
-        </div>
-        <div class="music-card">
-          <h3>DJ Set</h3>
-          <div class="gallery">
-            <a href="https://soundcloud.com/mutantradio/gaisma-13122022" target="_blank"  rel="noopener noreferrer">
-              <img src="https://i1.sndcdn.com/artworks-zCmzohVQkIyQ25zK-ALphPQ-t500x500.jpg" alt="Music Thumbnail" loading="lazy">
-              <p class="">Mutant Radio 13.12.2022</p>
-            </a>
-            <a href="https://soundcloud.com/gaisma/umbaustuttgart21house?ref=clipboard&p=a&c=1" target="_blank" rel="noopener noreferrer">
-              <img src="https://i1.sndcdn.com/artworks-000634171918-fbk03p-t500x500.jpg" alt="Music Thumbnail" loading="lazy">
-              <p>Umbau/ Stuttgart21/House</p>
-            </a>
-            <a href="https://soundcloud.com/gaisma/house-party-2?ref=clipboard&p=a&c=1" target="_blank" rel="noopener noreferrer">
-              <img src="https://i1.sndcdn.com/artworks-000678411697-sm98iw-t500x500.jpg" alt="Music Thumbnail" loading="lazy">
-              <p>House Party</p>
-            </a>
-            <a href="https://soundcloud.com/gaisma/fruit-salad-brombeere?ref=clipboard&p=a&c=1" target="_blank" rel="noopener noreferrer">
-              <img src="https://i1.sndcdn.com/artworks-000380865012-ucttl1-t500x500.jpg" alt="Music Thumbnail" loading="lazy">
-              <p>Fruit Salad - Brombeere</p>
-            </a>
-          </div>
-        </div>
-        <div class="music-card">
-          <h3>Radio Show</h3>
-          <div class="gallery">
-            <a href="https://soundcloud.com/gaisma/klang-parfum-viola?si=6f9125d763594aa49fd5ed212dcdd003"
-              target="_blank">
-              <img src="https://i1.sndcdn.com/artworks-7GTYzvqqVXi50Nqz-YhW2ag-t500x500.jpg" alt="Music Thumbnail" loading="lazy">
-              <p class="">Viola {Klang Parfüm}</p>
-            </a>
-            <a href="https://soundcloud.com/gaisma/lowenzahn?si=a0b5e4a4ed034af38a0590ba02741f1c" target="_blank" rel="noopener noreferrer">
-              <img src="https://i1.sndcdn.com/artworks-higItXLEX9aWs7yN-1vctxw-t500x500.jpg" alt="Music Thumbnail" loading="lazy">
-              <p>Löwenzahn {Klang Parfüm}</p>
-            </a>
-            <a href="https://soundcloud.com/gaisma/klang-parfum-winter-blues?si=d992466869854eb2b737741869d0184c"
-              target="_blank">
-              <img src="https://i1.sndcdn.com/artworks-ySt4VSmhirshKoW4-XY4Hkg-t500x500.jpg" alt="Music Thumbnail" loading="lazy">
-              <p>Winter Blues {Klang Parfüm}</p>
-            </a>
-          </div>
+          <blockquote>
+            <q class="quote">In times of unpredictability and chaos one thing that we can always be certain of is that the
+              power and growth behind our personality lies in our own hands.</q>
+          </blockquote>
         </div>
 
       </div>
-    </div>
+    </section>
 
-    <div id="music--container">
-      <div class="nav-title-wrapper">
-        <div class="nav-title">
-          <h2 class="title">Video</h2>
+    <section id="music">
+      <div id="music--container">
+        <div class="nav-title-wrapper">
+          <div class="nav-title">
+            <h2 class="title">Music</h2>
+          </div>
+        </div>  
+        <div id="music-content">
+
+          <div class="music-card">
+            <h3>Gaisma Album & EP</h3>
+            <div class="gallery">
+              <a href="https://open.spotify.com/intl-de/album/47S3HkEBEkwxPv6vQup7zB" target="_blank" rel="noopener noreferrer">
+                <img src="images/mirrorsOfCosmic.jpg" alt="Album Thumbnail" loading="lazy">
+                <p>Mirrors Of The Cosmic Cinema</p>
+              </a>
+              <a href="https://open.spotify.com/intl-de/album/0c3Bd93SHLw5vlVhrHN26P" target="_blank" rel="noopener noreferrer">
+                <img src="images/notMyCupOfTea.jpeg" alt="Album Thumbnail" loading="lazy">
+                <p>Not My Cup Of Tea</p>
+              </a>
+              <a href="https://open.spotify.com/intl-de/album/2bOnhokrEQOnHuvl8H6oZn" target="_blank" rel="noopener noreferrer">
+                <img src="images/empathy.jpg" alt="Album Thumbnail" loading="lazy">
+                <p>Empathy</p>
+              </a>
+              <a href="https://open.spotify.com/intl-de/album/0ZLCVkecn8E0h0RXuPbgpi" target="_blank" rel="noopener noreferrer">
+                <img src="images/monarchy.jpg" alt="Album Thumbnail" loading="lazy">
+                <p>Monarchy</p>
+              </a>
+            </div>
+          </div>
+          <div class="music-card">
+            <h3>Sceti EP</h3>
+            <div class="gallery">
+
+              <a href="https://open.spotify.com/intl-de/artist/7LmgNFt2L76bFO3f27IsC4" target="_blank" rel="noopener noreferrer">
+                <img src="images/sceti.png" alt="Video 1 Thumbnail" class="cd_label_4" loading="lazy">
+                <p>Feel Alive<p>
+              </a>
+            </div>
+
+          </div>
+          <div class="music-card">
+            <h3>DJ Set</h3>
+            <div class="gallery">
+              <a href="https://soundcloud.com/mutantradio/gaisma-13122022" target="_blank"  rel="noopener noreferrer">
+                <img src="https://i1.sndcdn.com/artworks-zCmzohVQkIyQ25zK-ALphPQ-t500x500.jpg" alt="Music Thumbnail" loading="lazy">
+                <p class="">Mutant Radio 13.12.2022</p>
+              </a>
+              <a href="https://soundcloud.com/gaisma/umbaustuttgart21house?ref=clipboard&p=a&c=1" target="_blank" rel="noopener noreferrer">
+                <img src="https://i1.sndcdn.com/artworks-000634171918-fbk03p-t500x500.jpg" alt="Music Thumbnail" loading="lazy">
+                <p>Umbau/ Stuttgart21/House</p>
+              </a>
+              <a href="https://soundcloud.com/gaisma/house-party-2?ref=clipboard&p=a&c=1" target="_blank" rel="noopener noreferrer">
+                <img src="https://i1.sndcdn.com/artworks-000678411697-sm98iw-t500x500.jpg" alt="Music Thumbnail" loading="lazy">
+                <p>House Party</p>
+              </a>
+              <a href="https://soundcloud.com/gaisma/fruit-salad-brombeere?ref=clipboard&p=a&c=1" target="_blank" rel="noopener noreferrer">
+                <img src="https://i1.sndcdn.com/artworks-000380865012-ucttl1-t500x500.jpg" alt="Music Thumbnail" loading="lazy">
+                <p>Fruit Salad - Brombeere</p>
+              </a>
+            </div>
+          </div>
+          <div class="music-card">
+            <h3>Radio Show</h3>
+            <div class="gallery">
+              <a href="https://soundcloud.com/gaisma/klang-parfum-viola?si=6f9125d763594aa49fd5ed212dcdd003"
+                target="_blank">
+                <img src="https://i1.sndcdn.com/artworks-7GTYzvqqVXi50Nqz-YhW2ag-t500x500.jpg" alt="Music Thumbnail" loading="lazy">
+                <p class="">Viola {Klang Parfüm}</p>
+              </a>
+              <a href="https://soundcloud.com/gaisma/lowenzahn?si=a0b5e4a4ed034af38a0590ba02741f1c" target="_blank" rel="noopener noreferrer">
+                <img src="https://i1.sndcdn.com/artworks-higItXLEX9aWs7yN-1vctxw-t500x500.jpg" alt="Music Thumbnail" loading="lazy">
+                <p>Löwenzahn {Klang Parfüm}</p>
+              </a>
+              <a href="https://soundcloud.com/gaisma/klang-parfum-winter-blues?si=d992466869854eb2b737741869d0184c"
+                target="_blank">
+                <img src="https://i1.sndcdn.com/artworks-ySt4VSmhirshKoW4-XY4Hkg-t500x500.jpg" alt="Music Thumbnail" loading="lazy">
+                <p>Winter Blues {Klang Parfüm}</p>
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div id="video-content">
-        <div class="music-card">
-          <h3>Music Video Gaisma</h3>
-          <div class="gallery ">
-            <a href="https://www.youtube.com/watch?v=Sk9y7KH4ARk" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.youtube.com/vi/Sk9y7KH4ARk/0.jpg" alt="Sunny Side Up " loading="lazy">
-              <p>Sunny Side Up</p>
-            </a>
-            <a href="https://www.youtube.com/watch?v=OkJS3Njo17g" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.youtube.com/vi/OkJS3Njo17g/0.jpg" alt="Catnip " loading="lazy">
-              <p>Catnip</p>
-            </a>
-            <a href="https://www.youtube.com/watch?v=wQ8LyXDO7Y4" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.youtube.com/vi/wQ8LyXDO7Y4/0.jpg" alt="Monarchy" loading="lazy">
-              <p>Monarchy</p>
-            </a>
-            <a href="https://www.youtube.com/watch?v=JbxhDVcAumA" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.youtube.com/vi/JbxhDVcAumA/0.jpg" alt="Organic Muesli" loading="lazy">
-              <p>Organic Muesli</p>
-            </a>
-            <a href="https://www.youtube.com/watch?v=hjc1WrK-4gA" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.youtube.com/vi/hjc1WrK-4gA/0.jpg" alt="Apana" loading="lazy">
-              <p>Apana (Hive Mind)</p>
-            </a>
+      <div id="music--container">
+        <div class="nav-title-wrapper">
+          <div class="nav-title">
+            <h2 class="title">Video</h2>
           </div>
         </div>
 
-        <div class="music-card">
-          <h3>Music Video Sceti</h3>
-          <div class="gallery">
-            <a href="https://www.youtube.com/watch?v=1UKIHVtwK9M" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.youtube.com/vi/1UKIHVtwK9M/0.jpg" alt="Music Video Sceti Thumbnail" loading="lazy">
-              <p>Dancing All Alone</p>
-            </a>
-            <a href="https://www.youtube.com/watch?v=azjcpwy_Qfw" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.youtube.com/vi/azjcpwy_Qfw/0.jpg" alt="Music Video Sceti Thumbnail" loading="lazy">
-              <p>Feel Alive</p>
-            </a>
+        <div id="video-content">
+          <div class="music-card">
+            <h3>Music Video Gaisma</h3>
+            <div class="gallery ">
+              <a href="https://www.youtube.com/watch?v=Sk9y7KH4ARk" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/Sk9y7KH4ARk/0.jpg" alt="Sunny Side Up " loading="lazy">
+                <p>Sunny Side Up</p>
+              </a>
+              <a href="https://www.youtube.com/watch?v=OkJS3Njo17g" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/OkJS3Njo17g/0.jpg" alt="Catnip " loading="lazy">
+                <p>Catnip</p>
+              </a>
+              <a href="https://www.youtube.com/watch?v=wQ8LyXDO7Y4" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/wQ8LyXDO7Y4/0.jpg" alt="Monarchy" loading="lazy">
+                <p>Monarchy</p>
+              </a>
+              <a href="https://www.youtube.com/watch?v=JbxhDVcAumA" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/JbxhDVcAumA/0.jpg" alt="Organic Muesli" loading="lazy">
+                <p>Organic Muesli</p>
+              </a>
+              <a href="https://www.youtube.com/watch?v=hjc1WrK-4gA" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/hjc1WrK-4gA/0.jpg" alt="Apana" loading="lazy">
+                <p>Apana (Hive Mind)</p>
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div class="music-card">
-          <h3>DJ & Live</h3>
-          <div class="gallery">
-            <a href="https://www.youtube.com/watch?v=FyTQhsSNJGY&t=462s" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.youtube.com/vi/FyTQhsSNJGY/0.jpg"
-                alt="Stuttgart Rooftop Streams #10 - Gaisma & Mariano Fernandez (Live-Malerei) Thumbnail" loading="lazy">
-              <p>Stuttgart Rooftop Streams #10 - Gaisma & Mariano Fernandez (Live-Malerei)</p>
-            </a>
-            <a href="https://www.youtube.com/watch?v=uifNs3R7t9U" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.youtube.com/vi/uifNs3R7t9U/0.jpg" alt="TINY WINDOW CONCERTS II - Gaisma Thumbnail">
-              <p>INY WINDOW CONCERTS II - Gaisma</p>
-            </a>
-            <a href="https://www.youtube.com/watch?v=lJh2z9t7eZc" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.youtube.com/vi/lJh2z9t7eZc/0.jpg" alt="Gaisma aka Tumsi - Bold Decisions" loading="lazy">
-              <p>Bold Decisions - Gaisma aka Tumsi</p>
-            </a>
-            <a href="https://www.youtube.com/watch?v=aRcXE3MpmSI" target="_blank" rel="noopener noreferrer" >
-              <img src="https://img.youtube.com/vi/aRcXE3MpmSI/0.jpg" alt="" loading="lazy">
-              <p> Synthstrom Festival- Antidote</p>
-            </a>
+          <div class="music-card">
+            <h3>Music Video Sceti</h3>
+            <div class="gallery">
+              <a href="https://www.youtube.com/watch?v=1UKIHVtwK9M" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/1UKIHVtwK9M/0.jpg" alt="Music Video Sceti Thumbnail" loading="lazy">
+                <p>Dancing All Alone</p>
+              </a>
+              <a href="https://www.youtube.com/watch?v=azjcpwy_Qfw" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/azjcpwy_Qfw/0.jpg" alt="Music Video Sceti Thumbnail" loading="lazy">
+                <p>Feel Alive</p>
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="music-card">
-          <h3>Radio Live</h3>
-          <div class="gallery">
-            <a href="https://youtu.be/wFM9VDz1308" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.youtube.com/vi/wFM9VDz1308/0.jpg" alt="Klang Parfüm" loading="lazy">
-              <p>Klang Parfüm No1</p>
-            </a>
-            <a href="https://youtu.be/i5lhwu1Jxv0" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.youtube.com/vi/i5lhwu1Jxv0/0.jpg" alt="Klang Parfüm" loading="lazy">
-              <p>Klang Parfüm No2</p>
-            </a>
-          </div>
-        </div>
-      </div>
-  </section>
 
-  <section id="performance">
-   
-      <div class="performance--title">
-        <h2 class="title">Performance</h2>
-        <h3>Performance</h3>
-        <h3>Art & Film</h3>
-        <h3>Music Video</h3>
-      </div>
+          <div class="music-card">
+            <h3>DJ & Live</h3>
+            <div class="gallery">
+              <a href="https://www.youtube.com/watch?v=FyTQhsSNJGY&t=462s" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/FyTQhsSNJGY/0.jpg"
+                  alt="Stuttgart Rooftop Streams #10 - Gaisma & Mariano Fernandez (Live-Malerei) Thumbnail" loading="lazy">
+                <p>Stuttgart Rooftop Streams #10 - Gaisma & Mariano Fernandez (Live-Malerei)</p>
+              </a>
+              <a href="https://www.youtube.com/watch?v=uifNs3R7t9U" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/uifNs3R7t9U/0.jpg" alt="TINY WINDOW CONCERTS II - Gaisma Thumbnail">
+                <p>INY WINDOW CONCERTS II - Gaisma</p>
+              </a>
+              <a href="https://www.youtube.com/watch?v=lJh2z9t7eZc" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/lJh2z9t7eZc/0.jpg" alt="Gaisma aka Tumsi - Bold Decisions" loading="lazy">
+                <p>Bold Decisions - Gaisma aka Tumsi</p>
+              </a>
+              <a href="https://www.youtube.com/watch?v=aRcXE3MpmSI" target="_blank" rel="noopener noreferrer" >
+                <img src="https://img.youtube.com/vi/aRcXE3MpmSI/0.jpg" alt="" loading="lazy">
+                <p> Synthstrom Festival- Antidote</p>
+              </a>
+            </div>
+          </div>
+          <div class="music-card">
+            <h3>Radio Live</h3>
+            <div class="gallery">
+              <a href="https://youtu.be/wFM9VDz1308" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/wFM9VDz1308/0.jpg" alt="Klang Parfüm" loading="lazy">
+                <p>Klang Parfüm No1</p>
+              </a>
+              <a href="https://youtu.be/i5lhwu1Jxv0" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/i5lhwu1Jxv0/0.jpg" alt="Klang Parfüm" loading="lazy">
+                <p>Klang Parfüm No2</p>
+              </a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="performance">
     
-    <div class="performance--card">
-      <p class="performance--text">Artist Statement<br /><br />
-        For me, Performance is the way one carries oneself and connects to the inner
-        voice, whether it is through music, dance, film, or any other source of expression. I believe that one
-        can find it through self-exploration. The path that navigates us and teaches how to channel our energies
-        and process our inner and outside worlds. We tend to view our body in parts, separating it into organs,
-        limbs, and chemical elements, forgetting that underneath the skin there is a smart mechanism connecting
-        it all.</p>
-
-      <!-- Performance Videos -->
-      <div class="video-category">
-
-        <div class="video">
-          <a href="https://youtu.be/h98Q9zuAS54" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/h98Q9zuAS54/0.jpg" alt="Emotional Traffic Thumbnail" class="video--thumbnail">
-            <iframe class="video--iframe" src="https://www.youtube.com/embed/h98Q9zuAS54?autoplay=1&mute=1&controls=0&modestbranding=1" frameborder="0" allow="autoplay" data-video-id="h98Q9zuAS54"></iframe>
-            <h4 class="p--title">Emotional Traffic - Alisa Scetinina</h4>
-          </a>
+        <div class="performance--title">
+          <h2 class="title">Performance</h2>
+          <h3>Performance</h3>
+          <h3>Art & Film</h3>
+          <h3>Music Video</h3>
         </div>
       
-        <div class="video">
-          <a href="https://youtu.be/UVqem5Be9VI" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/UVqem5Be9VI/0.jpg" alt="Retaken Heart Thumbnail" class="video--thumbnail">
-            <iframe class="video--iframe" src="https://www.youtube.com/embed/UVqem5Be9VI?autoplay=1&mute=1&controls=0&modestbranding=1" frameborder="0" allow="autoplay" data-video-id="UVqem5Be9VI"></iframe>
-            <h4 class="p--title">Retaken Heart - A Journey into the heart // Azimuth Arts and Dance Ensemble - Gonçalo Cruzinha</h4>
-          </a>
-        </div>
-      
-        <div class="video">
-          <a href="https://youtu.be/GIh38PjyJnQ" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/GIh38PjyJnQ/0.jpg" alt="Intact Thumbnail" class="video--thumbnail">
-            <iframe class="video--iframe" src="https://www.youtube.com/embed/GIh38PjyJnQ?autoplay=1&mute=1&controls=0&modestbranding=1" frameborder="0" allow="autoplay" data-video-id="GIh38PjyJnQ"></iframe>
-            <h4 class="p--title">Intact - Noverre - Young Choreographers Of Stuttgart Ballet 2017</h4>
-          </a>
-          <p class="credit">Choreography : Alisa Scetinina<br>Composer - Alisa Scetinina<br>Dancers : Shaked Heller &
-            Alisa Scetinina<br>Light & Costume Concept - Alisa Scetinina</p>
-        </div>
-      </div>
+      <div class="performance--card">
+        <p class="performance--text">Artist Statement<br /><br />
+          For me, Performance is the way one carries oneself and connects to the inner
+          voice, whether it is through music, dance, film, or any other source of expression. I believe that one
+          can find it through self-exploration. The path that navigates us and teaches how to channel our energies
+          and process our inner and outside worlds. We tend to view our body in parts, separating it into organs,
+          limbs, and chemical elements, forgetting that underneath the skin there is a smart mechanism connecting
+          it all.</p>
 
-      <!-- Art & Film Videos -->
-      <div class="video-category">
+        <!-- Performance Videos -->
+        <div class="video-category">
 
-        <div class="video">
-          <a href="https://vimeo.com/639004437" target="_blank" rel="noopener noreferrer">
-            <img src="/images/ISRA-perfomance.png" alt="ISRA Thumbnail" class="video--thumbnail">
-
-            <h4 class="p--title">ISRA - Journey Through The Night - Art House Short Film</h4>
-          </a>
-          <p class="credit">Direction/Production Manager - Reiner Bocka<br>Costume Designer - Stjepan
-            Cuka<br>Choreography, Performance - Alisa Scetinina<br>Music - Maximilian Luz and Ellie Fords<br>Camera -
-            Peter Heizmann, Braian Zajak<br>Post Production, Color Grading - Roman Brauch</p>
-        </div>
-
-        <div class="video">
-          <a href="https://vimeo.com/216516573" target="_blank" rel="noopener noreferrer">
-            <img src="/images/alisa-perfomance.png" alt="Alisa Thumbnail" class="video--thumbnail">
-            <h4 class="p--title">Alisa - filmed by Simon Pfister in Bavarian State Opera</h4>
-
-          </a>
-          <p class="credit">Director - Donna Mae Burrows<br>Camera - Simon Pfister<br>Dancer - Alisa Scetinina</p>
-        </div>
-      </div>
-
-      <!-- Music Video -->
-      <div class="video-category last-video-category">
-
-        <div class="video">
-          
-            <a href="https://youtu.be/mK-petdPykc" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.youtube.com/vi/mK-petdPykc/0.jpg" alt="Levin Goes Lightly Thumbnail" class="video--thumbnail" loading="lazy">
-              <iframe class="video--iframe" src="https://www.youtube.com/embed/mK-petdPykc?autoplay=1&mute=1&controls=0&modestbranding=1" frameborder="0" data-video-id="mK-petdPykc"></iframe>
-              <h4 class="p--title">Levin Goes Lightly - Geschichten (official)</h4>
+          <div class="video">
+            <a href="https://youtu.be/h98Q9zuAS54" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/h98Q9zuAS54/0.jpg" alt="Emotional Traffic Thumbnail" class="video--thumbnail">
+              <iframe class="video--iframe" src="https://www.youtube.com/embed/h98Q9zuAS54?autoplay=1&mute=1&controls=0&modestbranding=1" frameborder="0" allow="autoplay" data-video-id="h98Q9zuAS54"></iframe>
+              <h4 class="p--title">Emotional Traffic - Alisa Scetinina</h4>
             </a>
-            <p class="credit">Music & Text - Levin Stadler<br>Directed by Nicolas Ohnesorge<br>Starring : Alena Hermes,
-              Alisa Scetinina<br>Color Grading : Harry Delgas</p>
-         
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="curation">
-    <div class="nav-title-wrapper">
-      <div class="nav-title">
-        <h2 class="title">Curation</h2>
-      </div>
-    </div>
-    <div class="curation--card">
-      <div class="grid-container">
-        <!-- Exhibition Details and Main Poster -->
-        <div class="exhibition-details">
-          <h4>Exhibition</h4>
-          <h3>The Sacrifice Of Your Little Self</h3>
-          <p>
-            This exhibition aims to explore the concept of ego and our connection to it through various forms of art
-            including painting, ceramics, music and performance.<br />
-
-            In a world that is becoming increasingly individualistic and self-centred, the concept of ego becomes more
-            important than ever. <br> "The Sacrifice Of Your Little Self" is a thoughtful exhibition that invites
-            visitors to reflect on their own relationship with ego and its impact on our lives and the world around us.
-          </p>
-          <img src="images/nectar127_poster.png" alt="Event Poster" loading="lazy">
-          <p class="poster-credit">Poster: Ivan Zozulya</p>
-          <!-- Credits -->
-          <div class="credits-section">
-            <h4>Artists & Bands</h4>
-            <p><strong>Ivan Zozulya</strong> - Painting</p>
-            <p><strong>A-Hyun Cho</strong> - Ceramic</p>
-            <p><strong>Eva - Maria Hasler</strong> - Performance</p>
-            <p><strong>Alisa Scetinina</strong> - Digital Photography</p>
-    
-            <br />
-            <p>Bands: <strong>Gránátèze</strong>, <strong>NaN</strong>, <strong>Diva Daneben</strong></p>
-            <p class="funding">Project funded by the city of Stuttgart.</p>
+          </div>
+        
+          <div class="video">
+            <a href="https://youtu.be/UVqem5Be9VI" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/UVqem5Be9VI/0.jpg" alt="Retaken Heart Thumbnail" class="video--thumbnail">
+              <iframe class="video--iframe" src="https://www.youtube.com/embed/UVqem5Be9VI?autoplay=1&mute=1&controls=0&modestbranding=1" frameborder="0" allow="autoplay" data-video-id="UVqem5Be9VI"></iframe>
+              <h4 class="p--title">Retaken Heart - A Journey into the heart // Azimuth Arts and Dance Ensemble - Gonçalo Cruzinha</h4>
+            </a>
+          </div>
+        
+          <div class="video">
+            <a href="https://youtu.be/GIh38PjyJnQ" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/GIh38PjyJnQ/0.jpg" alt="Intact Thumbnail" class="video--thumbnail">
+              <iframe class="video--iframe" src="https://www.youtube.com/embed/GIh38PjyJnQ?autoplay=1&mute=1&controls=0&modestbranding=1" frameborder="0" allow="autoplay" data-video-id="GIh38PjyJnQ"></iframe>
+              <h4 class="p--title">Intact - Noverre - Young Choreographers Of Stuttgart Ballet 2017</h4>
+            </a>
+            <p class="credit">Choreography : Alisa Scetinina<br>Composer - Alisa Scetinina<br>Dancers : Shaked Heller &
+              Alisa Scetinina<br>Light & Costume Concept - Alisa Scetinina</p>
           </div>
         </div>
 
-        <!-- Artwork Gallery -->
-        <div class="artwork-gallery">
-          <img src="images/simulation.jpg" alt="Simulation Art" loading="lazy">
-          <img src="images/stimulation1-left.jpg" alt="Simulation Left Art" loading="lazy">
-          <img src="images/stimulation1-right.jpg" alt="Simulation Right Art" loading="lazy">
-          <img src="images/simulation2.jpg" alt="Simulation Art 2"  loading="lazy">
-          <img src="images/SacrificeOfourLittleSelf.jpg" alt="Main Theme Art" loading="lazy">
+        <!-- Art & Film Videos -->
+        <div class="video-category">
+
+          <div class="video">
+            <a href="https://vimeo.com/639004437" target="_blank" rel="noopener noreferrer">
+              <img src="/images/ISRA-perfomance.png" alt="ISRA Thumbnail" class="video--thumbnail">
+
+              <h4 class="p--title">ISRA - Journey Through The Night - Art House Short Film</h4>
+            </a>
+            <p class="credit">Direction/Production Manager - Reiner Bocka<br>Costume Designer - Stjepan
+              Cuka<br>Choreography, Performance - Alisa Scetinina<br>Music - Maximilian Luz and Ellie Fords<br>Camera -
+              Peter Heizmann, Braian Zajak<br>Post Production, Color Grading - Roman Brauch</p>
+          </div>
+
+          <div class="video">
+            <a href="https://vimeo.com/216516573" target="_blank" rel="noopener noreferrer">
+              <img src="/images/alisa-perfomance.png" alt="Alisa Thumbnail" class="video--thumbnail">
+              <h4 class="p--title">Alisa - filmed by Simon Pfister in Bavarian State Opera</h4>
+
+            </a>
+            <p class="credit">Director - Donna Mae Burrows<br>Camera - Simon Pfister<br>Dancer - Alisa Scetinina</p>
+          </div>
         </div>
-      </div>
-      <div class="grid-container">
-        <!-- Exhibition Details and Main Poster -->
-        <div class="exhibition-details">
-          <h4 class="">Festival</h4>
-          <h3>We Are The Future</h3>
-          <p>Family Festival in the German city of Waiblingen, offering Skate, BMX, Streetboard, Hip - Hop, Graffiti, Parkour, Fashion and Recycling Workshops, as well as Music Shows and Sport contests 
+
+        <!-- Music Video -->
+        <div class="video-category last-video-category">
+
+          <div class="video">
             
-          </p>
-
-          <div class="credits-section">
-            <p class="funding">
-              <a href="https://www.wearethefuture-festival.de" target="_blank"><p>Learn more: https://www.wearethefuture-festival.de</p></a> 
+              <a href="https://youtu.be/mK-petdPykc" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/mK-petdPykc/0.jpg" alt="Levin Goes Lightly Thumbnail" class="video--thumbnail" loading="lazy">
+                <iframe class="video--iframe" src="https://www.youtube.com/embed/mK-petdPykc?autoplay=1&mute=1&controls=0&modestbranding=1" frameborder="0" data-video-id="mK-petdPykc"></iframe>
+                <h4 class="p--title">Levin Goes Lightly - Geschichten (official)</h4>
+              </a>
+              <p class="credit">Music & Text - Levin Stadler<br>Directed by Nicolas Ohnesorge<br>Starring : Alena Hermes,
+                Alisa Scetinina<br>Color Grading : Harry Delgas</p>
+          
           </div>
         </div>
-        <div class="artwork-gallery">
-          <img src="images/weAretheFutureFes_logo.jpg" alt="festival Art" loading="lazy">
+      </div>
+    </section>
+
+
+    <section id="curation">
+      <div class="nav-title-wrapper">
+        <div class="nav-title">
+          <h2 class="title">Curation</h2>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="curation--card">
+        <div class="grid-container">
+          <!-- Exhibition Details and Main Poster -->
+          <div class="exhibition-details">
+            <h4>Exhibition</h4>
+            <h3>The Sacrifice Of Your Little Self</h3>
+            <p>
+              This exhibition aims to explore the concept of ego and our connection to it through various forms of art
+              including painting, ceramics, music and performance.<br />
 
+              In a world that is becoming increasingly individualistic and self-centred, the concept of ego becomes more
+              important than ever. <br> "The Sacrifice Of Your Little Self" is a thoughtful exhibition that invites
+              visitors to reflect on their own relationship with ego and its impact on our lives and the world around us.
+            </p>
+            <img src="images/nectar127_poster.png" alt="Event Poster" loading="lazy">
+            <p class="poster-credit">Poster: Ivan Zozulya</p>
+            <!-- Credits -->
+            <div class="credits-section">
+              <h4>Artists & Bands</h4>
+              <p><strong>Ivan Zozulya</strong> - Painting</p>
+              <p><strong>A-Hyun Cho</strong> - Ceramic</p>
+              <p><strong>Eva - Maria Hasler</strong> - Performance</p>
+              <p><strong>Alisa Scetinina</strong> - Digital Photography</p>
+      
+              <br />
+              <p>Bands: <strong>Gránátèze</strong>, <strong>NaN</strong>, <strong>Diva Daneben</strong></p>
+              <p class="funding">Project funded by the city of Stuttgart.</p>
+            </div>
+          </div>
 
+          <!-- Artwork Gallery -->
+          <div class="artwork-gallery">
+            <img src="images/simulation.jpg" alt="Simulation Art" loading="lazy">
+            <img src="images/stimulation1-left.jpg" alt="Simulation Left Art" loading="lazy">
+            <img src="images/stimulation1-right.jpg" alt="Simulation Right Art" loading="lazy">
+            <img src="images/simulation2.jpg" alt="Simulation Art 2"  loading="lazy">
+            <img src="images/SacrificeOfourLittleSelf.jpg" alt="Main Theme Art" loading="lazy">
+          </div>
+        </div>
+        <div class="grid-container">
+          <!-- Exhibition Details and Main Poster -->
+          <div class="exhibition-details">
+            <h4 class="">Festival</h4>
+            <h3>We Are The Future</h3>
+            <p>Family Festival in the German city of Waiblingen, offering Skate, BMX, Streetboard, Hip - Hop, Graffiti, Parkour, Fashion and Recycling Workshops, as well as Music Shows and Sport contests 
+              
+            </p>
 
-
-  <section id="press">
-    <div class="nav-title-wrapper">
-      <div class="nav-title">
-        <h2 class="title">Interviews & Press</h2>
+            <div class="credits-section">
+              <p class="funding">
+                <a href="https://www.wearethefuture-festival.de" target="_blank"><p>Learn more: https://www.wearethefuture-festival.de</p></a> 
+            </div>
+          </div>
+          <div class="artwork-gallery">
+            <img src="images/weAretheFutureFes_logo.jpg" alt="festival Art" loading="lazy">
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="press--card">
+    </section>
 
-      <a href="https://www.altiba9.com/artist-interviews/alisa-scetinina-performace-music-body" class="press--link"
-        target="_blank" rel="noopener noreferrer">
-        <div class="press--list">
-          <p>Al-Tiba9 Contemporary Art - Alisa Scetinina Performace music body</p>
-          <p>April 12, 2023</p>
-        </div>
-      </a>
-      <a href="https://www.altiba9.com/artist-interviews/alisa-scetinina-performace-music-body" class="press--link"
-        target="_blank" rel="noopener noreferrer">
-        <div class="press--list">
-          <p>An interview with SCETI - their debut on the Exlove label with a fantastic four-track synthesized disco EP
-          </p>
-          <p>August 12, 2021</p>
-        </div>
-      </a>
-      <a href="http://www.dmcworld.net/back-to-mine/back-to-mine-with-sceti/" class="press--link" target="_blank"
-        rel="noopener noreferrer">
-        <div class="press--list">
-          <p>dmcworld magazine - BACK TO MINE WITH SCETI</p>
-          <p>August 27, 2021</p>
-        </div>
-      </a>
-      <a href="https://womenofmusic.de/member_reader/alisa-pgeboren-in-lettland-hat-sich-alisa-scetinina-seit-ihrer-kindheit-mit-musik-und-lettischem-tanz-besch%C3%A4ftigt-w%C3%A4hrend-ihres-.html"
-        class="press--link" target="_blank" rel="noopener noreferrer">
-        <div class="press--list">
-          <p>WOMAN OF MUSIC</p>
-          <p>May, 2019</p>
-        </div>
-      </a>
-    </div>
-  </section>
 
+
+
+    <section id="press">
+      <div class="nav-title-wrapper">
+        <div class="nav-title">
+          <h2 class="title">Interviews & Press</h2>
+        </div>
+      </div>
+      <div class="press--card">
+
+        <a href="https://www.altiba9.com/artist-interviews/alisa-scetinina-performace-music-body" class="press--link"
+          target="_blank" rel="noopener noreferrer">
+          <div class="press--list">
+            <p>Al-Tiba9 Contemporary Art - Alisa Scetinina Performace music body</p>
+            <p>April 12, 2023</p>
+          </div>
+        </a>
+        <a href="https://www.altiba9.com/artist-interviews/alisa-scetinina-performace-music-body" class="press--link"
+          target="_blank" rel="noopener noreferrer">
+          <div class="press--list">
+            <p>An interview with SCETI - their debut on the Exlove label with a fantastic four-track synthesized disco EP
+            </p>
+            <p>August 12, 2021</p>
+          </div>
+        </a>
+        <a href="http://www.dmcworld.net/back-to-mine/back-to-mine-with-sceti/" class="press--link" target="_blank"
+          rel="noopener noreferrer">
+          <div class="press--list">
+            <p>dmcworld magazine - BACK TO MINE WITH SCETI</p>
+            <p>August 27, 2021</p>
+          </div>
+        </a>
+        <a href="https://womenofmusic.de/member_reader/alisa-pgeboren-in-lettland-hat-sich-alisa-scetinina-seit-ihrer-kindheit-mit-musik-und-lettischem-tanz-besch%C3%A4ftigt-w%C3%A4hrend-ihres-.html"
+          class="press--link" target="_blank" rel="noopener noreferrer">
+          <div class="press--list">
+            <p>WOMAN OF MUSIC</p>
+            <p>May, 2019</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
 
   <footer id="footer-section">
     <nav class="nav--button">
@@ -475,7 +474,6 @@
         <span class="edge"></span>
         <span class="front"><a class="nav-link" href="/whiteboard.html">Space for Users</a></span>
       </button>
-
     </nav>
 
     <div class="social mb-3">
@@ -634,10 +632,6 @@
             });
 
         });
-    
-  
   </script
-
 </body>
-
 </html>

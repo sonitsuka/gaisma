@@ -172,7 +172,6 @@ nav {
     font-size: .9rem;
 }
 
-/* Make the footer fixed at the bottom of the page */
 #footer-section {
     position: fixed;
     bottom: 0;
@@ -182,8 +181,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: auto;
+    height: 3rem;
     padding: 5px 10px;
+    z-index: 1000;
   }
 
 
