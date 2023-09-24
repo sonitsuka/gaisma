@@ -1,21 +1,18 @@
-// Import the functions you need from the SDKs you need
 //import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 let drawing = false;
-let mode = 'draw'; // can be 'draw' or 'erase'
+let mode = 'draw'; 
 
-let addingText = false; // whether we're currently adding text
-let currentTextInput = null; // to store current text input field if any
+let addingText = false; 
+let currentTextInput = null;
 
-let textObjects = []; // to store all texts and their positions
-let erasingText = false; // whether we're currently erasing text
+let textObjects = []; 
+let erasingText = false; 
 
-// Set canvas size
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -36,7 +33,6 @@ window.addEventListener('load', function() {
 
 document.getElementById('saveButton').addEventListener('click', saveCanvas);
 
-
 canvas.addEventListener('mousedown', function(e) {
     drawing = true;
     context.beginPath();
@@ -46,19 +42,17 @@ canvas.addEventListener('mousedown', function(e) {
 canvas.addEventListener('mousemove', function(e) {
     if (!drawing) return;
     context.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
-    context.strokeStyle = mode === 'draw' ? 'black' : 'white';
+    context.strokeStyle = mode === 'draw' ? context.fillStyle : 'white'; 
     context.stroke();
 });
 
-canvas.addEventListener('mouseup', function(e) {
-    drawing = false;
-    saveCanvas();
-});
+canvas.addEventListener('mouseup', endDrawing);
+canvas.addEventListener('mouseout', endDrawing);
 
-canvas.addEventListener('mouseout', function(e) {
+function endDrawing() {
     drawing = false;
     saveCanvas();
-});
+}
 
 document.getElementById('drawButton').addEventListener('click', function() {
     mode = 'draw';
@@ -70,8 +64,8 @@ document.getElementById('eraseButton').addEventListener('click', function() {
 
 document.getElementById('clearButton').addEventListener('click', function() {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    textObjects = []; // remove all texts
-    if (currentTextInput) { // remove text input field if present
+    textObjects = []; 
+    if (currentTextInput) {
         currentTextInput.parentNode.removeChild(currentTextInput);
         currentTextInput = null;
     }
@@ -79,7 +73,6 @@ document.getElementById('clearButton').addEventListener('click', function() {
 });
 
 document.getElementById('textButton').addEventListener('click', function() {
-    // remove existing text input field if any
     if (currentTextInput) {
         currentTextInput.parentNode.removeChild(currentTextInput);
         currentTextInput = null;
@@ -89,15 +82,12 @@ document.getElementById('textButton').addEventListener('click', function() {
 
 canvas.addEventListener('click', function(e) {
     if (erasingText) {
-        // check if we clicked on a text
         for (let i = textObjects.length - 1; i >= 0; i--) {
             const textObject = textObjects[i];
             const textWidth = context.measureText(textObject.text).width;
             if (e.clientX >= textObject.x && e.clientX <= textObject.x + textWidth
                 && e.clientY >= textObject.y - 10 && e.clientY <= textObject.y) {
-                // we clicked on a text, remove it
                 textObjects.splice(i, 1);
-                // redraw the canvas
                 context.clearRect(0, 0, canvas.width, canvas.height);
                 for (const textObject of textObjects) {
                     context.fillText(textObject.text, textObject.x, textObject.y);
@@ -109,7 +99,7 @@ canvas.addEventListener('click', function(e) {
     }
     if (!addingText) return;
     addingText = false;
-    // create new text input field
+
     const textInput = document.createElement('input');
     textInput.type = 'text';
     textInput.style.position = 'absolute';
@@ -118,31 +108,35 @@ canvas.addEventListener('click', function(e) {
     document.body.appendChild(textInput);
     textInput.focus();
     currentTextInput = textInput;
+
     textInput.addEventListener('input', function() {
-        // adjust the size of the input field based on the text length
-        textInput.size = Math.max(1, textInput.value.length); // at least 1
+        textInput.size = Math.max(1, textInput.value.length); 
     });
+
     textInput.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') {
             const text = textInput.value;
-            context.fillText(text, e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+            context.fillText(text, parseFloat(textInput.style.left), parseFloat(textInput.style.top) + parseFloat(lineWidth));
             saveCanvas();
-            // remove the text input field
             textInput.parentNode.removeChild(textInput);
             currentTextInput = null;
-            // add this text to our array
-            textObjects.push({text: text, x: e.clientX - canvas.offsetLeft, y: e.clientY - canvas.offsetTop});
+            textObjects.push({text: text, x: parseFloat(textInput.style.left), y: parseFloat(textInput.style.top) + parseFloat(lineWidth)});
         }
     });
 });
 
-let lineWidth = 1; // default line width
-
+let lineWidth = 1;
 document.getElementById('lineWidth').addEventListener('input', function(e) {
     lineWidth = e.target.value;
     context.lineWidth = lineWidth;
     context.font = lineWidth + "px sans-serif";
 });
+
+// Color picker
+document.getElementById('colorPicker').addEventListener('input', function(e) {
+    context.fillStyle = e.target.value;
+});
+
 
 
 /* ------------
