@@ -387,14 +387,13 @@ canvas {
 }
 
 .performance--text {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   padding: 1rem;
   line-height: 1.5rem;
   font-size: 1.1rem;
   color: #fff;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
 }
-
 
 .video-category {
    display: -webkit-grid;
@@ -543,14 +542,12 @@ q.quote{
 
 }
 
-
 .artwork-gallery {
- display: -webkit-grid;
- display: grid;
- -webkit-grid-template-columns: repeat(4, 1fr); /* Four columns for the first 4 images */
-  /*grid-template-rows: auto 1fr; Two rows: one for the four images and another for the large image */
-
- align-items: center;
+  display: -webkit-grid;
+  display: grid;
+  -webkit-grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
 }
 
 .artwork-gallery img {
@@ -560,7 +557,7 @@ q.quote{
 }
 
 .artwork-gallery img:last-child {
- grid-column: 1 / 5; /* Spanning the entire width for the last image */
+ grid-column: 1 / 5;
 }
 
 
@@ -619,15 +616,21 @@ q.quote{
 
 /* FOOTER NAV BAR */
 nav {
+  display: -webkit-flex;
   display: flex;
   gap: 2px;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   align-items: center;
   padding: 2px;
 }
 
-
 .pushable {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+
   position: relative;
   border: none;
   background: transparent;
@@ -639,13 +642,16 @@ nav {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+.front, .shadow, .edge {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
 
 .front {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  border-radius: 5px;
   font-size: 13px;
   color: #4B4453;
   background: linear-gradient(145deg, #F5F5F5, #E0E0E0); /* Subtle gradient for convex appearance */
@@ -667,7 +673,9 @@ nav {
   border-radius: 5px;
   background: hsl(0deg 0% 0% / 0.25);
   will-change: transform;
+  -webkit-transform: translateY(2px);
   transform: translateY(2px);
+  -webkit-transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
   transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
 }
 
@@ -682,26 +690,35 @@ nav {
   z-index: -1;
 }
 
-
 .pushable:hover .front {
+  -webkit-transform: translateY(-6px);
   transform: translateY(-6px);
+  -webkit-transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
   transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
 }
 
 .pushable:active .front {
+  -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
+  -webkit-transition: transform 34ms;
   transition: transform 34ms;
 }
 
 .pushable:hover .shadow {
+  -webkit-transform: translateY(4px);
   transform: translateY(4px);
+  -webkit-transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
   transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
 }
 
 .pushable:active .shadow {
+  -webkit-transform: translateY(1px);
   transform: translateY(1px);
+  -webkit-transition: transform 34ms;
   transition: transform 34ms;
 }
+
+
 
 .pushable:focus:not(:focus-visible) {
   outline: none;
@@ -782,29 +799,38 @@ nav {
 }
 
 #footer-section {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   position: fixed;
   bottom: 0;
   width: 100%;
-  backdrop-filter: blur(5px);
   color: gray;
+  display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
+  -webkit-align-items: center;
   align-items: center;
   height: 3rem;
   padding: 5px 10px;
   z-index: 1000;
 }
 
+
 #footer-section nav {
+  display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
+  -webkit-align-items: center;
   align-items: center;
   font-size: 0.8rem;
 }
 
-/* Style the navigation links */
 #footer-section .nav-links {
+  display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   list-style: none;
   padding: 0;
@@ -813,7 +839,6 @@ nav {
 #footer-section .nav-links li {
   margin: 0 0.5rem;
 }
-
 
   
 /* Styles for Extra Small (XS) Devices */
