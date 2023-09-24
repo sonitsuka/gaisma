@@ -23,7 +23,7 @@
   <div class="container">
     <section id="home">
       <video id="home--video" crossOrigin="anonymous" muted playsinline loop preload="auto" autoplay>
-          <source src="/images/toppage_video.mp4" type="video/mp4">
+          <source src="/images/gaisma_promoVideo.webm" type="video/webm">
       </video>
       <canvas id="canvas" width="1440" height="1000"></canvas>
     </section>
@@ -500,6 +500,12 @@
   </footer>
 
   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let video = document.getElementById("home--video");
+        video.play();
+    });
+
+
      // Function to set active button color
      function setActiveButtonColor(button) {
         const color = button.dataset.color;
@@ -612,22 +618,21 @@
             mask.endFill();
             app.stage.addChild(mask);
        
-            // Apply the mask to the video sprite
             videoSprite.mask = mask;
             app.stage.addChild(videoSprite);
        
             video.play();
             
             // Fade-in effect for the background sprite
-            const fadeInDuration = 1; // Duration in seconds
+            const fadeInDuration = 1; 
             let elapsedTime = 0;
             app.ticker.add((delta) => {
-                elapsedTime += delta / 60; // Convert frame delta to seconds
+                elapsedTime += delta / 60; 
                 const alphaValue = Math.min(elapsedTime / fadeInDuration, 1);
                 bgSprite.alpha = alphaValue;
-                videoSprite.alpha = alphaValue; // Fade in the video sprite
+                videoSprite.alpha = alphaValue; 
                 if (alphaValue === 1) {
-                    app.ticker.remove(this); // Stop the ticker when fade-in is complete
+                    app.ticker.remove(this); 
                 }
             });
 
