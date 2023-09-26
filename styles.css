@@ -375,15 +375,14 @@ canvas {
    gap: 20px;
    width: 100%;
 }
-
 .performance--card .video {
-   -webkit-flex-basis: calc(33.33% - 20px);
-   flex-basis: calc(33.33% - 20px);
-   border: #cacaca solid 0.5px;
-   padding: 0.5rem;
-   background-color: rgb(12, 12, 12);
-   position: relative;
-   box-sizing: border-box;
+  -webkit-flex-basis: calc(25% - 20px); 
+  flex-basis: calc(25% - 20px);
+  border: #cacaca solid 0.5px;
+  padding: 0.5rem;
+  background-color: rgb(12, 12, 12);
+  position: relative;
+  box-sizing: border-box;
 }
 
 .performance--text {
@@ -396,12 +395,14 @@ canvas {
 }
 
 .video-category {
-   display: -webkit-grid;
-   display: grid;
-   -webkit-grid-template-columns: 0.7fr 1fr 1fr 1fr;
-   grid-template-columns: 0.7fr 1fr 1fr 1fr;
-   gap: 0.8rem;
+  display: -webkit-grid;
+  display: grid;
+  -webkit-grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+
+  gap: 0.8rem;
 }
+
 .video {
  position: relative;
  box-sizing: border-box;
@@ -409,7 +410,7 @@ canvas {
 
 .video--thumbnail {
  width: 100%;
- height: 250px;
+ height: 150px;
  display: block;
  object-fit: cover;
 }
@@ -430,6 +431,7 @@ canvas {
 
 .credit{
  margin-top: 1rem;
+ font-size: 0.8rem;
 }
    /* */
 
