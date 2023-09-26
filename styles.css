@@ -381,7 +381,7 @@ canvas {
    flex-basis: calc(33.33% - 20px);
    border: #cacaca solid 0.5px;
    padding: 0.5rem;
-   background-color: #2e2e2e;
+   background-color: rgb(12, 12, 12);
    position: relative;
    box-sizing: border-box;
 }
@@ -398,8 +398,8 @@ canvas {
 .video-category {
    display: -webkit-grid;
    display: grid;
-   -webkit-grid-template-columns: 0.7fr 2fr 2fr 2fr;
-   grid-template-columns: 0.7fr 2fr 2fr 2fr;
+   -webkit-grid-template-columns: 0.7fr 1fr 1fr 1fr;
+   grid-template-columns: 0.7fr 1fr 1fr 1fr;
    gap: 0.8rem;
 }
 .video {
@@ -430,18 +430,6 @@ canvas {
 
 .credit{
  margin-top: 1rem;
-}
-
-.video--iframe {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 250px;
- display: none;
- z-index: 10;
- pointer-events: none; /* This will allow you to click the link below the iframe */
- padding: 0.5rem;
 }
    /* */
 
