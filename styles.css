@@ -317,7 +317,7 @@ canvas {
    grid-template-rows: 4fr auto;  
    width: 100%;
    align-items: stretch;
-   color: #D3D3D3;
+  
 
 }
 
@@ -337,6 +337,7 @@ canvas {
 }
 
 .performance--title h2, .performance--title h3 {
+color: #D3D3D3;
  hyphens: auto;
  word-wrap: break-word; 
  overflow-wrap: break-word;
@@ -361,6 +362,7 @@ canvas {
    padding: 20px;
    background: url(/images/bg-performance.jpg) ;
    background-size: contain;
+   color: #181818;
 }
 
 .performance--card .performance--text {
@@ -380,7 +382,8 @@ canvas {
   flex-basis: calc(25% - 20px);
   border: #cacaca solid 0.5px;
   padding: 0.5rem;
-  background-color: rgb(12, 12, 12);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   position: relative;
   box-sizing: border-box;
 }
@@ -391,7 +394,7 @@ canvas {
   padding: 1rem;
   line-height: 1.5rem;
   font-size: 1.1rem;
-  color: #fff;
+  color: #181818;
 }
 
 .video-category {
@@ -427,6 +430,7 @@ canvas {
 
 .p--title {
  padding-top: 5px;
+ color: #181818;
 }
 
 .credit{
