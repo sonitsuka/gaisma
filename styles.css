@@ -360,8 +360,8 @@ color: #D3D3D3;
    grid-template-rows: auto repeat(3, 1fr);
    gap: 20px;
    padding: 20px;
-   background: url(/images/bg-performance.png) ;
-   background-size: contain;
+   background: url(/images/bg-performance.jpg) no-repeat;
+   background-size: cover;
    color: #181818;
 }
 
@@ -388,13 +388,19 @@ color: #D3D3D3;
   box-sizing: border-box;
 }
 
+.performance--statementText{
+  text-align: center;
+  font-weight: bold;
+}
+
 .performance--text {
   /* -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px); */
   padding: 1rem;
+  font-size: 1rem;
   line-height: 1.5rem;
-  font-size: 1.1rem;
-  color: #181818;
+  color: black;
+  max-width: 1360px;
 }
 
 .video-category {
