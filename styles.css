@@ -362,6 +362,7 @@ color: #D3D3D3;
    padding: 20px;
    background: url(/images/bg-performance.jpg) no-repeat;
    background-size: cover;
+   background-position: right center;
    color: #181818;
 }
 
@@ -479,12 +480,28 @@ color: #D3D3D3;
  display: -webkit-flex;
  display: flex;
  justify-content: space-between;
- align-items: flex-start;
+ align-items: center;
 }
 
 #about-image img {
  max-width: 360px;
 }
+#about-image a {
+  display: block;
+  margin-top: 10px;
+  background-color: #555;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+#about-image a:hover {
+  background-color: #333;
+}
+
 
 .about-title {
  padding: 0;
@@ -950,6 +967,7 @@ nav {
     #performance {
       grid-template-columns: 1fr; 
       grid-template-rows: auto auto;
+
     }
     .video-category {
         display: block;
@@ -960,7 +978,9 @@ nav {
       display: block;  
       grid-column: 1;
       grid-row: 2;
+      background-position: left center;
   }
+
   .performance--title {
     grid-column: 1;
     grid-row: 1;
@@ -1169,6 +1189,7 @@ nav {
       display: block;  
       grid-column: 1;
       grid-row: 2;
+      background-position: left center;
   }
   .performance--title {
     grid-column: 1;
@@ -1335,6 +1356,10 @@ nav {
     flex-basis: calc(50% - 1rem); /* Two videos per row on tablet */
   }
 
+  .performance--card  {
+    background-position: left center;
+  }
+
   .press--card {
     padding: 1.5rem;
     }
@@ -1362,3 +1387,4 @@ nav {
           display: none;
       }
 }
+
