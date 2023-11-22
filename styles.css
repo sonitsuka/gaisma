@@ -348,7 +348,8 @@ color: #D3D3D3;
 
 
 .performance--title h3 {
- border-bottom: var(--background-color) 0.1px solid;
+  border-bottom: var(--background-color) 0.1px solid;
+
 }
 
 .performance--card {
@@ -357,7 +358,7 @@ color: #D3D3D3;
    display: -webkit-grid; 
    display: grid;
    -webkit-grid-template-rows: auto repeat(3, 1fr);
-   grid-template-rows: auto repeat(3, 1fr);
+   grid-template-rows: auto auto auto;
    gap: 20px;
    padding: 20px;
    background: url(/images/bg-performance.jpg) no-repeat;
@@ -389,18 +390,29 @@ color: #D3D3D3;
   box-sizing: border-box;
 }
 
+.performance--statement{
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px); 
+  padding: 5px 10px;
+}
 .performance--statementText{
   text-align: center;
   font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: #ffeeda 1px 0 10px;
 }
 
 .performance--text {
-  /* -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px); */
+  /**/
+
   padding: 1rem;
   font-size: 1rem;
   line-height: 1.5rem;
   color: black;
+  text-shadow: #ffeeda 1px 0 12px;
+  font-weight: bold;
+
+  
   max-width: 1360px;
 }
 
@@ -442,7 +454,7 @@ color: #D3D3D3;
 
 .credit{
  margin-top: 1rem;
- font-size: 0.8rem;
+ font-size: 0.95rem;
 }
    /* */
 
