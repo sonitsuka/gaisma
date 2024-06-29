@@ -818,7 +818,8 @@ nav {
   color: #FFF;
 }
 
-.copyright {
+.copyright,
+.mb-0  {
   color: #F5F5F5;
   font-size: 0.7rem;
 }
