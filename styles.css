@@ -809,6 +809,10 @@ nav {
   background-color: #ff0000;
 }
 
+.social-icon.rd a {
+  background-color: #e1ad01;
+}
+
 /* Hover effect */
 .social a:hover {
   color: #FFF; /* White color on hover */
@@ -816,6 +820,14 @@ nav {
 
 .social-icon.in a:hover, .social-icon.fb a:hover, .social-icon.sc a:hover, .social-icon.sp a:hover, .social-icon.bc a:hover, .social-icon.yt a:hover {
   color: #FFF;
+}
+
+.school-logo {
+  max-height: 6.4rem;
+}
+
+.school-logo img {
+  max-height: 38px;
 }
 
 .copyright,
