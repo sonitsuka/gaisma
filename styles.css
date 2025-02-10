@@ -830,6 +830,13 @@ nav {
   max-height: 38px;
 }
 
+.icons-footer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
 .copyright,
 .mb-0  {
   color: #F5F5F5;
@@ -1094,7 +1101,7 @@ nav {
   #footer-section {
       flex-direction: column;
       padding: 1rem 0 0;
-      height: 6.5rem;
+      height: 8.5rem;
   }
 
   nav {
