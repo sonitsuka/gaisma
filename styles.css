@@ -747,8 +747,6 @@ nav {
   transition: transform 34ms;
 }
 
-
-
 .pushable:focus:not(:focus-visible) {
   outline: none;
 }
@@ -895,7 +893,7 @@ nav {
 }
 
   
-/* Styles for Extra Small (XS) Devices */
+/* Styles for Extra Small (XS) Mobile Devices */
 @media (max-width: 480px) {
 
   #home {
@@ -1335,6 +1333,11 @@ nav {
 @media (min-width: 768px) and (max-width: 1024px) {
   .social a, .social .social-icon  {
     margin: 0;
+  }
+
+  #footer-section {
+    flex-direction: column;
+    height: 100px;
   }
 
   .nav-title-wrapper {
