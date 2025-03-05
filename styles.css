@@ -897,13 +897,7 @@ nav {
 @media (max-width: 480px) {
 
   #home {
-    /* Webkit prefix for older Safari versions */
-    -webkit-background-image: url('/images/bg-navtitle.jpg');
-    
-    /* Standard properties */
-    background-image: url('/images/bg-navtitle.jpg');
-    height: 90vh;
-    background-size: cover; 
+    background-color: black;
     }
   
   #home--video {
