@@ -22,24 +22,253 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+/* Retro TV Styles */
 body, html {
-font-family: 'Petrona',serif; 
-margin: 0;
-  min-height: 100vh;
-  background: transparent;
-}
-
-
-body {
-overflow-x: hidden; 
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
 }
 
 .container {
-  background-color: #2e2e2e;
-  padding-bottom: 6rem;  
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
+#home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+/* TV Container */
+.tv-container {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* TV Frame */
+.tv-frame {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Screen Container */
+.screen-container {
+  position: absolute;
+  top: 10.5%;   /* Adjust based on the TV frame image */
+  left: 9.5%;   /* Adjust based on the TV frame image */
+  width: 65%;   /* Adjust based on the TV frame image */
+  height: 65%;  /* Adjust based on the TV frame image */
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 8% / 8%;
+  background-color: #000;
+}
+
+/* Video Wrapper */
+.video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#home--video {
+  height: 100%;
+  max-width: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* For vertical videos, contain within height and center horizontally */
+.vertical-video {
+  height: 100%;
+  width: auto;
+  max-height: 100%;
+}
+
+/* Black side bars for vertical video */
+.video-side-bars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.side-bar {
+  background-color: #000;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.video-space {
+  height: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/* Retro TV effects */
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(0, 0, 0, 0.03) 50%,
+    rgba(0, 0, 0, 0.03) 100%
+  );
+  background-size: 100% 4px;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Interactive elements */
+.tv-controls {
+  position: absolute;
+  right: 11%;
+  top: 30%;
+  z-index: 3;
+  height: 45%;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tv-knob {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.effect-grayscale {
+  filter: grayscale(100%);
+}
+
+.effect-sepia {
+  filter: sepia(80%);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tv-container {
+    width: 95%;
+  }
+  
+  .tv-controls {
+    right: 10%;
+  }
+  
+  .tv-knob {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tv-container {
+    width: 100%;
+  }
+  
+  .tv-controls {
+    right: 8%;
+  }
+  
+  .tv-knob {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* TV on/off animation */
+.tv-off .screen-container {
+  background-color: #111;
+  transition: background-color 0.2s ease;
+}
+
+.tv-off #home--video {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.screen-flicker {
+  animation: flicker 0.15s infinite alternate;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+/* Video Effects */
+.effect-grayscale {
+  filter: grayscale(100%);
+}
+
+.effect-sepia {
+  filter: sepia(80%);
+}
+
+/* TV power on effect */
+.tv-turn-on {
+  animation: turn-on 1s ease;
+}
+
+@keyframes turn-on {
+  0% { 
+    transform: scale(1, 0.1) translate(0, 0);
+    opacity: 0;
+  }
+  10% { 
+    transform: scale(1, 0.3) translate(0, 0);
+    opacity: 1;
+  }
+  30% { 
+    transform: scale(1, 0.7) translate(0, 0);
+  }
+  100% { 
+    transform: scale(1, 1) translate(0, 0);
+  }
+}
   a {
   text-decoration: none;
   color: #f6efef;
@@ -76,58 +305,6 @@ h2.title {
   overflow-wrap: break-word;
 }
 
-/* HOME 
-video{
-  -webkit-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-  display: none; 
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0;
-}*/
-
-#home--video {
-  display: none;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-canvas {
-  display: block;
-  margin: 0 auto;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-#home {
-  margin: 0;
-  height: 100vh;
-  position: relative; 
-  overflow: hidden;
-  background-size: cover;
-
-}
-
-#canvas {
-  display: block;
-  margin: 0 auto;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
 /*---------- Music -------------------------------- */
 #music {
