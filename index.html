@@ -27,37 +27,87 @@
 
 <body>
   <div class="container">
+    <div class="artistic-bg"></div>
+    <div class="particles" id="particles"></div>
+    
     <section id="home">
-      <div class="tv-container">
-        <!-- TV Frame Image -->
-        <img src="/images/tvframe_square.jpg" alt="Vintage TV Frame" class="tv-frame">
+      <div class="video-composition">
+        <!-- Decorative lines -->
+        <div class="decorative-line top-line"></div>
+        <div class="decorative-line bottom-line"></div>
         
-        <!-- Screen Container -->
-        <div class="screen-container">
-          <!-- Video Side Bars for vertical video -->
-          <div class="video-side-bars">
-            <div class="side-bar"></div>
-            <div class="video-space" id="video-space"></div>
-            <div class="side-bar"></div>
+        <!-- Left Video (AutoPlay) -->
+        <div class="video-cell left">
+          <video id="video-left" class="video effect-grayscale" muted autoplay>
+            <source src="/images/gaisma-Matze-short.mp4" type="video/mp4">
+          </video>
+          
+          <div class="video-overlay">
+            <h3 class="video-title">Reflection</h3>
+            <p class="video-description">Past memories captured in monochrome</p>
           </div>
           
-          <!-- Video Wrapper -->
-          <div class="video-wrapper">
-            <video id="home--video" class="vertical-video" crossOrigin="anonymous" muted playsinline loop preload="auto">
-              <source src="/images/gaisma-Matze-short.mp4" type="video/mp4">
-            </video>
+          <div class="progress-container">
+            <div class="progress-bar" id="progress-left"></div>
           </div>
           
-          <!-- TV Effects -->
-          <div class="scanlines"></div>
-          <div class="vignette"></div>
+          <div class="play-button" id="play-button-left">
+            <i class="fas fa-play"></i>
+          </div>
         </div>
         
-        <!-- Interactive TV Knobs -->
-        <div class="tv-controls">
-          <div class="tv-knob" id="volume-knob" title="Volume Control"></div>
-          <div class="tv-knob" id="channel-knob" title="Channel Control"></div>
-          <div class="tv-knob" id="power-knob" title="Power Control"></div>
+        <!-- Center Video (AutoPlay with delay) -->
+        <div class="video-cell center">
+          <video id="video-center" class="video" muted autoplay>
+            <source src="/images/gaisma-Matze-short.mp4" type="video/mp4">
+          </video>
+          
+          <div class="video-overlay">
+            <h3 class="video-title">Present Moment</h3>
+            <p class="video-description">The vivid reality of now</p>
+          </div>
+          
+          <div class="progress-container">
+            <div class="progress-bar" id="progress-center"></div>
+          </div>
+          
+          <div class="play-button" id="play-button-center">
+            <i class="fas fa-play"></i>
+          </div>
+          
+          <div class="video-finished" id="finished-center">
+            <button class="replay-button" id="replay-center">Replay</button>
+          </div>
+        </div>
+        
+        <!-- Right Video (AutoPlay) -->
+        <div class="video-cell right">
+          <video id="video-right" class="video effect-sepia" muted autoplay>
+            <source src="/images/gaisma-Matze-short.mp4" type="video/mp4">
+          </video>
+          
+          <div class="video-overlay">
+            <h3 class="video-title">Memory</h3>
+            <p class="video-description">Nostalgic glimpses through sepia tones</p>
+          </div>
+          
+          <div class="progress-container">
+            <div class="progress-bar" id="progress-right"></div>
+          </div>
+          
+          <div class="play-button" id="play-button-right">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Main controls -->
+      <div class="main-controls">
+        <div class="control-button" id="mute-toggle">
+          <i class="fas fa-volume-mute"></i>
+        </div>
+        <div class="control-button" id="play-all">
+          <i class="fas fa-play"></i>
         </div>
       </div>
     </section>
@@ -602,133 +652,278 @@ Post Production / Colorgrading - Roman Brauch<br/>
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const video = document.getElementById('home--video');
-      const screenContainer = document.querySelector('.screen-container');
-      const videoSpace = document.getElementById('video-space');
-      const tvContainer = document.querySelector('.tv-container');
+  /*HOME */
+  window.onload = function() {
+      console.log("Page loaded");
       
-      // Power knob functionality
-      const powerKnob = document.getElementById('power-knob');
-      let isPowerOn = true;
+      // Create particle effect
+      createParticles();
       
-      powerKnob.addEventListener('click', function() {
-        isPowerOn = !isPowerOn;
+      // Get video elements
+      const videoLeft = document.getElementById('video-left');
+      const videoCenter = document.getElementById('video-center');
+      const videoRight = document.getElementById('video-right');
+      const allVideos = [videoLeft, videoCenter, videoRight];
+      
+      // Get progress bars
+      const progressLeft = document.getElementById('progress-left');
+      const progressCenter = document.getElementById('progress-center');
+      const progressRight = document.getElementById('progress-right');
+      
+      // Get play buttons
+      const playButtonLeft = document.getElementById('play-button-left');
+      const playButtonCenter = document.getElementById('play-button-center');
+      const playButtonRight = document.getElementById('play-button-right');
+      
+      // Center video overlay
+      const finishedCenter = document.getElementById('finished-center');
+      const replayCenter = document.getElementById('replay-center');
+      
+      // Main control buttons
+      const muteToggle = document.getElementById('mute-toggle');
+      const playAll = document.getElementById('play-all');
+      
+      // Set up videos
+      allVideos.forEach(video => {
+        video.load();
         
-        if (isPowerOn) {
-          tvContainer.classList.remove('tv-off');
-          screenContainer.classList.add('tv-turn-on');
-          
-          // Turn on the video
-          video.play();
-          
-          // Remove the turn-on animation after it completes
-          setTimeout(() => {
-            screenContainer.classList.remove('tv-turn-on');
-          }, 1000);
-        } else {
-          tvContainer.classList.add('tv-off');
-          
-          // Pause the video
-          video.pause();
-        }
+        // Disable auto-repeat
+        video.removeAttribute('loop');
       });
       
-      // Channel knob functionality
-      const channelKnob = document.getElementById('channel-knob');
-      
-      // すべて同じビデオを使用し、エフェクトを適用します
-      const videoSources = [
-        '/images/gaisma-Matze-short.mp4' // オリジナルビデオ
-      ];
-      
-      // ビデオエフェクト - チャンネル切り替え時に適用
-      const videoEffects = [
-        null, // オリジナル - エフェクトなし
-        'grayscale', // 白黒エフェクト
-        'sepia' // セピアエフェクト
-      ];
-      
-      let currentEffect = 0;
-      
-      channelKnob.addEventListener('click', function() {
-        // Add screen flicker effect
-        screenContainer.classList.add('screen-flicker');
+      // Left and right videos play simultaneously (immediately)
+      videoLeft.play()
+        .then(() => console.log("Left video playing"))
+        .catch(e => console.error("Left video play error:", e));
         
-        // Change channel/effect after a short delay
-        setTimeout(() => {
-          // サイクルを通じて次のエフェクトに移動
-          currentEffect = (currentEffect + 1) % videoEffects.length;
-          
-          // ビデオにエフェクトを適用
-          applyVideoEffect(video, videoEffects[currentEffect]);
-          
-          // Remove flicker effect
-          screenContainer.classList.remove('screen-flicker');
-        }, 300);
-      });
+      videoRight.play()
+        .then(() => console.log("Right video playing"))
+        .catch(e => console.error("Right video play error:", e));
       
-      // ビデオにエフェクトを適用する関数
-      function applyVideoEffect(videoElement, effect) {
-        // すべてのエフェクトクラスをリセット
-        videoElement.classList.remove('effect-grayscale', 'effect-sepia');
-        
-        // 選択されたエフェクトを適用
-        if (effect === 'grayscale') {
-          videoElement.classList.add('effect-grayscale');
-        } else if (effect === 'sepia') {
-          videoElement.classList.add('effect-sepia');
+      // Center video plays after 3 seconds
+      setTimeout(() => {
+        if (videoCenter.paused) {
+          videoCenter.play()
+            .then(() => console.log("Center video playing"))
+            .catch(e => console.error("Center video play error:", e));
         }
-        // エフェクトがnullの場合、クラスは追加されません（オリジナル）
+      }, 3000);
+      
+      // Progress bar update function
+      function updateProgress(video, progressBar) {
+        if (video.duration) {
+          const percent = (video.currentTime / video.duration) * 100;
+          progressBar.style.width = percent + '%';
+        }
       }
       
-      // Volume knob functionality
-      const volumeKnob = document.getElementById('volume-knob');
+      // Play individual video
+      function playVideo(video, playButton) {
+        video.play()
+          .then(() => {
+            console.log("Video playing");
+            if (playButton) {
+              playButton.querySelector('i').className = 'fas fa-pause';
+            }
+          })
+          .catch(err => {
+            console.error("Video play error:", err);
+          });
+      }
+      
+      // Pause individual video
+      function pauseVideo(video, playButton) {
+        video.pause();
+        if (playButton) {
+          playButton.querySelector('i').className = 'fas fa-play';
+        }
+      }
+      
+      // Toggle individual video play/pause
+      function toggleVideo(video, playButton) {
+        if (video.paused) {
+          playVideo(video, playButton);
+        } else {
+          pauseVideo(video, playButton);
+        }
+      }
+      
+      // Set up progress tracking for all videos
+      videoLeft.addEventListener('timeupdate', () => updateProgress(videoLeft, progressLeft));
+      videoCenter.addEventListener('timeupdate', () => updateProgress(videoCenter, progressCenter));
+      videoRight.addEventListener('timeupdate', () => updateProgress(videoRight, progressRight));
+      
+      // Center video ended handler - only center video shows replay button
+      videoCenter.addEventListener('ended', () => {
+        finishedCenter.style.opacity = '1';
+        finishedCenter.style.pointerEvents = 'auto';
+        playButtonCenter.style.opacity = '0';
+      });
+      
+      // Play button click handlers
+      playButtonLeft.addEventListener('click', () => toggleVideo(videoLeft, playButtonLeft));
+      playButtonCenter.addEventListener('click', () => toggleVideo(videoCenter, playButtonCenter));
+      playButtonRight.addEventListener('click', () => toggleVideo(videoRight, playButtonRight));
+      
+      // Center video replay button
+      replayCenter.addEventListener('click', () => {
+        videoCenter.currentTime = 0;
+        finishedCenter.style.opacity = '0';
+        finishedCenter.style.pointerEvents = 'none';
+        playButtonCenter.style.opacity = '0';
+        playVideo(videoCenter, playButtonCenter);
+      });
+      
+      // Play all button
+      playAll.addEventListener('click', function() {
+        // Reset center video
+        videoCenter.currentTime = 0;
+        if (finishedCenter) {
+          finishedCenter.style.opacity = '0';
+          finishedCenter.style.pointerEvents = 'none';
+        }
+        
+        // Reset left and right videos if they've ended
+        if (videoLeft.ended) {
+          videoLeft.currentTime = 0;
+          playVideo(videoLeft, playButtonLeft);
+        }
+        
+        if (videoRight.ended) {
+          videoRight.currentTime = 0;
+          playVideo(videoRight, playButtonRight);
+        }
+        
+        // Play center video
+        playVideo(videoCenter, playButtonCenter);
+        
+        // Update play all button
+        playAll.querySelector('i').className = 'fas fa-pause';
+      });
+      
+      // Toggle mute/unmute on all videos
       let isMuted = true;
       
-      volumeKnob.addEventListener('click', function() {
+      muteToggle.addEventListener('click', function() {
         isMuted = !isMuted;
-        video.muted = isMuted;
+        
+        allVideos.forEach(video => {
+          video.muted = isMuted;
+        });
+        
+        // Update icon
+        muteToggle.querySelector('i').className = isMuted ? 
+          'fas fa-volume-mute' : 'fas fa-volume-up';
+        
+        console.log("Mute state:", isMuted);
       });
       
-      // Adjust video size on load to maintain aspect ratio
-      video.addEventListener('loadedmetadata', function() {
-        adjustVideoSize();
-      });
-      
-      // Handle window resize
-      window.addEventListener('resize', adjustVideoSize);
-      
-      // Function to adjust video size based on aspect ratio
-      function adjustVideoSize() {
-        const videoAspect = video.videoHeight / video.videoWidth;
-        const containerAspect = screenContainer.clientHeight / screenContainer.clientWidth;
+      // Create particle effect
+      function createParticles() {
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 30;
         
-        // Calculate video display width based on container and video aspect ratios
-        let videoDisplayWidth;
-        
-        if (videoAspect > containerAspect) {
-          // Video is taller than container (typical for mobile/vertical format)
-          // Fit by height and center horizontally
-          video.style.height = "100%";
-          video.style.width = "auto";
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.classList.add('particle');
           
-          // Calculate the width of the video space for side bars
-          videoDisplayWidth = screenContainer.clientHeight / videoAspect;
-          videoSpace.style.width = videoDisplayWidth + "px";
-        } else {
-          // Video is wider than container
-          // Fit by width and center vertically
-          video.style.width = "100%";
-          video.style.height = "auto";
+          // Random size
+          const size = Math.random() * 5 + 1;
+          particle.style.width = size + 'px';
+          particle.style.height = size + 'px';
           
-          videoDisplayWidth = screenContainer.clientWidth;
-          videoSpace.style.width = videoDisplayWidth + "px";
+          // Random position
+          particle.style.top = Math.random() * 100 + '%';
+          particle.style.left = Math.random() * 100 + '%';
+          
+          // Random opacity
+          particle.style.opacity = Math.random() * 0.5;
+          
+          // Animation
+          const duration = Math.random() * 20 + 10;
+          particle.style.animation = `float ${duration}s linear infinite`;
+          
+          particlesContainer.appendChild(particle);
         }
+        
+        // Add keyframes for float animation
+        const style = document.createElement('style');
+        style.innerHTML = `
+          @keyframes float {
+            0% {
+              transform: translateY(0) translateX(0);
+              opacity: 0;
+            }
+            50% {
+              opacity: 0.5;
+            }
+            100% {
+              transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px);
+              opacity: 0;
+            }
+          }
+        `;
+        document.head.appendChild(style);
       }
-      
-      // Start with power on
-      video.play();
+    };
+    /* common */
+    // Function to set active button color
+    function setActiveButtonColor(button) {
+        const color = button.dataset.color;
+        button.querySelector('.front').style.background = color;
+    }
+    
+    // Function to reset button color
+    function resetButtonColor(button) {
+        button.querySelector('.front').style.background = '#F2F2F2';
+    }
+    
+    // Event listener for each button
+    document.querySelectorAll('.pushable').forEach(button => {
+        button.addEventListener('click', function () {
+        const target = this.dataset.target;
+    
+        // Change color of the clicked button
+        setActiveButtonColor(this);
+    
+        // Reset colors of other buttons
+        document.querySelectorAll('.pushable').forEach(otherButton => {
+            if (otherButton !== this) {
+            resetButtonColor(otherButton);
+            }
+        });
+    
+        // Use GSAP to smoothly scroll to the target section
+        const targetSection = document.getElementById(target);
+        if (targetSection) { 
+            gsap.to(window, {
+            duration: 1,
+            scrollTo: targetSection,
+            ease: "power2.out"
+            });
+        }
+        });
+    });
+
+    
+    // Add a scroll event to change the navbar button colors based on the section in view
+    window.addEventListener('scroll', function () {
+        let activeSection = null;
+    
+        document.querySelectorAll('section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.25 && rect.bottom >= window.innerHeight * 0.75) {
+            activeSection = section;
+        }
+        });
+    
+        document.querySelectorAll('.pushable').forEach(button => {
+        if (button.dataset.target === activeSection?.id) {
+            setActiveButtonColor(button);
+        } else {
+            resetButtonColor(button);
+        }
+        });
     });
   </script>
   

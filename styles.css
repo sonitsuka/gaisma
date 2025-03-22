@@ -30,245 +30,6 @@ body, html {
   font-family: Arial, sans-serif;
 }
 
-.container {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-#home {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #000;
-}
-
-/* TV Container */
-.tv-container {
-  position: relative;
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* TV Frame */
-.tv-frame {
-  width: 100%;
-  height: auto;
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* Screen Container */
-.screen-container {
-  position: absolute;
-  top: 10.5%;   /* Adjust based on the TV frame image */
-  left: 9.5%;   /* Adjust based on the TV frame image */
-  width: 65%;   /* Adjust based on the TV frame image */
-  height: 65%;  /* Adjust based on the TV frame image */
-  z-index: 1;
-  overflow: hidden;
-  border-radius: 8% / 8%;
-  background-color: #000;
-}
-
-/* Video Wrapper */
-.video-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-#home--video {
-  height: 100%;
-  max-width: none;
-  position: relative;
-  z-index: 1;
-}
-
-/* For vertical videos, contain within height and center horizontally */
-.vertical-video {
-  height: 100%;
-  width: auto;
-  max-height: 100%;
-}
-
-/* Black side bars for vertical video */
-.video-side-bars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.side-bar {
-  background-color: #000;
-  height: 100%;
-  flex-grow: 1;
-}
-
-.video-space {
-  height: 100%;
-  flex-grow: 0;
-  flex-shrink: 0;
-}
-
-/* Retro TV effects */
-.scanlines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.03) 0%,
-    rgba(255, 255, 255, 0.03) 50%,
-    rgba(0, 0, 0, 0.03) 50%,
-    rgba(0, 0, 0, 0.03) 100%
-  );
-  background-size: 100% 4px;
-  z-index: 3;
-  pointer-events: none;
-  opacity: 0.4;
-}
-
-.vignette {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* Interactive elements */
-.tv-controls {
-  position: absolute;
-  right: 11%;
-  top: 30%;
-  z-index: 3;
-  height: 45%;
-  width: 15%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.tv-knob {
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.effect-grayscale {
-  filter: grayscale(100%);
-}
-
-.effect-sepia {
-  filter: sepia(80%);
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .tv-container {
-    width: 95%;
-  }
-  
-  .tv-controls {
-    right: 10%;
-  }
-  
-  .tv-knob {
-    width: 30px;
-    height: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .tv-container {
-    width: 100%;
-  }
-  
-  .tv-controls {
-    right: 8%;
-  }
-  
-  .tv-knob {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-/* TV on/off animation */
-.tv-off .screen-container {
-  background-color: #111;
-  transition: background-color 0.2s ease;
-}
-
-.tv-off #home--video {
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.screen-flicker {
-  animation: flicker 0.15s infinite alternate;
-}
-
-@keyframes flicker {
-  0% { opacity: 1; }
-  100% { opacity: 0.8; }
-}
-
-/* Video Effects */
-.effect-grayscale {
-  filter: grayscale(100%);
-}
-
-.effect-sepia {
-  filter: sepia(80%);
-}
-
-/* TV power on effect */
-.tv-turn-on {
-  animation: turn-on 1s ease;
-}
-
-@keyframes turn-on {
-  0% { 
-    transform: scale(1, 0.1) translate(0, 0);
-    opacity: 0;
-  }
-  10% { 
-    transform: scale(1, 0.3) translate(0, 0);
-    opacity: 1;
-  }
-  30% { 
-    transform: scale(1, 0.7) translate(0, 0);
-  }
-  100% { 
-    transform: scale(1, 1) translate(0, 0);
-  }
-}
   a {
   text-decoration: none;
   color: #f6efef;
@@ -304,8 +65,345 @@ h2.title {
   word-wrap: break-word;  
   overflow-wrap: break-word;
 }
+/*---------- Home -------------------------------- */
+/* Base Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background: #000;
+  overflow: hidden;
+  color: #fff;
+}
 
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
 
+#home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Artistic background */
+.artistic-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(125deg, #000000 0%, #1a1a2e 50%, #000000 100%);
+  z-index: 0;
+}
+
+/* Particle effect */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Advanced video display */
+.video-composition {
+  position: relative;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-gap: 0;
+  width: 90%;
+  height: 80vh;
+  max-width: 1600px;
+  z-index: 2;
+}
+
+.video-cell {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  transition: all 0.5s ease;
+}
+
+.video-cell::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.video-cell:hover::before {
+  opacity: 1;
+}
+
+.video-cell.left, .video-cell.right {
+  transform: perspective(1000px) scale(0.85);
+  z-index: 2;
+}
+
+.video-cell.left {
+  transform: perspective(1000px) rotateY(15deg) scale(0.85);
+  transform-origin: right center;
+  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+  margin-right: -30px;
+}
+
+.video-cell.center {
+  z-index: 3;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  transform: translateZ(50px) scale(1.05);
+}
+
+.video-cell.right {
+  transform: perspective(1000px) rotateY(-15deg) scale(0.85);
+  transform-origin: left center;
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+  margin-left: -30px;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+/* Video effects */
+.effect-grayscale {
+  filter: grayscale(100%);
+}
+
+.effect-sepia {
+  filter: sepia(80%);
+}
+
+/* Video overlay elements */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+}
+
+.video-cell:hover .video-overlay {
+  opacity: 1;
+}
+
+.video-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.video-description {
+  font-size: 0.9rem;
+  margin: 0;
+  max-width: 80%;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Progress bar */
+.progress-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 5;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: rgba(120, 120, 140, 0.7);
+  transition: width 0.1s linear;
+}
+
+/* Play/pause button */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.video-cell:hover .play-button {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-button i {
+  font-size: 30px;
+  color: white;
+}
+
+/* Video finished state - only for center video */
+.video-finished {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.replay-button {
+  padding: 12px 24px;
+  background: rgba(80, 80, 100, 0.8);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.replay-button:hover {
+  background: rgba(100, 100, 120, 0.9);
+  transform: scale(1.05);
+}
+
+/* Decorative elements */
+.decorative-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, rgba(120, 120, 140, 0.5), transparent);
+  height: 1px;
+  width: 80%;
+  left: 10%;
+  z-index: 5;
+}
+
+.top-line {
+  top: -20px;
+}
+
+.bottom-line {
+  bottom: -20px;
+}
+
+/* Main controls */
+.main-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 10;
+}
+
+.control-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(80, 80, 100, 0.3);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(120, 120, 140, 0.3);
+}
+
+.control-button:hover {
+  background: rgba(100, 100, 120, 0.5);
+  transform: scale(1.1);
+}
+
+.control-button i {
+  color: white;
+  font-size: 20px;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .video-composition {
+    display: block;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  /* Only show center video on mobile */
+  .video-cell.left, 
+  .video-cell.right {
+    display: none;
+  }
+  
+  .video-cell.center {
+    width: 100%;
+    height: 100%;
+    transform: none;
+    margin: 0;
+    box-shadow: none;
+  }
+  
+  .play-button {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .play-button i {
+    font-size: 24px;
+  }
+  
+  .decorative-line {
+    display: none;
+  }
+}
 /*---------- Music -------------------------------- */
 #music {
   width: 100%;
